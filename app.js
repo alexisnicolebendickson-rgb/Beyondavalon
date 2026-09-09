@@ -7,7 +7,9 @@
   "use strict";
 
   /* ---------- Theme toggle ---------- */
-  var THEME_KEY = "beyond-avalon-theme";
+  // In-memory only (no localStorage/sessionStorage) so this behaves
+  // identically everywhere, including sandboxed preview iframes that
+  // disallow web storage APIs.
   var root = document.documentElement;
 
   function applyTheme(theme) {
@@ -18,27 +20,8 @@
     }
   }
 
-  function getStoredTheme() {
-    try {
-      return localStorage.getItem(THEME_KEY);
-    } catch (_e) {
-      return null;
-    }
-  }
-
-  function storeTheme(theme) {
-    try {
-      localStorage.setItem(THEME_KEY, theme);
-    } catch (_e) {
-      /* ignore (e.g. sandboxed iframe blocking storage) */
-    }
-  }
-
   (function initTheme() {
-    var stored = getStoredTheme();
-    if (stored) {
-      applyTheme(stored);
-    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       applyTheme("dark");
     }
   })();
@@ -47,9 +30,7 @@
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {
       var isDark = root.getAttribute("data-theme") === "dark";
-      var next = isDark ? "light" : "dark";
-      applyTheme(next);
-      storeTheme(next);
+      applyTheme(isDark ? "light" : "dark");
     });
   }
 
