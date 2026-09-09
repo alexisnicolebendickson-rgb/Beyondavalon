@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <rect width="1080" height="1350" fill="#F5F0E6"/>
+  <rect x="0" y="0" width="1080" height="26" fill="#2D6F70"/>
+  <rect x="76" y="78" width="928" height="1194" rx="10" fill="#FFFCF7" stroke="#C9B894" stroke-width="2"/>
+
+  <text x="112" y="145" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="2.5" fill="#2D6F70">
+    AVALON HISTORY SPOTLIGHT
+  </text>
+  <line x1="112" y1="176" x2="968" y2="176" stroke="#C9B894" stroke-width="2"/>
+
+  <text x="112" y="262" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="700" fill="#172033">
+    COLUMBUS
+  </text>
+  <text x="112" y="342" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="700" fill="#172033">
+    JONES
+  </text>
+  <text x="115" y="390" font-family="Arial, Helvetica, sans-serif" font-size="21" letter-spacing="1.2" fill="#5C5141">
+    <tspan x="115" dy="0">RECONSTRUCTION-ERA DELEGATE</tspan>
+    <tspan x="115" dy="30">MADISON COUNTY, ALABAMA</tspan>
+  </text>
+
+  <rect x="112" y="448" width="10" height="457" fill="#B58A3A"/>
+  <text x="158" y="518" font-family="Georgia, 'Times New Roman', serif" font-size="42" fill="#172033">
+    <tspan x="158" dy="0">“Freedmen are taken</tspan>
+    <tspan x="158" dy="62">from their beds at night</tspan>
+    <tspan x="158" dy="62">and carried to the woods</tspan>
+    <tspan x="158" dy="62">and beaten almost to death</tspan>
+    <tspan x="158" dy="62">by Rebels disguised.”</tspan>
+  </text>
+
+  <text x="158" y="866" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#2D6F70">
+    APRIL 27, 1868
+  </text>
+  <text x="158" y="902" font-family="Arial, Helvetica, sans-serif" font-size="21" fill="#5C5141">
+    Letter to R. M. Reynolds
+  </text>
+
+  <line x1="112" y1="967" x2="968" y2="967" stroke="#D7CCB7" stroke-width="2"/>
+
+  <text x="112" y="1025" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#172033">
+    <tspan x="112" dy="0">In the same letter, Jones wrote that he had served</tspan>
+    <tspan x="112" dy="39">three years in the Union Army and was “late of the</tspan>
+    <tspan x="112" dy="39">Convention.” His testimony records Black political</tspan>
+    <tspan x="112" dy="39">service and racial terror in his own words.</tspan>
+  </text>
+
+  <rect x="76" y="1198" width="928" height="74" fill="#172033"/>
+  <text x="112" y="1233" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="0.8" fill="#FFFFFF">
+    INSTITUTIONAL ERASURE AT AVALON PLANTATION
+  </text>
+  <text x="112" y="1260" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#D8E4E4">
+    Reclaiming Black History in Huntsville, Alabama
+  </text>
+
+  <text x="112" y="1313" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#6C6255">
+    Source: Columbus Jones to R. M. Reynolds, April 27, 1868, Alabama Department of Archives and History
+  </text>
+</svg>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plantations Map — Beyond Avalon</title>
+<meta name="description" content="An interactive map of plantation sites connected to the Avalon/Jones research network across Alabama, tiered by confidence of connection to the core research line." />
+<meta name="google-site-verification" content="jhiERlPNpy3anJ0NUfWdMwd3_V0cvt4goJESA_m7bRA" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./base.css" />
+<link rel="stylesheet" href="./style.css" />
+<link rel="stylesheet" href="./map.css" />
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238A3A22'/%3E%3Cpath d='M32 12c8 6 12 14 12 22 0 8-5 14-12 16-7-2-12-8-12-16 0-8 4-16 12-22z' fill='%23F3EDE2'/%3E%3Cline x1='32' y1='16' x2='32' y2='48' stroke='%238A3A22' stroke-width='2'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="./index.html#top" class="brand" aria-label="Beyond Avalon home">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+        <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Beyond Avalon
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="./index.html#history">The History</a></li>
+        <li><a href="./index.html#erasure">The Argument</a></li>
+        <li><a href="./index.html#registry">Names Registry</a></li>
+        <li><a href="./index.html#documents">Documents</a></li>
+        <li><a href="./index.html#lineage">Family &amp; Findings</a></li>
+        <li><a href="./map.html" aria-current="page">Plantations Map</a></li>
+        <li><a href="./uah-campus-map.html">UAH Campus Map</a></li>
+        <li><a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
+        <li><a href="./leasing.html">Slave &amp; Convict Leasing</a></li>
+          <li><a href="./institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
+        <li><a href="./index.html#about">About</a></li>
+        <li><a href="./index.html#support">Support</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="./index.html#history">The History</a>
+    <a href="./index.html#erasure">The Argument</a>
+    <a href="./index.html#registry">Names Registry</a>
+    <a href="./index.html#documents">Documents</a>
+    <a href="./index.html#lineage">Family &amp; Findings</a>
+    <a href="./map.html">Plantations Map</a>
+    <a href="./uah-campus-map.html">UAH Campus Map</a>
+    <a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a>
+    <a href="./leasing.html">Slave &amp; Convict Leasing</a>
+    <a href="./institutional-knowledge.html">What UAH & Huntsville Knew</a>
+    <a href="./index.html#about">About</a>
+    <a href="./index.html#support">Support</a>
+    <a href="./index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero map-hero" style="padding-bottom: var(--space-6);">
+    <div class="container">
+      <span class="eyebrow">Interactive research map</span>
+      <h1>Plantations Map</h1>
+      <p class="lede">This map plots plantation sites and related properties that have surfaced across our research, tiered by how confidently each is connected to the core Avalon/Jones network. Markers with a solid fill and border are precisely located; dashed-outline markers are approximate placeholders pending better location data. Click any marker for sourcing detail.</p>
+      <p style="color:var(--color-text-muted); font-size:var(--text-sm); max-width:62ch;">
+        <strong>Dataset note:</strong> This map currently shows <span id="site-count-note">24 of 37</span> originally documented sites. Entries for Lauderdale, Morgan, and DeKalb counties could not be recovered from surviving records and are not shown rather than invented — if you have the original data for these, please <a href="./index.html#contact">get in touch</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: var(--space-12);">
+    <div class="map-shell">
+      <aside class="map-controls">
+        <h3>Confidence tiers</h3>
+        <label class="tier-toggle">
+          <input type="checkbox" data-tier="1" checked />
+          <span class="tier-swatch tier-1"></span>
+          Tier 1 — Avalon / Jones research line
+        </label>
+        <label class="tier-toggle">
+          <input type="checkbox" data-tier="2" checked />
+          <span class="tier-swatch tier-2"></span>
+          Tier 2 — Caution: namesake only
+        </label>
+        <label class="tier-toggle">
+          <input type="checkbox" data-tier="3" checked />
+          <span class="tier-swatch tier-3"></span>
+          Tier 3 — General context
+        </label>
+
+        <h3>Filter by county</h3>
+        <select id="county-filter" aria-label="Filter by county">
+          <option value="">All counties</option>
+        </select>
+
+        <h3>Network connections</h3>
+        <label class="tier-toggle">
+          <input type="checkbox" id="connections-toggle" checked />
+          <span class="tier-swatch" style="background:#8a3a22;"></span>
+          Show family / network lines
+        </label>
+        <p style="font-size:var(--text-xs); color:var(--color-text-faint); line-height:1.5;">Dashed lines connect documented ownership, kinship, and business ties between sites — part of tracing plantation slavery as an interlocking regional system, not a set of isolated households. Click a marker for the specific sourced connections.</p>
+
+        <h3>Marker key</h3>
+        <p style="font-size:var(--text-sm); color:var(--color-text-muted);">Solid marker = precise location.<br />Dashed marker = approximate placeholder.</p>
+      </aside>
+
+      <div style="position:relative;">
+        <div id="map" style="width:100%; height:640px; border-radius:var(--radius-lg); border:1px solid var(--color-border);"></div>
+
+        <div id="detail-panel" class="detail-panel" hidden>
+          <button id="detail-close" class="detail-close" aria-label="Close details">×</button>
+          <div id="detail-content"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: var(--space-12);">
+    <div class="term-box" style="margin-top:0;">
+      <strong>Why this map draws lines, not just pins.</strong> Individual plantations did not operate in isolation. Enslavers married into each other's families, executed each other's estates, witnessed each other's contracts, and bought, sold, mortgaged, and leased enslaved people to and from one another across county and state lines. Historians of slavery's economy have described this interlocking system of credit, kinship, and coerced labor as functioning much like a corporation &mdash; a network built to extract and pass on wealth generated by enslaved people's labor, and to keep circulating that same coerced labor after emancipation under new legal names. This section traces that network as far as the evidence currently allows, and names where the trail runs cold.
+    </div>
+
+    <h2 style="margin-top: var(--space-8);">Bondage &amp; Labor Systems Across the Network</h2>
+    <p style="max-width:74ch; color:var(--color-text-muted);">These are the specific, documented mechanisms of coercion this research has traced so far &mdash; not a general history of slavery, but what the Avalon/Jones-network evidence base currently shows. We do not soften this material: enslaved people were legally property, divided among heirs like furniture, and that violence continued in new forms after 1865. The most sensitive material &mdash; sexual exploitation of enslaved women and girls, and post-emancipation convict/slave leasing &mdash; has been moved to dedicated pages linked below so it can be read deliberately rather than encountered inside map markers. No text or sourcing was altered or removed in that move.</p>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: var(--space-5); margin-top: var(--space-6);">
+
+      <div class="gaps-list" style="gap:var(--space-2);">
+        <h3 style="margin:0 0 var(--space-2); font-size:var(--text-md);">Slave trading &amp; forced family separation</h3>
+        <li><strong>1820, Madison County:</strong> On Lewellen Jones's death, his estate &mdash; including 40 enslaved people &mdash; was divided between his two sons; Alexander Jones inherited Avalon plantation and 20 of the 40. <em>Source: "2020 and the Future of Alabama History: The Avalon Plantation Marker Story" panel transcript, logged in the evidence database, row 413.</em></li>
+        <li>See <a href="./leasing.html">Slave &amp; Convict Leasing</a> for full detail on hiring-out, forced family separation, and post-emancipation convict leasing, with complete citations.</li>
+      </div>
+
+      <div class="gaps-list" style="gap:var(--space-2);">
+        <h3 style="margin:0 0 var(--space-2); font-size:var(--text-md);">Hiring out, slave &amp; convict leasing</h3>
+        <li>Hiring out enslaved people, and &mdash; after 1865 &mdash; Alabama's state and county convict-leasing system that re-enslaved Black men under new legal forms, are documented mechanisms in this research network's broader regional context.</li>
+        <li><strong>See <a href="./leasing.html">Slave &amp; Convict Leasing</a> for the full, fully-cited discussion</strong>, including the Elyton/Jones Valley and Arlington/The Grove convict-leasing context and open research questions.</li>
+      </div>
+
+      <div class="gaps-list" style="gap:var(--space-2);">
+        <h3 style="margin:0 0 var(--space-2); font-size:var(--text-md);">Sexual exploitation &amp; reproductive coercion</h3>
+        <li>This research names directly, and traces with primary sources, the sexual exploitation and reproductive coercion of enslaved women and girls within the Avalon/Jones network &mdash; including the documented 1820 manumission of Elizabeth and her children.</li>
+        <li><strong>See <a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a> for the full, fully-cited discussion.</strong></li>
+      </div>
+
+    </div>
+
+    <p class="data-note" style="margin-top: var(--space-5);">This panel will grow as evidence is confirmed. Distinguish carefully between what a document states, what a document implies, and what remains an open question. If you have documents, family knowledge, or leads on any of these mechanisms, please <a href="./index.html#contact">get in touch</a>.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:var(--space-3);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" style="width:28px;height:28px;">
+            <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+          </svg>
+          Beyond Avalon
+        </div>
+        <p style="max-width:44ch; color:var(--color-text-muted); font-size:var(--text-sm);">A public-history and genealogy project reclaiming the names, families, and legacy of the people enslaved at Avalon Plantation, Huntsville, Alabama — and following where the wealth and power went afterward.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="./index.html#history">The History</a></li>
+          <li><a href="./index.html#erasure">The Argument</a></li>
+          <li><a href="./index.html#registry">Names Registry</a></li>
+          <li><a href="./index.html#documents">Documents</a></li>
+          <li><a href="./index.html#lineage">Family &amp; Findings</a></li>
+          <li><a href="./map.html">Plantations Map</a></li>
+          <li><a href="./uah-campus-map.html">UAH Campus Map</a></li>
+          <li><a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
+          <li><a href="./leasing.html">Slave &amp; Convict Leasing</a></li>
+          <li><a href="./institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Project</h5>
+        <ul>
+          <li><a href="./index.html#support">Support This Research</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
+          <li><a href="https://www.alabamahistory.net/madison" target="_blank" rel="noopener noreferrer">AHA Marker Text ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Beyond Avalon · Independent research by Alexis Bendickson</span>
+      <span>All findings are subject to ongoing verification.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+<script src="./plantations-data.js"></script>
+<script src="./map.js"></script>
+<script src="./app.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>
