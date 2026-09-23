@@ -25,7 +25,8 @@
     stable: "#c99a3e",
     outbuilding: "#c99a3e",
     cemetery: "#3f5a41",
-    "survey-area": "#4a6fa5"
+    "survey-area": "#4a6fa5",
+    easement: "#6b5b3e"
   };
   var CATEGORY_LABELS = {
     house: "House / dwelling",
@@ -33,7 +34,8 @@
     stable: "Stable",
     outbuilding: "Outbuilding",
     cemetery: "Cemetery / burial ground",
-    "survey-area": "Archaeological survey area"
+    "survey-area": "Archaeological survey area",
+    easement: "1960s campus easement area"
   };
 
   var markers = [];

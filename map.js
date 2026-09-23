@@ -20,6 +20,12 @@
   if (!mapEl || typeof maplibregl === "undefined") return;
 
   var TIER_COLORS = { 1: "#8a3a22", 2: "#c99a3e", 3: "#3f5a41" };
+  /* Evidence-grade badges, driven by tier: every popup carries one. */
+  var EVIDENCE_BADGES = {
+    1: { label: "VERIFIED", note: "Archival / manuscript evidence ties this site to the research line." },
+    2: { label: "LEAD", note: "A research lead — identity or connection not yet confirmed." },
+    3: { label: "CONTEXT", note: "General background — no claimed link to the Avalon/Jones line." }
+  };
   var CONNECTION_COLORS = {
     kinship: "#8a3a22",
     business: "#4a6fa5",
@@ -105,6 +111,11 @@
     var html = "";
     html += '<h4>' + escapeHtml(site.name) + '</h4>';
     html += '<span class="detail-tag tier-' + site.tier + '">' + escapeHtml(tierLabel) + '</span>';
+    var badge = EVIDENCE_BADGES[site.tier];
+    if (badge) {
+      var badgeColor = TIER_COLORS[site.tier] || "#8a3a22";
+      html += '<span class="detail-tag evidence-badge" title="' + escapeHtml(badge.note) + '" style="background:' + badgeColor + '22; color:' + badgeColor + '; font-weight:700;">Evidence: ' + escapeHtml(badge.label) + '</span>';
+    }
     html += '<p>' + escapeHtml(site.summary || "") + '</p>';
     if (site.confirmedEnslaved) {
       html += '<p><strong>Confirmed enslaved population:</strong> ' + escapeHtml(site.confirmedEnslaved) + '</p>';
@@ -249,6 +260,31 @@
       }
     });
   }
+
+  /* ---------- Evidence-badge legend entry + live site count ----------
+     map.html (sibling-owned) holds the static legend and the "24 of 37" note;
+     this injects the evidence-badge key into the controls aside and keeps the
+     visible site count in sync with PLANTATIONS_DATA without touching map.html. */
+  (function addEvidenceLegendAndCount() {
+    var countNote = document.getElementById("site-count-note");
+    if (countNote) {
+      countNote.textContent = DATA.restoredCount + " of " + DATA.originalCount;
+    }
+    var controls = document.querySelector(".map-controls");
+    if (!controls || document.getElementById("evidence-badge-legend")) return;
+    var h = document.createElement("h3");
+    h.textContent = "Evidence badges";
+    var p = document.createElement("p");
+    p.id = "evidence-badge-legend";
+    p.style.cssText = "font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.6;";
+    p.innerHTML =
+      "Every popup carries an evidence badge: " +
+      "<strong>VERIFIED</strong> = archival/manuscript source ties the site to the research line; " +
+      "<strong>LEAD</strong> = identity or connection unresolved, needs confirmation; " +
+      "<strong>CONTEXT</strong> = background only, no claimed link.";
+    controls.appendChild(h);
+    controls.appendChild(p);
+  })();
 
   map.on("load", function () {
     buildMarkers();

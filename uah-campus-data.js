@@ -17,6 +17,12 @@
   ESTIMATED point placed between/behind those buildings' approximate modern locations —
   NOT a surveyed coordinate — and is labeled "approximate" in both marker style and
   popup text. Do not treat any marker here as a precise GPS location.
+
+  2026-09-23: added three 1966-67 campus easement areas (Holmes Avenue extension,
+  Governors Drive right-of-way quitclaim, north-campus east-edge utility easement —
+  from the UAH easement correspondence read 2026-09-21; chain-of-title context, not
+  plantation structures) and the corrected north-campus-entrance GPR anomaly record
+  (unreplicated grave-pattern anomalies — NOT a burial site).
 */
 window.UAH_CAMPUS_DATA = {
   campusCenter: { lat: 34.7241, lng: -86.6402 },
@@ -70,7 +76,48 @@ window.UAH_CAMPUS_DATA = {
       precise: false,
       summary: "The 1966 UAH Campus Topographic Map (G.W. Jones & Sons / Atlantic Aerial Surveys) shows a cluster of small structures and access roads in the southwestern portion of the pre-development campus tract, consistent with plantation-era outbuildings (barns, stables, or similar service structures) noted in period plantation layouts generally. No structure on the 1966 map is individually labeled as a stable; this marker is a general approximate placement based on the visible building cluster and access-road pattern, not a confirmed identification. A documented structure ID or period source naming this cluster has not yet been located.",
       citation: "1966 UAH Campus Topographic Map, G.W. Jones & Sons / Atlantic Aerial Surveys (Avalon project Drive archive, file 1966-06-UAH-Campus-Topographic-Map)."
+    },
+    {
+      id: "holmes-avenue-extension-easement-1966",
+      name: "Holmes Avenue extension easement area (1966)",
+      category: "easement",
+      lat: 34.7195,
+      lng: -86.643,
+      precise: false,
+      summary: "Dec 7, 1966: University attorney George T. Driver enclosed a proposed easement from the UA Board of Trustees to the City of Huntsville for the Bradford Drive–Holmes Avenue Extension. Terms included the City conveying all unused James Stewart property to the Board and vacating old Holmes Avenue north and west of the new highway. Chain-of-title context for UAH land history — not a plantation structure. Marker placed approximately along the south campus edge (Holmes Avenue corridor); the easement plat's exact polygon is not in the correspondence.",
+      citation: "Driver→Reeves, Dec 7, 1966 (UAH easement correspondence, read 2026-09-21; Beyond Avalon research_notes/unread-documents-20260921/child1-diaries/uah-easement-correspondence.md)."
+    },
+    {
+      id: "governors-drive-row-quitclaim-1966",
+      name: "Governors Drive right-of-way quitclaim area (1966)",
+      category: "easement",
+      lat: 34.718,
+      lng: -86.633,
+      precise: false,
+      summary: "Dec 7, 1966: Driver enclosed a quitclaim deed from William P. Dilworth, Jr. (trustee of William P. and Susie A. Dilworth) covering a 30-foot-wide right-of-way between Governors Drive and University property, between the lots of Mrs. Della Hall — long used as access to the Dilworth property. Chain-of-title context for UAH land history — not a plantation structure. Marker placed approximately on the Governors Drive corridor south of campus; exact polygon not in the correspondence.",
+      citation: "Driver→Reeves, Dec 7, 1966 (UAH easement correspondence, read 2026-09-21; Beyond Avalon research_notes/unread-documents-20260921/child1-diaries/uah-easement-correspondence.md)."
+    },
+    {
+      id: "north-campus-east-edge-utility-easement-1966",
+      name: "North campus east-edge utility easement (1966)",
+      category: "easement",
+      lat: 34.729,
+      lng: -86.633,
+      precise: false,
+      summary: "Jan 27, 1966: Philip M. Mason recommended executing the City of Huntsville's easement agreement for water, sewer, and gas lines on the east edge of the north campus, joining private dwellings in the McThornmor Subdivision. Chain-of-title context for UAH land history — not a plantation structure. Marker placed approximately on the east edge of the north campus; the exact easement line is not in the correspondence.",
+      citation: "Mason→Bealle, Jan 27, 1966 (UAH easement correspondence, read 2026-09-21; Beyond Avalon research_notes/unread-documents-20260921/child1-diaries/uah-easement-correspondence.md)."
+    },
+    {
+      id: "north-entrance-gpr-anomaly-corrected",
+      name: "North campus entrance — unreplicated GPR anomalies (CORRECTED record)",
+      category: "survey-area",
+      lat: 34.7295,
+      lng: -86.6415,
+      precise: false,
+      summary: "CORRECTED: Ben Hoksbergen's initial GPR survey found anomalies near the north entrance of campus that fit the pattern of graves, but a subsequent survey did NOT replicate the results. This marker records the corrected, unreplicated anomaly set — it is NOT a burial site and must not be presented as one. No grave-pattern anomalies were found near the Jones-Perkins Cemetery. Marker placed approximately at the north-campus/University Drive entrance area; the exact survey boundary was not published.",
+      citation: "Ben Hoksbergen to Alexis Bendickson, email Sep 8, 2026 (read firsthand via Gmail); Beyond Avalon research notes (citation-clusterE-20260922/groupB-uah-campus/log.md)."
     }
+
   ],
   oralHistories: [
     {
