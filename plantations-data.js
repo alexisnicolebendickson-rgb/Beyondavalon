@@ -21,8 +21,8 @@ window.PLANTATIONS_DATA = {
      site has no fixed coordinates, e.g. a mercantile firm) a note is carried
      on the related site's own record instead of a line. "type" controls the
      line color/legend in map.js. Every edge must cite a source — do not add
-     an edge on inference alone; log inference-level ties as text in the
-     Bondage & Labor Systems panel on map.html instead. */
+     an edge on inference alone; log inference-level ties as text on the
+     dedicated Leasing page (leasing.html) instead. */
   connections: [
     {
       from: "avalon",
@@ -122,7 +122,7 @@ window.PLANTATIONS_DATA = {
       lng: -86.85,
       precise: false,
       summary: "Named for John \"Devil John\" Jones — no documented link to the Avalon/Lewellen Jones line.",
-      laborSystemNote: "Jefferson County became the center of Alabama's post-emancipation convict-leasing system, in which county and state prisoners — disproportionately Black men convicted under Reconstruction-era vagrancy and petty-theft laws — were leased to coal mines and furnace operators (see Bondage & Labor Systems panel below). This is regional context for the labor system that replaced slavery in this part of Alabama; no document yet ties Elyton/Jones Valley specifically into the Avalon/Jones research line.",
+      laborSystemNote: "Jefferson County became the center of Alabama's post-emancipation convict-leasing system, in which county and state prisoners — disproportionately Black men convicted under Reconstruction-era vagrancy and petty-theft laws — were leased to coal mines and furnace operators (see the site's Leasing page). This is regional context for the labor system that replaced slavery in this part of Alabama; no document yet ties Elyton/Jones Valley specifically into the Avalon/Jones research line.",
       citation: "Beyond Avalon research dataset (Tier 2 legend, map.html)."
     },
     {
@@ -134,7 +134,7 @@ window.PLANTATIONS_DATA = {
       lng: -86.845,
       precise: false,
       summary: "Included for regional map context only; no claimed Jones-family connection.",
-      laborSystemNote: "Also located in Jefferson County, the historic center of Alabama's post-emancipation convict-leasing system (see Bondage & Labor Systems panel below). Regional context only; not a confirmed Avalon/Jones-network site.",
+      laborSystemNote: "Also located in Jefferson County, the historic center of Alabama's post-emancipation convict-leasing system (see the site's Leasing page). Regional context only; not a confirmed Avalon/Jones-network site.",
       citation: "Beyond Avalon research dataset (Tier 2 legend, map.html)."
     },
     {

@@ -3,7 +3,7 @@ const REGISTRY_DATA = [
   {
     "name": "Peter",
     "meta": "1683/4 Deed of Gift, York Co., VA",
-    "note": "The earliest documented enslaved individual found so far anywhere in this family's ancestral network -- conveyed with a cow named Blackbird from William Clopton to his daughter Ann Clopton, an ancestor of Mary Anderson (who married Lewellen Jones), 36 years before Orlando Jones's 1719 will."
+    "note": "The earliest documented enslaved individual found so far anywhere in this family's ancestral network -- conveyed with a cow named Blackbird from William Clopton to his daughter Ann Clopton, an ancestor of Mary Anderson (married to Llewellin Jones Oct 22, 1792, Louisa County, Virginia -- confirmed from the primary marriage register, DGS 007578998, image 61 of 527), 36 years before Orlando Jones's 1719 will."
   },
   {
     "name": "Frank, Hannah, Ned, David, Sarah, Selton",
@@ -22,8 +22,8 @@ const REGISTRY_DATA = [
   },
   {
     "name": "Elizabeth (\"Eliza\")",
-    "meta": "Freed 1820 · Age ~40",
-    "note": "Named in the 1820 Alabama emancipation act with three of her children. Mother of Shandy Wesley Jones, Reuben Jones, and Evelina."
+    "meta": "Manumitted Dec 11, 1820",
+    "note": "Emancipated with her children by the Alabama Legislature act of Dec 11, 1820, at the behest of John N. S. Jones and Alexander P. Jones. Per Hoksbergen & DeNeefe (Alabama Review, July 2026), Shandy Wesley Jones -- freed as a small child in the same act -- was her son. The claim that she also mothered Reuben and Columbus Jones comes from family oral history and a professional genealogy, but the authors flag the ages as making it \"remote\": she would have been about 47 at Columbus's birth and about 53 at Reuben's. Maternity disputed, not fact."
   },
   {
     "name": "Shandy Wesley Jones",
@@ -32,8 +32,8 @@ const REGISTRY_DATA = [
   },
   {
     "name": "Reuben Jones",
-    "meta": "Born enslaved at Avalon",
-    "note": "Elizabeth's son and Shandy's half-brother. Union Army veteran; became one of the first Black state representatives from Madison County and enabled the Jones School."
+    "meta": "Union Army veteran · Madison County legislator",
+    "note": "Union Army veteran; among the first Black state representatives elected from Madison County during Reconstruction; enabled the Jones School. The claims that he was born at Avalon and was Shandy Wesley Jones's half-brother are withdrawn -- the Elizabeth maternity behind them is disputed, not documented (see the Elizabeth entry)."
   },
   {
     "name": "Evelina",
@@ -48,7 +48,7 @@ const REGISTRY_DATA = [
   {
     "name": "Columbus Jones",
     "meta": "Freedman's Bank record, 1867",
-    "note": "About 40 in 1867; blacksmith near Athens Pike, Huntsville. Freedmen's Bank record names his parents as Turner Moore and Eliza Jones, and brothers Reuben and Turner."
+    "note": "About 40 in 1867; blacksmith near Athens Pike, Huntsville. His 1867 Freedmen's Bank entry is Account No. 29 (not No. 31) and names NO parent -- the Turner Moore and Eliza Jones parentage came from later derivative indexing, not the manuscript. A new manuscript read of the account lists his brothers Reuben and Turner as living, with only Wade, Shandy, and David dead."
   },
   {
     "name": "Turner Moore",
@@ -1994,5 +1994,130 @@ const REGISTRY_DATA = [
     "name": "Kate, Pearl Macklin, Lilia Tucker, Leah, Brewster Townsend, Nanny, Jackson Turner, Byrd Chapman, Felicia Hubbard, Margaret",
     "meta": "Huntsville memoir volume, 6:17:26 folder, 1890s",
     "note": "Named Black domestic workers and community members of 1890s Huntsville (Humes-Turner-Chapman-Coleman social circle), recorded in a memoir volume tentatively attributed to Elizabeth Humes Chapman. Not yet traced to the Alexander P. Jones/Avalon plantation estate; recorded per this project's mandate to name enslaved and formerly enslaved people within the wider community. The Brewster Townsend named here should not be assumed related to the Samuel/Edmund Townsend family already documented in this project's Lunenburg Co., VA migration research absent further evidence."
+  },
+  {
+    "name": "Hercules (spelled Harceles in the record)",
+    "meta": "Dearing v. Lightfoot detinue suit, 1844–1847",
+    "note": "A boy of about ten, enslaved as the mortgage property of James Jackson -- carried from the Western District of Tennessee to North Alabama in 1832, then sold on to Col. John F. Lightfoot. Mortgagee William Dearing sued for him in detinue in Lawrence County, Alabama; he was valued at $2,000 at the September 1847 trial. The court transcript spells his name Harceles, Harcles, and Hercles. (DB2 row 1694)"
+  },
+  {
+    "name": "Solomon (Dearing v. Lightfoot)",
+    "meta": "Dearing v. Lightfoot detinue suit, 1844–1847",
+    "note": "A boy of about twenty, enslaved as the mortgage property of James Jackson and carried from the Western District of Tennessee to North Alabama in 1832 -- named alongside Hercules in the 1844–1847 Lawrence County, Alabama detinue suit. A different person from the Solomon of the 1821 Peter Blow deed of trust. (DB2 row 1695)"
+  },
+  {
+    "name": "Aggy",
+    "meta": "Dearing v. Lightfoot detinue suit, 1844–1847",
+    "note": "A woman given to James Jackson by his wife's uncle -- named in his deposition in the 1844–1847 Lawrence County, Alabama detinue suit. A different person from the Aggy bequeathed in the 1791/1794 Thomas Jackson will, half a century earlier. (DB2 row 1696)"
+  },
+  {
+    "name": "Edward (Dearing v. Lightfoot)",
+    "meta": "Dearing v. Lightfoot detinue suit, 1844–1847",
+    "note": "A man bought by James Jackson in Jefferson County, Georgia, in 1816 or 1817 -- named in his deposition in the 1844–1847 Lawrence County, Alabama detinue suit. A different person from the Edward of the James Manning 1841 probate. (DB2 row 1697)"
+  },
+  {
+    "name": "Tilla",
+    "meta": "Dearing v. Lightfoot detinue suit, 1844–1847",
+    "note": "Mortgage property of James Jackson, sold to John M. Swoope of Lawrence County, Alabama, \"by the special direction of Dr. H. M. Jackson\" -- named in the 1844–1847 detinue suit. Sex and age are not stated in the record. (DB2 row 1698)"
+  },
+  {
+    "name": "Fenton",
+    "meta": "Dearing v. Lightfoot detinue suit, 1844–1847",
+    "note": "Mortgage property of James Jackson, sold to Paul J. Walkins of Lawrence County, Alabama, \"by the special direction of Dr. H. M. Jackson\" -- named in the 1844–1847 detinue suit. Sex and age are not stated in the record. (DB2 row 1699)"
+  },
+  {
+    "name": "Will (waterman, 1803)",
+    "meta": "Chancery cause 1820-022, Bedford Co., VA",
+    "note": "Enslaved waterman of Richard Perkins Sr. of Fluvanna County -- \"head man\" of the boat -- hired to William L. Adams for 1803 at £90 for the three hands. He carried 146 barrels of flour freight and applied to Jesse Moore for loading on Feb 1, 1803. Bedford County chancery cause 1820-022 (William L. Adams v. Richard & Benjamin Perkins), read firsthand from the Library of Virginia images. A different person from every other Will in this registry. (DB2 row 1700)"
+  },
+  {
+    "name": "James (waterman, 1803)",
+    "meta": "Chancery cause 1820-022, Bedford Co., VA",
+    "note": "Enslaved waterman of Richard Perkins Sr. of Fluvanna County, hired to William L. Adams for 1803 alongside Will and Jack -- named by Richard Murray in Bedford County chancery cause 1820-022 (firsthand visual read of the Library of Virginia images). (DB2 row 1701)"
+  },
+  {
+    "name": "Jack (waterman, 1803)",
+    "meta": "Chancery cause 1820-022, Bedford Co., VA",
+    "note": "Enslaved waterman of Richard Perkins Sr. of Fluvanna County, hired to William L. Adams for 1803 alongside Will and James -- named by Richard Murray in Bedford County chancery cause 1820-022 (firsthand visual read of the Library of Virginia images). (DB2 row 1702)"
+  },
+  {
+    "name": "Billy (a waterman)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "Named in the bill as \"Billy a Waterman\" -- one of fourteen people Benjamin Moore alleged were Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. Bedford County chancery cause 1841-044 (Benjamin Moore v. Benjamin Perkins et als). The record distinguishes him from \"Billy an old man\" in the same bill. (DB2 row 1703)"
+  },
+  {
+    "name": "Billy (an old man)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "Named in the bill as \"Billy an old man\" -- one of fourteen people Benjamin Moore alleged were Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. Bedford County chancery cause 1841-044. The record distinguishes him from \"Billy a Waterman\" in the same bill. (DB2 row 1704)"
+  },
+  {
+    "name": "Sally (1841-044)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. A different person from the Sally of the Thomas Jones 1821-will freedom dispute. (DB2 row 1705)"
+  },
+  {
+    "name": "Judith (1841-044)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. A different person from the Judith of the 1805 Lewellen Jones deed of gift. (DB2 row 1706)"
+  },
+  {
+    "name": "Cato (1841-044)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. A different person from the Cato of the 1851 Dearing sworn statement and the 1862 overseer receipt. (DB2 row 1707)"
+  },
+  {
+    "name": "Libby",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. The name appears nowhere else in the project's databases. (DB2 row 1708)"
+  },
+  {
+    "name": "Adaline (1841-044)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. A different person from the Adaline of the 1856 Talbot County sheriff's sale. (DB2 row 1709)"
+  },
+  {
+    "name": "Maria (1841-044)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. (DB2 row 1710)"
+  },
+  {
+    "name": "Delphy",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. The anti-removal writ reads \"Rebeky\" in this position [uncertain]; the bill spelling is taken as primary. (DB2 row 1711)"
+  },
+  {
+    "name": "Polly (1841-044)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. The anti-removal writ reads \"Betsy\" in this position [uncertain]; the bill spelling is taken as primary. A different person from the Polly of the 1805 Lewellen Jones deed of gift. (DB2 row 1712)"
+  },
+  {
+    "name": "Bob (1841-044)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. A different person from Bob Jude, the 1930 lien-system entry. (DB2 row 1713)"
+  },
+  {
+    "name": "Philada",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. Spelling as written in the bill; the name appears nowhere else in the project's databases. (DB2 row 1714)"
+  },
+  {
+    "name": "Jane (1841-044)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. (DB2 row 1715)"
+  },
+  {
+    "name": "Lewis (1841-044)",
+    "meta": "Chancery cause 1841-044, Bedford Co., VA",
+    "note": "One of fourteen people named in Benjamin Moore's 1841-044 bill -- alleged to be Benjamin Perkins's property, fraudulently put in the possession of his brother Richard Perkins to hide it from creditors and being removed westward under Woodson Dowdy. A different person from the Lewis of the 1856 Talbot County sheriff's sale. (DB2 row 1716)"
+  },
+  {
+    "name": "Giles",
+    "meta": "Hired out, 1842 · Berry family, Franklin Co., TN",
+    "note": "An enslaved person in Elizabeth Jones's control, hired out at $3 a month -- Thomas Beary wanted to hire him, and Samuel G. Beary wrote to \"Mrs Elizabeth Jones\" on Feb 23, 1842 that he would \"let [him] have him when you Send him.\" Firsthand manuscript read (FamilySearch image group 005178550, image 193 of 1234). Sex and age are not stated in the record. (DB2 row 1717)"
+  },
+  {
+    "name": "Junius",
+    "meta": "Post-emancipation chancery bill, undated",
+    "note": "A Black person named in an undated, post-1900 chancery bill -- a fraud and coercion suit to set aside a deed. The complainant, an unnamed woman who had inherited land and estate from her deceased brother Moses Jones, said Junius had \"for a long time been attempting to get a portion of [her] estate.\" Described in the bill only as \"a negro\" -- sex not stated -- and as an associate of \"Louie Hyter,\" a fraud defendant from Chicago \"or some other Northern city.\" Case caption and complainant's name not yet on the pages read. (DB2 row 1718)"
   }
 ];
