@@ -71,6 +71,9 @@
 
   /* ---------- Populate county filter ---------- */
   var countyFilter = document.getElementById("county-filter");
+  /* Labels that are not US counties: render as-is instead of appending " County". */
+  var NON_COUNTY_LABELS = { "Jamaica": 1, "Barbados": 1, "Bristol": 1, "London": 1, "Oxfordshire": 1, "Buckinghamshire": 1, "Shropshire": 1, "Montserrado": 1, "Unconfirmed": 1 };
+  function countyLabel(c) { return NON_COUNTY_LABELS[c] ? c : c + " County"; }
   if (countyFilter) {
     var counties = Array.from(new Set(DATA.sites.map(function (s) { return s.county; })))
       .filter(Boolean)
@@ -78,7 +81,7 @@
     counties.forEach(function (c) {
       var opt = document.createElement("option");
       opt.value = c;
-      opt.textContent = c + " County";
+      opt.textContent = countyLabel(c);
       countyFilter.appendChild(opt);
     });
     countyFilter.addEventListener("change", function () {
@@ -138,7 +141,7 @@
       html += '</ul>';
     }
     html += '<div class="detail-meta">';
-    html += (site.county ? escapeHtml(site.county) + " County · " : "");
+    html += (site.county ? escapeHtml(countyLabel(site.county)) + " · " : "");
     html += (site.precise ? "Precise location" : "Approximate location");
     html += '</div>';
     if (site.citation) {

@@ -827,15 +827,15 @@ window.PLANTATIONS_DATA = {
       citation: "Bradford conveyance, Mar 11, 1891; Beyond Avalon chancery pass 2026-09-23."
     },
     {
-      id: "mobile-al-berry-letter",
-      name: "Elizabeth Berry's 1842 letter — Mobile, AL",
+      id: "jackson-county-al-berry-letter",
+      name: "Elizabeth Berry's 1842 letter — Jackson County, AL",
       tier: 1,
-      county: "Mobile",
-      lat: 30.6954,
-      lng: -88.0399,
-      precise: false, // approximate: city level; house site not identified
-      summary: "Elizabeth Berry wrote from her brother M. T. Levert's house after a nine-day journey, signing 'Elizabeth Berry or Jones,' May 1, 1842.",
-      citation: "Elizabeth Berry letter, May 1, 1842; Beyond Avalon chancery pass 2026-09-23."
+      county: "Jackson",
+      lat: 34.65,
+      lng: -86.04,
+      precise: false, // approximate: county level; exact writing location not identified
+      summary: "Elizabeth Berry wrote from Jackson County, AL, asking S. G. Berry to come or send money to pay a judgment of about $30, and asking Abe Hunter to send tobacco 'by Jim when he comes in' — signing 'Elizabeth Berry or Jones,' May 1, 1842. Filed as an exhibit in the Berry chancery case.",
+      citation: "Elizabeth Berry letter, May 1, 1842 (manuscript visually read 2026-09-23; FamilySearch DGS 005178550, img. 185 of 1234)."
     },
     {
       id: "jefferson-county-ga-jackson",
