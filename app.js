@@ -24,7 +24,7 @@
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       applyTheme("dark");
     }
-  })();
+})();
 
   var themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
@@ -110,4 +110,22 @@
       });
     }
   }
+    /* ---------- Nav dropdown toggles (touch/keyboard support; hover/focus-within handled in CSS) ---------- */
+  document.querySelectorAll(".has-dropdown > .dropdown-toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var li = btn.parentElement;
+      var isOpen = li.classList.toggle("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".has-dropdown.open").forEach(function (li) {
+        li.classList.remove("open");
+        var b = li.querySelector(".dropdown-toggle");
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
+
 })();

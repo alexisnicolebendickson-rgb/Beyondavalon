@@ -54,19 +54,29 @@
       </svg>
       Beyond Avalon
     </a>
-    <nav aria-label="Primary">
+        <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="#history">The History</a></li>
         <li><a href="#erasure">The Argument</a></li>
         <li><a href="#registry">Names Registry</a></li>
         <li><a href="#documents">Documents</a></li>
         <li><a href="#lineage">Family &amp; Findings</a></li>
-        <li><a href="./map.html">Plantations Map</a></li>
-          <li><a href="./uah-campus-map.html">UAH Campus Map</a></li>
-          <li><a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
-          <li><a href="./leasing.html">Slave &amp; Convict Leasing</a></li>
-          <li><a href="./institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
-          <li><a href="./glossary.html">Thesis Glossary</a></li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Maps</button>
+          <ul class="dropdown">
+            <li><a href="./map.html">Plantations Map</a></li>
+            <li><a href="./uah-campus-map.html">UAH Campus Map</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Topics</button>
+          <ul class="dropdown">
+            <li><a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
+            <li><a href="./leasing.html">Slave &amp; Convict Leasing</a></li>
+            <li><a href="./institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
+          </ul>
+        </li>
+        <li><a href="./glossary.html">Thesis Glossary</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#support">Support</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -83,14 +93,16 @@
       </button>
     </div>
   </div>
-  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu" id="mobile-menu">
     <a href="#history">The History</a>
     <a href="#erasure">The Argument</a>
     <a href="#registry">Names Registry</a>
     <a href="#documents">Documents</a>
     <a href="#lineage">Family &amp; Findings</a>
+    <span class="mobile-menu-label" aria-hidden="true">Maps</span>
     <a href="./map.html">Plantations Map</a>
     <a href="./uah-campus-map.html">UAH Campus Map</a>
+    <span class="mobile-menu-label" aria-hidden="true">Topics</span>
     <a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a>
     <a href="./leasing.html">Slave &amp; Convict Leasing</a>
     <a href="./institutional-knowledge.html">What UAH & Huntsville Knew</a>
@@ -912,25 +924,30 @@
     <div class="container">
       <div class="section-head">
         <span class="kicker">Family &amp; Findings</span>
-        <h2>Tracing the kinship network</h2>
-        <p>We build family trees in both directions — the enslavers, to follow the money and power, and the enslaved and their descendants, to restore what was taken. Here's what the evidence shows so far.</p>
+        <h2>Tracing the kinship and plantation network</h2>
+        <p>We build family trees in both directions — the enslavers, to follow the money and power, and the enslaved and their descendants, to restore what was taken — and we map the plantations and places those families moved through, from colonial Virginia to Madison County to Tuscaloosa and beyond. Here's what the evidence shows so far.</p>
       </div>
 
       <div class="grid-cards">
         <div class="card">
           <span class="tag">Confirmed lineage</span>
           <h3>Elizabeth's descendants</h3>
-          <p>Elizabeth's children Evelina, Ann, and Shandy were named in the 1820 emancipation act. Shandy Wesley Jones and Reuben Jones both became Reconstruction-era state legislators — Shandy from Tuscaloosa County, Reuben from Madison County — a documented line from the 1820 act to the statehouse within a single generation. (Reuben's kinship to the family is still under investigation; an earlier "half-brother" claim was withdrawn — see "What we got wrong," below.)</p>
+          <p>Elizabeth's children Evelina, Ann, and Shandy were named in the 1820 emancipation act — which names only Elizabeth and her three children, not Columbus or Reuben, so their tie to this family stays under investigation. Shandy Wesley Jones and Reuben Jones both became Reconstruction-era state legislators — Shandy from Tuscaloosa County, Reuben from Madison County — a documented line from the 1820 act to the statehouse within a single generation. The family's geography runs Madison County to Tuscaloosa: Shandy built his life as a barber and legislator in Tuscaloosa, while Columbus lived and worked between Tuscaloosa and Madison County. (Reuben's kinship to the family is still under investigation; an earlier "half-brother" claim was withdrawn — see "What we got wrong," below.)</p>
         </div>
         <div class="card">
           <span class="tag">Under investigation</span>
           <h3>The Barber and Anderson lines</h3>
-          <p>Frances Barber and Mary Louise Anderson married into the Jones family and brought significant colonial Virginia land and social capital with them. We're actively researching how these marriages helped the Jones family retain power and accumulate wealth across generations — and whether that wealth is traceable to institutions today.</p>
+          <p>Frances Barber and Mary Louise Anderson married into the Jones family and brought significant colonial Virginia land and social capital with them. Lewellen Jones married Mary Anderson in Louisa County, Virginia, in 1792, and the family migrated through Bedford County to Madison County, Alabama — carrying enslaved people with them. We're actively researching how these marriages helped the Jones family retain power and accumulate wealth across generations — and whether that wealth is traceable to institutions today.</p>
         </div>
         <div class="card">
           <span class="tag">Possible connection</span>
           <h3>A link to Dred Scott</h3>
           <p>An 1821 deed of trust pledged eight enslaved people — including a man recorded as "Sam" and a boy named "Dred" — to John N. S. Jones as collateral on a $2,000 debt from the Blow family. Some sources connect "Sam" to Sam Blow, later known as Dred Scott, whose Supreme Court case became one of the most consequential in American history. We are verifying this lead against the original deed.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Ongoing</span>
+          <h3>The plantation network</h3>
+          <p>The kinship network is also a map. Avalon plantation in Madison County — the land under today's UAH campus — anchors it. The family's roots run through Louisa and Bedford Counties, Virginia; Reconstruction scattered the next generation to Tuscaloosa. And the network's afterlife runs to Jefferson County: Elyton/Jones Valley and Arlington/The Grove sit in the historic heart of Alabama's convict-leasing economy, the Birmingham-district mines and furnaces. See the <a href="./map.html">Plantations Map</a> and <a href="./leasing.html">Slave &amp; Convict Leasing</a>.</p>
         </div>
         <div class="card">
           <span class="tag">Ruled out</span>
