@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>UAH Campus Map — Beyond Avalon</title>
-<meta name="description" content="Interactive map of documented and approximately-located Avalon Plantation structures on the present-day University of Alabama in Huntsville campus, plus related oral histories and local legends." />
+<title>Institutional Philanthropy — Beyond Avalon</title>
+<meta name="description" content="From the thesis: how plantation wealth was converted into churches, colleges, railroads, and civic institutions &mdash; philanthropy as the legitimation of wealth made from human bondage, with the Jones-Donnell documentary trail." />
 <meta name="google-site-verification" content="jhiERlPNpy3anJ0NUfWdMwd3_V0cvt4goJESA_m7bRA" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="./base.css" />
 <link rel="stylesheet" href="./style.css" />
 <link rel="stylesheet" href="./map.css" />
-<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238A3A22'/%3E%3Cpath d='M32 12c8 6 12 14 12 22 0 8-5 14-12 16-7-2-12-8-12-16 0-8 4-16 12-22z' fill='%23F3EDE2'/%3E%3Cline x1='32' y1='16' x2='32' y2='48' stroke='%238A3A22' stroke-width='2'/%3E%3C/svg%3E">
 </head>
@@ -40,19 +39,19 @@
         <li><a href="./index.html#documents">Documents</a></li>
         <li><a href="./index.html#lineage">Family &amp; Findings</a></li>
         <li class="has-dropdown">
-          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-current="true">Maps</button>
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Maps</button>
           <ul class="dropdown">
             <li><a href="./map.html">Plantations Map</a></li>
-            <li><a href="./uah-campus-map.html" aria-current="page">UAH Campus Map</a></li>
+            <li><a href="./uah-campus-map.html">UAH Campus Map</a></li>
           </ul>
         </li>
         <li class="has-dropdown">
-          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Topics</button>
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-current="true">Topics</button>
           <ul class="dropdown">
             <li><a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
             <li><a href="./leasing.html">Slave &amp; Convict Leasing</a></li>
             <li><a href="./institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
-            <li><a href="./philanthropy.html">Institutional Philanthropy</a></li>
+            <li><a href="./philanthropy.html" aria-current="page">Institutional Philanthropy</a></li>
           </ul>
         </li>
         <li><a href="./glossary.html">Thesis Glossary</a></li>
@@ -85,6 +84,7 @@
     <a href="./leasing.html">Slave &amp; Convict Leasing</a>
     <a href="./institutional-knowledge.html">What UAH & Huntsville Knew</a>
     <a href="./philanthropy.html">Institutional Philanthropy</a>
+    <a href="./philanthropy.html">Institutional Philanthropy</a>
     <a href="./glossary.html">Thesis Glossary</a>
     <a href="./index.html#about">About</a>
     <a href="./index.html#support">Support</a>
@@ -94,47 +94,51 @@
 
 <main id="main">
 
-
   <section class="hero map-hero" style="padding-bottom: var(--space-6);">
     <div class="container">
-      <span class="eyebrow">Research documentation</span>
-      <h1>UAH Campus Structures Map</h1>
-      <p class="lede">A secondary, campus-scale map showing known and approximately-located structures &mdash; houses, enslaved persons' quarters, outbuildings, cemeteries, and archaeological survey areas &mdash; from Avalon Plantation on the present-day UAH campus, plus 1960s campus land-easement areas and a corrected GPR-anomaly record, based on the 1966 UAH Campus Topographic Map and published UAH research. Oral histories and local legends without a confirmed location are listed separately below.</p>
+      <span class="eyebrow">From the thesis &middot; Literature review</span>
+      <h1>Institutional Philanthropy</h1>
+      <p class="lede">Plantation wealth did not stay on the plantation. This page follows the thesis&apos;s account of how money made from human bondage was converted into churches, colleges, railroads, and civic institutions &mdash; and what that conversion hides.</p>
     </div>
   </section>
 
   <section class="container" style="padding-bottom: var(--space-12);">
     <div class="term-box" style="margin-top:0;">
-      <strong>How to read this map.</strong> Markers show documented or approximately-located structures tied to Avalon Plantation on the present-day UAH campus. Dashed-outline markers are approximate placements based on relative descriptions in published sources (e.g., "between Building A and Building B") &mdash; not surveyed GPS coordinates. Click any marker for its full sourcing. Oral histories and local legends without a confirmed location are listed below the map rather than pinned.
+      <strong>How the thesis frames this.</strong> The paper&apos;s literature review treats philanthropy as one of the mechanisms of <em>institutional erasure</em> &mdash; under the heading &ldquo;INSTITUTIONAL PHILANTHROPY AND THE LEGITIMATION OF PLANTATION WEALTH.&rdquo; Assets produced through slavery acquired the public legitimacy of philanthropy and improvement, while the people whose labor produced them disappeared from the story the institution tells about its own founding.
     </div>
 
-    <div class="map-shell" style="margin-top: var(--space-6);">
-      <aside class="map-controls">
-        <h3>Marker key</h3>
-        <p style="font-size:var(--text-sm); color:var(--color-text-muted);">Solid marker = precise location.<br />Dashed marker = approximate placeholder, sourced in the popup.</p>
-        <h3>Base source</h3>
-        <p style="font-size:var(--text-xs); color:var(--color-text-faint); line-height:1.5;">1966 UAH Campus Topographic Map (G.W. Jones &amp; Sons / Atlantic Aerial Surveys), Avalon project archive, plus published UAH Archives &amp; History Dept. research. See individual marker citations for full sourcing.</p>
-      </aside>
-
-      <div style="position:relative;">
-        <div id="campus-map" style="width:100%; height:640px; border-radius:var(--radius-lg); border:1px solid var(--color-border);"></div>
-
-        <div id="campus-detail-panel" class="detail-panel" hidden>
-          <button id="campus-detail-close" class="detail-close" aria-label="Close details">&times;</button>
-          <div id="campus-detail-content"></div>
-        </div>
-      </div>
+    <h2 style="margin-top: var(--space-10);">When slavery&apos;s profits became respectable</h2>
+    <div class="prose" style="max-width:74ch;">
+      <p style="color:var(--color-text-muted);">Alabama slaveholders converted plantation wealth into religious, educational, transportation, and civic institutions. The thesis cites James B. Sellers&apos;s documentation: Jeremiah H. Brown&apos;s endowment of the Brown Chair of Theology at Howard College (now Samford University), and Abner McGehee&apos;s investment in railroad stock and benefactions to the Alabama Bible Society.</p>
+      <p style="color:var(--color-text-muted);">Money made from human bondage does not arrive at a seminary or a rail line with a label attached; it simply becomes a chair, a stock certificate, a line in a ledger of good works &mdash; while the people whose labor produced it disappear from the story the institution tells about its own founding.</p>
     </div>
-  </section>
 
-  <section class="container" style="padding-bottom: var(--space-12);">
-    <h2>Oral histories &amp; local legends</h2>
-    <p style="max-width:74ch; color:var(--color-text-muted);">These stories are logged for the record but are not pinned to the map above because no confirmed location or documentary source has been located yet. We do not fabricate coordinates for oral tradition &mdash; each item below is flagged with its verification status.</p>
-    <div id="oral-history-list" style="margin-top: var(--space-6); max-width: 74ch;"></div>
-    <p class="data-note" style="margin-top: var(--space-5);">If you have family knowledge, a recording, or a document related to any of these stories &mdash; including "APJ and the cave" &mdash; please <a href="./index.html#contact">get in touch</a>.</p>
-    <p style="margin-top: var(--space-6);"><a href="./map.html">&larr; Back to the Plantations Map</a></p>
-  </section>
+    <h2 style="margin-top: var(--space-12);">Capital conversion: philanthropy as alibi</h2>
+    <div class="prose" style="max-width:74ch;">
+      <p style="color:var(--color-text-muted);">The thesis borrows Pierre Bourdieu&apos;s account of capital conversion to name the mechanism: economic capital accumulated through slavery was converted into <em>symbolic</em> capital &mdash; the durable legitimacy of a named chair, a Bible society benefaction, a railroad investment &mdash; while the origins of that wealth were laundered out of the institution&apos;s story about itself.</p>
+      <p style="color:var(--color-text-muted);">Philanthropy, in this frame, is not the opposite of extraction but its alibi: the moment at which tainted wealth is transmuted into honor, and the people whose labor produced it disappear from the ledger of good works.</p>
+    </div>
 
+    <div class="term-box" style="margin-top:var(--space-10);"><strong>What this doesn&apos;t claim:</strong> these examples do not mean that every Alabama church, college, railroad, or charitable organization was funded directly by slavery &mdash; and they do not establish a direct financial connection between those specific benefactions and the later UAH campus. What they demonstrate is the broader process: wealth accumulated in a slave economy could be converted into durable institutional authority while the enslaved people whose labor generated it stayed absent from institutional origin stories.</div>
+
+    <h2 style="margin-top: var(--space-12);">The local documentary route: the Donnell papers</h2>
+    <div class="prose" style="max-width:74ch;">
+      <p style="color:var(--color-text-muted);">The finding aid for the James Webb Smith Donnell Papers offers a concrete archival basis for studying this process up close. It identifies the Donnell and John Nelson Spotswood Jones families as large landowners and prosperous planters &mdash; and describes records concerning the purchase of enslaved people, land transactions, taxes, the Memphis and Charleston Railroad, and postwar contracts with freedpeople. Plantation property, transportation finance, family networks, and labor relations intersect in a single collection.</p>
+      <p style="color:var(--color-text-muted);">The evidence presently supports a documented connection between John Nelson Spotswood Jones, his daughter Maria Louisa Jones Donnell, James Webb Smith Donnell, and the plantation known as Seclusion near Jonesboro in Lawrence County. Druid Grove is where Maria Louisa Jones married Donnell in 1839.</p>
+    </div>
+
+    <h2 style="margin-top: var(--space-12);">Fortune&apos;s marker</h2>
+    <div class="prose" style="max-width:74ch;">
+      <p style="color:var(--color-text-muted);">A named enslaved man, Fortune, died at Seclusion in February 1859 &mdash; and was afterward memorialized with an inscribed granite grave marker erected by Donnell himself. It is one of the very few individually marked graves of an enslaved person identified anywhere in this project&apos;s records to date.</p>
+      <p style="color:var(--color-text-muted);">A single stone, cut and inscribed at an enslaver&apos;s order, does more to individuate one man&apos;s death than the entire probate apparatus does for the thousands of people it otherwise records only as line items.</p>
+    </div>
+
+    <div class="term-box" style="margin-top:var(--space-10);"><strong>Separate histories stay separate:</strong> the evidence does not support treating Seclusion, Druid Grove, Quietdale in northeast Huntsville, the Madison County Jones plantation, and Robert A. Jones&apos;s North Carolina properties as one continuous plantation enterprise or one Black community. A shared surname, geographic proximity, or later local tradition does not by itself establish the connection. This study insists on documentary chains &mdash; deeds, probate records, correspondence, business accounts, migration records, documented kinship &mdash; precisely so it doesn&apos;t reproduce the white genealogical assumption that a shared surname is a shared history.</div>
+
+    <p style="margin-top: var(--space-10); color:var(--color-text-muted); font-size:var(--text-sm);">Drawn directly from the thesis literature review, &ldquo;Institutional Philanthropy and the Legitimation of Plantation Wealth.&rdquo; The thesis&apos;s key terms are defined in the <a href="./glossary.html">Thesis Glossary</a>.</p>
+
+    <p style="margin-top: var(--space-6);"><a href="./institutional-knowledge.html">&larr; Back to What UAH &amp; Huntsville Knew</a></p>
+  </section>
 
 </main>
 
@@ -164,7 +168,6 @@
           <li><a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
           <li><a href="./leasing.html">Slave &amp; Convict Leasing</a></li>
           <li><a href="./institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
-          <li><a href="./philanthropy.html">Institutional Philanthropy</a></li>
           <li><a href="./glossary.html">Thesis Glossary</a></li>
         </ul>
       </div>
@@ -185,9 +188,6 @@
 </footer>
 
 <script src="./app.js"></script>
-<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
-<script src="./uah-campus-data.js"></script>
-<script src="./uah-campus-map.js"></script>
 <script data-pplx-inline-edit>
 (function () {
   if (window === window.top) return;
