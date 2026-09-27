@@ -18,10 +18,17 @@
   37 remain unrecovered — a new Morgan County research anchor
   (morgan-county-al-love) is NOT one of the lost originals — so missingCounties
   is unchanged.
+  2026-09-27 UPDATE: 4 new sites added (harvest-road-moore-cemetery,
+  blow-cunningham-sec29-patent, lewis-anderson-sec18-patent,
+  lewellen-jones-t4s-patents; ids collision-checked against all existing ids).
+  restoredCount is now 85, originalCount 98. Also: the arthur-jones-sec17-al
+  entry was expanded with the Jan 15, 1832 Evalina B. Jones deed (the site's
+  own Findings log, Sep 27, covers the same instrument) instead of a duplicate
+  point for the same parcel.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 81,
-  originalCount: 94,
+  restoredCount: 85,
+  originalCount: 98,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
   /* ---------- Network connections ----------
@@ -489,8 +496,8 @@ window.PLANTATIONS_DATA = {
       lat: 34.7304,
       lng: -86.5861,
       precise: false, // approximate: Huntsville (county seat); refine against the deed's metes (from John Danels's corner) at map-build time
-      summary: "Arthur W. Jones (Joel W. Jones's brother, 1827 will) bought 112.5 acres in the NE¼ of Section 17, Township 2, Range 1 East, for $2,000 from Hugh Lawson White of Knox County, Tennessee (Deed Book N pp. 395–396, Aug 9, 1831; recorded Sept 7, 1831). Prior title ran back to Thomas Bailey (Book H p. 531). The deed never expands Arthur's 'W.' — Tier 1 by the documented 1827 kinship, not by name match.",
-      citation: "Madison County Deed Book N, pp. 395–396 (instrument read 2026-09-20)."
+      summary: "Arthur W. Jones (Joel W. Jones's brother, 1827 will) bought 112.5 acres in the NE¼ of Section 17, Township 2, Range 1 East, for $2,000 from Hugh Lawson White of Knox County, Tennessee (Deed Book N pp. 395–396, Aug 9, 1831; recorded Sept 7, 1831). Prior title ran back to Thomas Bailey (Book H p. 531). The deed never expands Arthur's 'W.' — Tier 1 by the documented 1827 kinship, not by name match. On Jan 15, 1832 Arthur and his wife Evalina B. Jones resold the tract to Beverly Keeble for $1,325 (Deed Book F, p. 501; registered June 5, 1832): Evalina signed under seal and was privately examined the day before, consistent with relinquishing her dower. The direct index lists her as 'Evaline B.' co-maker — overturning the project's earlier 'no Evalina Jones deed' read.",
+      citation: "Madison County Deed Book N, pp. 395–396 (instrument read 2026-09-20); Deed Book F, p. 501 (instrument read 2026-09-27; FamilySearch deed-image follow-up)."
     },
   {
       id: "arthur-jones-sec28-21-al",
@@ -968,6 +975,51 @@ window.PLANTATIONS_DATA = {
       precise: false, // APPROXIMATE: county-level placement only; courthouse-level refinement owed
       summary: "Oct 22, 1792: 'Llewellin Jones' to 'Mary Anderson,' confirmed from the county marriage register (DGS 007578998, image 61 of 527). Handwriting not visually verified — see note. Coordinates are approximate (county level).",
       citation: "Register of marriages, Louisa County, Virginia, 1766-1861, DGS 007578998, image 61 of 527; Beyond Avalon 2026-09-23."
+    },
+    // ---------- 2026-09-27 additions: Turner Moore / GLO patent / deed follow-ups ----------
+    {
+      id: "harvest-road-moore-cemetery",
+      name: "Harvest Road — old Moore Plantation slave cemetery",
+      tier: 1,
+      county: "Madison",
+      lat: 34.858,
+      lng: -86.7787,
+      precise: false, // APPROXIMATE: section-level GPS from survey note; exact tract not yet proven
+      summary: "Slave burial ground of the old Moore Plantation (Sec. 19, T2S, R2W); Black Moore and Hammons families buried here into the 20th century. Antebellum owner unproven — not merged with Benjamin T. Moore or with Gabriel Moore's house site (Sec. 6, T3, R1W, ~7 mi away).",
+      citation: "Cemetery survey note (GPS N 34.858, W -86.7787); Beyond Avalon 2026-09-27."
+    },
+    {
+      id: "blow-cunningham-sec29-patent",
+      name: "Sec. 29, T3S R1W — Blow/Cunningham 1819 patent",
+      tier: 1,
+      county: "Madison",
+      lat: 34.7533,
+      lng: -86.6573,
+      precise: false, // APPROXIMATE: center of the NW1/4 of Sec. 29 per the BLM PLSS grid (Huntsville Meridian); patent bounds are quarter-section, not point
+      summary: "Peter Blow and John Cunningham patented the NW1/4 directly from the federal government, signed October 5, 1819 (Accession CV-0109-462) — the 'how acquired' gap closed: federal patent, not purchase from a patentee. Coordinates approximate: NW1/4 center on the BLM GLO survey grid.",
+      citation: "BLM GLO records, Accession CV-0109-462 (Harrison Land Act of 1800); Beyond Avalon 2026-09-27."
+    },
+    {
+      id: "lewis-anderson-sec18-patent",
+      name: "Sec. 18, T3S R3E — Lewis Anderson 1831 patent",
+      tier: 1,
+      county: "Madison",
+      lat: 34.7852,
+      lng: -86.3541,
+      precise: false, // APPROXIMATE: center of the E1/2NW of Sec. 18 per the BLM PLSS grid (Huntsville Meridian)
+      summary: "Lewis Anderson patented 80.32 acres, June 1, 1831 (Document #3130, Accession STA-AL1210__.163). Relation to Mary Anderson's family unproven. Coordinates approximate: E1/2NW center on the BLM GLO survey grid.",
+      citation: "BLM GLO records, Document #3130, Accession STA-AL1210__.163; Beyond Avalon 2026-09-27."
+    },
+    {
+      id: "lewellen-jones-t4s-patents",
+      name: "Township 4 South — Lewellen Jones's seven 1818 patents",
+      tier: 2,
+      county: "Madison",
+      lat: 34.6832,
+      lng: -86.5743,
+      precise: false, // APPROXIMATE: midpoint of T4S R1W / T4S R1E township centroids on the BLM PLSS grid; patents span Secs 1 & 12 (T4S R1W) and Sec 6 (T4S R1E)
+      summary: "LEAD. Seven patents, all issued November 20, 1818 — three with Leroy Pope, four with David Moore — all in Township 4 South (Secs 1 & 12 T4S R1W; Sec 6 T4S R1E), Huntsville Meridian. Zero patents to Irby Jones or any Llewellin/Llewellyn spelling. Coordinates approximate: township-level centroid.",
+      citation: "BLM GLO records; Beyond Avalon 2026-09-27."
     }
 
   ]
