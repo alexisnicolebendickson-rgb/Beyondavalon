@@ -151,8 +151,14 @@
         <a class="btn btn-secondary" href="./data/fan-graph-diagram-20260928.svg" download style="margin-left:var(--space-2);">Diagram (SVG)</a>
         <a class="btn btn-secondary" href="./data/fan-graph-diagram-20260928.png" download style="margin-left:var(--space-2);">Diagram (PNG)</a></p>
       </article>
+      <article class="download-card">
+        <h3>The Silence Ledger</h3>
+        <p class="file-meta"><code>silence-ledger-20260928.md</code></p>
+        <p><strong>13 search entries + 3 interpretive entries.</strong> A record of archival silences: who and what was searched for and not found — ten name negatives across the Freedmen's Bureau Alabama reels, the missing NARA Roll 15, the absent Clift slaveholder, the cold maternal line — each with its bound. A bound is not a conclusion: "no hit in these three reels" never means "never existed." Absence of evidence is not evidence of absence beyond what each entry states.</p>
+        <p><a class="btn" href="./data/silence-ledger-20260928.md" download>Download the ledger · Markdown</a></p>
+      </article>
     </div>
-    <p style="margin-top: var(--space-4);"><a href="./data/DATA-DICTIONARY.md" download>Download the full data dictionary (Markdown)</a> — every column defined, hypothesis codes, and the complete data-quality caveats. <a href="./data/FAN-GRAPH-SCHEMA.md" download>Download the FAN graph schema (Markdown)</a> — node and edge types, the confidence vocabulary, and the do-not-merge discipline.</p>
+    <p style="margin-top: var(--space-4);"><a href="./data/DATA-DICTIONARY.md" download>Download the full data dictionary (Markdown)</a> — every column defined, hypothesis codes, and the complete data-quality caveats. <a href="./data/FAN-GRAPH-SCHEMA.md" download>Download the FAN graph schema (Markdown)</a> — node and edge types, the confidence vocabulary, and the do-not-merge discipline. <a href="./data/silence-ledger-20260928.md" download>Download the Silence Ledger (Markdown)</a> — the project's negative-evidence log: what was searched, what came back empty, and the bound on each silence.</p>
 
     <h2 id="reading-guide">How to read this data — verified vs. hypothesis</h2>
     <p>No row may be cited as fact on its own authority. The verification level of each row is encoded in the table itself — read it before you quote anything:</p>
@@ -162,6 +168,7 @@
       <li><strong>DB2 <em>Evidence</em> / <em>Notes</em></strong> — verification status is stated in prose. There is no separate confidence column; the do-not-merge warnings in <em>Notes</em> are load-bearing. Names that look alike are not the same person until a source says so.</li>
       <li><strong>Leads <em>Verification Status</em></strong> — nearly all values begin <em>Unverified</em>. Treat accordingly.</li>
       <li><strong>FAN graph <em>confidence</em></strong> — the edge's confidence column is the claim. <em>confirmed_primary</em> (read from the manuscript) and <em>confirmed_secondary</em> are citable; <em>lead</em> and <em>unresolved</em> are not — never display them as fact. <em>do_not_merge</em> edges are project decisions keeping same-name people distinct; the do-not-merge warnings in <em>notes</em> are load-bearing.</li>
+      <li><strong>Silence ledger <em>status</em></strong> — each entry records a search that came back empty, with its bound. <em>CLOSED</em> means the stated search is complete; <em>OPEN</em> means the search continues or other sources remain. A closed negative covers only the search described — never read it as proof a person or event never existed.</li>
     </ul>
     <p><strong>Thin-evidence convention:</strong> where evidence is thin, cells are left <strong>blank</strong>. A blank cell means "no data" — never "no," never "unknown person."</p>
 
