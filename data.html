@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open Data — Beyond Avalon</title>
+<meta name="description" content="Downloadable snapshots of the Beyond Avalon research databases — redacted public release, with data dictionary and reading guide." />
+<meta name="google-site-verification" content="jhiERlPNpy3anJ0NUfWdMwd3_V0cvt4goJESA_m7bRA" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./base.css" />
+<link rel="stylesheet" href="./style.css" />
+<link rel="stylesheet" href="./map.css" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238A3A22'/%3E%3Cpath d='M32 12c8 6 12 14 12 22 0 8-5 14-12-16 0-8 4-16 12-22z' fill='%23F3EDE2'/%3E%3Cline x1='32' y1='16' x2='32' y2='48' stroke='%238A3A22' stroke-width='2'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="./index.html#top" class="brand" aria-label="Beyond Avalon home">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+        <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Beyond Avalon
+    </a>
+        <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="./index.html#history">The History</a></li>
+        <li><a href="./index.html#erasure">The Argument</a></li>
+        <li><a href="./index.html#registry">Names Registry</a></li>
+        <li><a href="./index.html#documents">Documents</a></li>
+        <li><a href="./index.html#lineage">Family &amp; Findings</a></li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Maps</button>
+          <ul class="dropdown">
+            <li><a href="./map.html">Plantations Map</a></li>
+            <li><a href="./uah-campus-map.html">UAH Campus Map</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-current="true">Topics</button>
+          <ul class="dropdown">
+            <li><a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
+            <li><a href="./leasing.html">Slave &amp; Convict Leasing</a></li>
+            <li><a href="./institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
+            <li><a href="./uah-knew.html">What UAH Knew: Burial Timeline</a></li>
+            <li><a href="./findings.html">Recent Findings</a></li>
+            <li><a href="./philanthropy.html">Institutional Philanthropy</a></li>
+            <li><a href="./voyages.html">The Middle Passage &amp; Landing Stops</a></li>
+            <li><a href="./archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a></li>
+            <li><a href="./debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a></li>
+            <li><a href="./eminent-domain.html">Eminent Domain</a></li>
+            <li><a href="./scc.html">Southern Claims Commission</a></li>
+            <li><a href="./data.html" aria-current="page">Open Data</a></li>
+          </ul>
+        </li>
+        <li><a href="./glossary.html">Thesis Glossary</a></li>
+        <li><a href="./index.html#about">About</a></li>
+        <li><a href="./index.html#support">Support</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+    <div class="mobile-menu" id="mobile-menu">
+    <a href="./index.html#history">The History</a>
+    <a href="./index.html#erasure">The Argument</a>
+    <a href="./index.html#registry">Names Registry</a>
+    <a href="./index.html#documents">Documents</a>
+    <a href="./index.html#lineage">Family &amp; Findings</a>
+    <span class="mobile-menu-label" aria-hidden="true">Maps</span>
+    <a href="./map.html">Plantations Map</a>
+    <a href="./uah-campus-map.html">UAH Campus Map</a>
+    <span class="mobile-menu-label" aria-hidden="true">Topics</span>
+    <a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a>
+    <a href="./leasing.html">Slave &amp; Convict Leasing</a>
+    <a href="./institutional-knowledge.html">What UAH & Huntsville Knew</a>
+    <a href="./uah-knew.html">What UAH Knew: Burial Timeline</a>
+    <a href="./findings.html">Recent Findings</a>
+    <a href="./philanthropy.html">Institutional Philanthropy</a>
+    <a href="./voyages.html">The Middle Passage &amp; Landing Stops</a>
+    <a href="./archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a>
+    <a href="./debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a>
+    <a href="./eminent-domain.html">Eminent Domain</a>
+    <a href="./scc.html">Southern Claims Commission</a>
+    <a href="./data.html">Open Data</a>
+    <a href="./glossary.html">Thesis Glossary</a>
+    <a href="./index.html#about">About</a>
+    <a href="./index.html#support">Support</a>
+    <a href="./index.html#contact">Contact</a>
+  </div>
+</header>
+<main id="main">
+
+  <section class="hero map-hero" style="padding-bottom: var(--space-6);">
+    <div class="container">
+      <span class="eyebrow">Open data</span>
+      <h1>Open Data</h1>
+      <p class="lede">The working databases behind Beyond Avalon — the source reads, name recoveries, and research leads — published as downloadable files. This is a research snapshot, not a finished archive: it mixes verified findings with working hypotheses, leads, and bounded negatives, and it says which is which.</p>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: var(--space-12);">
+
+    <div class="term-box" style="margin-top:0;">
+      <strong>Snapshot 2026-09-28 · redacted public release.</strong> Exported read-only from the live research spreadsheets; the live sheets keep changing. Names of living people and private email addresses have been removed — see <a href="#privacy">what was redacted and why</a>. Cite this snapshot by its date.
+    </div>
+
+    <h2 id="downloads">Downloads</h2>
+    <div class="download-grid">
+      <article class="download-card">
+        <h3>Avalon Research Database</h3>
+        <p class="file-meta"><code>db1-avalon-research-database-20260928-redacted.csv</code></p>
+        <p><strong>1,853 rows × 23 columns.</strong> One row per source read, finding, or research object: what the source says, why it matters, the citation, hypothesis assessments (H1–H8), and the evidence-confidence rating. The backbone of the project.</p>
+        <p><a class="btn" href="./data/db1-avalon-research-database-20260928-redacted.csv" download>Download CSV · 5.2 MB</a></p>
+      </article>
+      <article class="download-card">
+        <h3>Reclaiming Enslaved Names</h3>
+        <p class="file-meta"><code>db2-reclaiming-enslaved-names-20260928-redacted.csv</code></p>
+        <p><strong>1,450 rows × 7 columns.</strong> One row per person believed to have been enslaved: name as recorded, age, race descriptor, sex, the source evidence, and working notes including do-not-merge warnings. Blank cells mean the source gave no data — never fill them by inference.</p>
+        <p><a class="btn" href="./data/db2-reclaiming-enslaved-names-20260928-redacted.csv" download>Download CSV · 0.6 MB</a></p>
+      </article>
+      <article class="download-card">
+        <h3>Research Leads</h3>
+        <p class="file-meta"><code>db2-research-leads-20260928-redacted.csv</code></p>
+        <p><strong>169 rows × 10 columns.</strong> The to-search list: names that <em>might</em> belong in the enslaved-names table once verified, with the record that would confirm or kill each lead. The overwhelming majority are unverified — this tab is a finding aid, not a finding.</p>
+        <p><a class="btn" href="./data/db2-research-leads-20260928-redacted.csv" download>Download CSV · 0.1 MB</a></p>
+      </article>
+    </div>
+    <p style="margin-top: var(--space-4);"><a href="./data/DATA-DICTIONARY.md" download>Download the full data dictionary (Markdown)</a> — every column defined, hypothesis codes, and the complete data-quality caveats.</p>
+
+    <h2 id="reading-guide">How to read this data — verified vs. hypothesis</h2>
+    <p>No row may be cited as fact on its own authority. The verification level of each row is encoded in the table itself — read it before you quote anything:</p>
+    <ul>
+      <li><strong>DB1 <em>Evidence Confidence</em></strong> — the primary signal. Free text, and the qualifier after the dash is the actual claim: <em>High (manuscript read in full)</em> is citable; <em>Low — cover sheet read only; images unexamined</em> is not.</li>
+      <li><strong>DB1 H1–H8 hypothesis columns</strong> — each cell assesses what the row's source says about one of eight research hypotheses (<em>Supports</em>, <em>Refutes</em>, <em>Mixed</em>, <em>Context</em>, <em>Unresolved</em>). A row can support H3 and be unresolved on H5.</li>
+      <li><strong>DB2 <em>Evidence</em> / <em>Notes</em></strong> — verification status is stated in prose. There is no separate confidence column; the do-not-merge warnings in <em>Notes</em> are load-bearing. Names that look alike are not the same person until a source says so.</li>
+      <li><strong>Leads <em>Verification Status</em></strong> — nearly all values begin <em>Unverified</em>. Treat accordingly.</li>
+    </ul>
+    <p><strong>Thin-evidence convention:</strong> where evidence is thin, cells are left <strong>blank</strong>. A blank cell means "no data" — never "no," never "unknown person."</p>
+
+    <h2 id="dictionary">Data dictionary (summary)</h2>
+    <h3>Avalon Research Database — 23 columns</h3>
+    <table class="data-table">
+      <thead><tr><th>#</th><th>Column</th><th>What it holds</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Document Title</td><td>Working title of the source, finding, or research object.</td></tr>
+        <tr><td>2</td><td>Document Type</td><td>Compiler-assigned label for the kind of thing the row is (e.g. <em>Primary source</em>, <em>Census transcription</em>, <em>Finding Aid / Index Pointer (Lead)</em>). The parenthetical qualifier is part of the meaning.</td></tr>
+        <tr><td>3</td><td>Source</td><td>The archive, publication, collection, or informant the row derives from.</td></tr>
+        <tr><td>4</td><td>Evidence</td><td>What the source says, in the researcher's words or as transcribed.</td></tr>
+        <tr><td>5</td><td>Why It Is Important</td><td>The researcher's assessment of significance. Interpretive — not a source claim.</td></tr>
+        <tr><td>6</td><td>Connections</td><td>Related people, places, records, and project threads. Used for FAN-cluster linkage.</td></tr>
+        <tr><td>7</td><td>Conclusions</td><td>What the researcher concludes. Check <em>Evidence Confidence</em> before citing.</td></tr>
+        <tr><td>8</td><td>Questions</td><td>Open questions the row raises. Research notes, not findings.</td></tr>
+        <tr><td>9</td><td>Citation</td><td>Source citation in a loose APA-like format.</td></tr>
+        <tr><td>10</td><td>File</td><td>Filenames the row draws on — project-library filenames, not hyperlinks.</td></tr>
+        <tr><td>11–18</td><td>H1–H8</td><td>Hypothesis assessments (see codes below).</td></tr>
+        <tr><td>19</td><td>Evidence Type</td><td>Kind of evidence (e.g. <em>Chancery manuscript — firsthand read of page images</em>). The dash-qualifier carries the verification claim.</td></tr>
+        <tr><td>20</td><td>Thesis Category</td><td>Mixed-use: status-like values (<em>Supports</em>, <em>Verified findings</em>, <em>Unresolved</em>, <em>Lead</em>, <em>Context</em>) or topic labels. Read each value literally.</td></tr>
+        <tr><td>21</td><td>Notes</td><td>Working notes: transcription caveats, do-not-merge warnings, read-level notes.</td></tr>
+        <tr><td>22</td><td>Evidence Confidence</td><td>The row's verification level in the researcher's own words. The most important column for judging whether a row is citable.</td></tr>
+        <tr><td>23</td><td>Source Fingerprint</td><td>Researcher-assigned provenance slug for the source object.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>H1–H8 hypothesis codes</h3>
+    <table class="data-table">
+      <thead><tr><th>Code</th><th>Hypothesis</th><th>What counts</th></tr></thead>
+      <tbody>
+        <tr><td>H1</td><td>Institutional knowledge / erasure</td><td>Institutional notice, memorialization, omission, disturbance, or erasure</td></tr>
+        <tr><td>H2</td><td>Legal-archival erasure</td><td>Law, property, probate, bureaucracy, archival naming, archival silences</td></tr>
+        <tr><td>H3</td><td>Black Jones lineage</td><td>Identifies, distinguishes, or connects Black Jones individuals and families</td></tr>
+        <tr><td>H4</td><td>Shandy parentage</td><td>Bears on Shandy's identity, mother, age, father, or descendants</td></tr>
+        <tr><td>H5</td><td>APJ children hypothesis</td><td>Bears on whether Alexander P. Jones fathered children with an enslaved woman</td></tr>
+        <tr><td>H6</td><td>Plantation kinship / economy</td><td>Jones-Donnell-Haywood-Perkins kinship, landholding, plantation commerce, transatlantic business</td></tr>
+        <tr><td>H7</td><td>Black agency / post-emancipation</td><td>Enslaved or freedpeople's action, family formation, claims, work, politics, education, community life</td></tr>
+        <tr><td>H8</td><td>Patrol / KKK / racial violence</td><td>Slave patrols, KKK, racial terror, coercion, organized white violence</td></tr>
+      </tbody>
+    </table>
+    <p>Cell values: <strong>Supports</strong> (affirmative evidence; strength depends on source quality) · <strong>Refutes</strong> (contradicts a proposed connection) · <strong>Mixed</strong> · <strong>Context</strong> (background, not proof) · <strong>Unresolved</strong> (bears on the question, doesn't decide it). Blank means not assessed. A few cells carry legacy <em>Yes</em>/<em>TRUE</em> values whose exact meaning is unconfirmed — do not treat them as <em>Supports</em> without checking.</p>
+
+    <h3>Reclaiming Enslaved Names — 7 columns</h3>
+    <table class="data-table">
+      <thead><tr><th>Column</th><th>What it holds</th></tr></thead>
+      <tbody>
+        <tr><td>First Name / Last Name</td><td>As recorded in the source. Most enslaved people are recorded without surnames; blank is normal. 84 rows have no name at all — these are method rows, negative controls, or name fragments; read <em>Evidence</em>/<em>Notes</em> first.</td></tr>
+        <tr><td>Age</td><td>As recorded (<em>22</em>, <em>24-35</em>, <em>under 10</em>). Transcribed as found, not normalized.</td></tr>
+        <tr><td>Race</td><td>Mix of source language and researcher annotation. Quoted period terms preserve what the record said; they are not the researcher's language.</td></tr>
+        <tr><td>Sex</td><td><em>M</em>/<em>F</em>, sometimes with a basis note. Never inferred beyond what the value states.</td></tr>
+        <tr><td>Evidence</td><td>Compact pipe-separated: finding | record description | citation.</td></tr>
+        <tr><td>Notes</td><td>Working notes including do-not-merge warnings and identity caveats.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Research Leads — 10 columns</h3>
+    <p>Name · Name Variant · Associated Enslaver or Property · Date or Range · Location · Source Lead · Record Needed (what would confirm or kill the lead) · Verification Status · Source Citation or URL · Source-Only Notes.</p>
+
+    <h2 id="privacy">What was redacted and why</h2>
+    <p>This release is redacted. The project's working databases name living people — descendants who gave interviews, family correspondents, local historians, and staff who answered research requests. Interview participation is not publication consent, so until each person opts in, they appear here as <strong>[REDACTED — living person]</strong>.</p>
+    <p>Also removed: one personal email address, five staff email addresses used in research correspondence, and the researcher's own university email address. Public reference-desk addresses (archives, special collections) are kept. Historical figures — including the 1950s Willie Jones family at the center of the land-reclamation research, who appear in public court records and news reporting — are named as the sources name them.</p>
+    <p>Where a redaction would have removed a historically significant public record, the name is kept: redaction targets living private individuals, not the public record. If you are named in this data and want your name restored or removed, use the contact link below.</p>
+
+    <h2 id="caveats">Data-quality caveats</h2>
+    <ul>
+      <li><strong>No single status column exists yet.</strong> Verification level must be read from <em>Evidence Confidence</em> (DB1), the H-column codes (DB1), or prose in <em>Evidence</em>/<em>Notes</em> (DB2).</li>
+      <li><strong>Free-text coded columns.</strong> <em>Document Type</em>, <em>Evidence Type</em>, <em>Thesis Category</em>, and <em>Evidence Confidence</em> are researcher-assigned free text, not controlled vocabularies. Identical strings were not necessarily applied under identical criteria.</li>
+      <li><strong>Blank = no data.</strong> Never "no," never "unknown person," never filled by inference.</li>
+      <li><strong>Method rows.</strong> DB2 contains negative-control and method rows with no person; the Leads tab is unverified by definition.</li>
+      <li><strong>Snapshot, not a feed.</strong> Dated 2026-09-28. The live sheets keep changing; cite the snapshot date.</li>
+    </ul>
+
+    <h2 id="cite">How to cite</h2>
+    <p>Bendickson, Alexis. <em>Beyond Avalon Research Databases</em>, snapshot 2026-09-28 (redacted public release). Beyond Avalon, Huntsville, Alabama. https://www.beyondavalon.app/data.html</p>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:var(--space-3);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" style="width:28px;height:28px;">
+            <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Beyond Avalon
+        </div>
+        <p style="max-width:44ch; color:var(--color-text-muted); font-size:var(--text-sm);">A public-history and genealogy project reclaiming the names, families, and legacy of the people enslaved at Avalon Plantation, Huntsville, Alabama — and following where the wealth and power went afterward.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="./index.html#history">The History</a></li>
+          <li><a href="./index.html#erasure">The Argument</a></li>
+          <li><a href="./index.html#registry">Names Registry</a></li>
+          <li><a href="./index.html#documents">Documents</a></li>
+          <li><a href="./index.html#lineage">Family &amp; Findings</a></li>
+          <li><a href="./map.html">Plantations Map</a></li>
+          <li><a href="./uah-campus-map.html">UAH Campus Map</a></li>
+          <li><a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
+          <li><a href="./leasing.html">Slave &amp; Convict Leasing</a></li>
+          <li><a href="./institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
+          <li><a href="./uah-knew.html">What UAH Knew: Burial Timeline</a></li>
+          <li><a href="./findings.html">Recent Findings</a></li>
+          <li><a href="./philanthropy.html">Institutional Philanthropy</a></li>
+          <li><a href="./voyages.html">The Middle Passage &amp; Landing Stops</a></li>
+          <li><a href="./archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a></li>
+          <li><a href="./debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a></li>
+          <li><a href="./eminent-domain.html">Eminent Domain</a></li>
+          <li><a href="./scc.html">Southern Claims Commission</a></li>
+          <li><a href="./glossary.html">Thesis Glossary</a></li>
+          <li><a href="./data.html">Open Data</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Project</h5>
+        <ul>
+          <li><a href="./index.html#support">Support This Research</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
+          <li><a href="https://www.alabamahistory.net/madison" target="_blank" rel="noopener noreferrer">AHA Marker Text ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Beyond Avalon · Independent research by Alexis Bendickson</span>
+      <span>All findings are subject to ongoing verification.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js"></script>
+</body>
+</html>
