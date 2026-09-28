@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Willie (Fay) Jones — Beyond Avalon</title>
+<meta name="description" content="Willie (Fay) Jones — the Black landowner whose family well the City of Huntsville condemned in 1954, whose land was sold in 1958, and whose siblings carry the land-reclamation fight today. A Beyond Avalon counter-archive person page." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../base.css" />
+<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../map.css" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/200/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238A3A22'/%3E%3Cpath d='M32 12c8 6 12 14 12 22 0 8-5 14-12 16-7-2-12-8-12-16 0-8 4-16 12-22z' fill='%23F3EDE2'/%3E%3Cline x1='32' y1='16' x2='32' y2='48' stroke='%238A3A22' stroke-width='2'/%3E%3C/svg%3E">
+
+<style>
+/* ---------- Person-page additions (draft) ---------- */
+.draft-banner {
+  background: #fdf6e3;
+  border: 1px solid #e0c36a;
+  border-left: 4px solid #8a5a00;
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+.draft-banner strong { color: #8a5a00; }
+.person-section { margin-top: var(--space-12); }
+.person-section > h2 { margin-bottom: var(--space-6); }
+.kin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: var(--space-4);
+}
+.kin-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.kin-card .rel {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+.kin-card h4 { font-size: var(--text-base); margin-bottom: var(--space-2); }
+.kin-card p { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 0; }
+.silence-box {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+}
+.silence-box h3 { margin-top: 0; }
+.silence-box ul { list-style: disc; padding-left: var(--space-6); color: var(--color-text-muted); font-size: var(--text-md); }
+.silence-box li { margin-bottom: var(--space-2); }
+.source-list { counter-reset: src; padding: 0; }
+.source-list li {
+  counter-increment: src;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-8);
+  position: relative;
+  list-style: none;
+}
+.source-list li::before {
+  content: "[" counter(src) "]";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.place-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: baseline;
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-md);
+}
+.place-row:last-child { border-bottom: none; }
+.place-row strong { min-width: 220px; }
+.place-row a { color: var(--color-primary); font-size: var(--text-sm); }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="../index.html#top" class="brand" aria-label="Beyond Avalon home">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+        <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Beyond Avalon
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="../index.html#history">The History</a></li>
+        <li><a href="../index.html#erasure">The Argument</a></li>
+        <li><a href="../index.html#registry" aria-current="true">Names Registry</a></li>
+        <li><a href="../index.html#documents">Documents</a></li>
+        <li><a href="../index.html#lineage">Family &amp; Findings</a></li>
+        <li><a href="./index.html">People</a></li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Maps</button>
+          <ul class="dropdown">
+            <li><a href="../map.html">Plantations Map</a></li>
+            <li><a href="../uah-campus-map.html">UAH Campus Map</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Topics</button>
+          <ul class="dropdown">
+            <li><a href="../exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
+            <li><a href="../leasing.html">Slave &amp; Convict Leasing</a></li>
+            <li><a href="../institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
+            <li><a href="../philanthropy.html">Institutional Philanthropy</a></li>
+            <li><a href="../voyages.html">The Middle Passage &amp; Landing Stops</a></li>
+            <li><a href="../archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a></li>
+            <li><a href="../debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a></li>
+            <li><a href="../eminent-domain.html">Eminent Domain</a></li>
+            <li><a href="../scc.html">Southern Claims Commission</a></li>
+          </ul>
+        </li>
+        <li><a href="../glossary.html">Thesis Glossary</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#support">Support</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html#history">The History</a>
+    <a href="../index.html#erasure">The Argument</a>
+    <a href="../index.html#registry">Names Registry</a>
+    <a href="../index.html#documents">Documents</a>
+    <a href="../index.html#lineage">Family &amp; Findings</a>
+    <a href="./index.html">People</a>
+    <span class="mobile-menu-label" aria-hidden="true">Maps</span>
+    <a href="../map.html">Plantations Map</a>
+    <a href="../uah-campus-map.html">UAH Campus Map</a>
+    <span class="mobile-menu-label" aria-hidden="true">Topics</span>
+    <a href="../exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a>
+    <a href="../leasing.html">Slave &amp; Convict Leasing</a>
+    <a href="../institutional-knowledge.html">What UAH & Huntsville Knew</a>
+    <a href="../philanthropy.html">Institutional Philanthropy</a>
+    <a href="../voyages.html">The Middle Passage &amp; Landing Stops</a>
+    <a href="../archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a>
+    <a href="../debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a>
+    <a href="../eminent-domain.html">Eminent Domain</a>
+    <a href="../scc.html">Southern Claims Commission</a>
+    <a href="../glossary.html">Thesis Glossary</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#support">Support</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" style="padding-bottom: var(--space-6);">
+    <div class="container">
+      <span class="eyebrow">Counter-archive &middot; Person page</span>
+      <h1>Willie (Fay) Jones</h1>
+      <p class="lede">The man who lost the well. In 1954 the City of Huntsville condemned the well site on his family&rsquo;s Athens Pike land; in 1958 he sold the parcel. His siblings carry the land-reclamation fight today — Black ownership taken and destroyed, in a single life.</p>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: var(--space-12);">
+
+    <div class="draft-banner"><strong>DRAFT — not for publication.</strong> Staged for review September 2026. Nothing on this page goes live without the researcher&rsquo;s word. Evidence levels: <span class="verdict verdict-doc">Documented</span> <span class="verdict verdict-ui">Under investigation</span> <span class="verdict verdict-unv">Unresolved</span></div>
+
+    <div class="term-box" style="margin-top:0;">
+      <strong>How to read this page.</strong> Every claim names its source. Where the record is silent, this page says so instead of filling the gap. This page adds to the researcher&rsquo;s thesis — that in Madison County, Black-owned land was taken and destroyed while white generational land was leased and kept — and it does not take that thesis over. One hypothesis on this page is still a hypothesis: that Willie was Reuben Jones&rsquo;s great-grandson. It is marked wherever it appears, and the deed that would test it is named. <span class="verdict verdict-ui">Under investigation</span>
+    </div>
+
+    <div class="person-section">
+      <h2>Life in brief</h2>
+      <div class="prose" style="max-width:74ch;">
+        <p>Willie (Fay) Jones was a Black landowner on Athens Pike in Huntsville, Alabama — the family&rsquo;s 2.25-acre parcel sitting about three miles northwest of the city, with the family well on it. <span class="verdict verdict-doc">Documented</span> In 1954, the City of Huntsville condemned a sixty-by-forty-foot site around that well, in Madison County Probate Cause No. 12257. The December 30, 1954 decree set the award at $900; on appeal it was raised to $1,250. <span class="verdict verdict-doc">Documented</span> On October 15, 1958, Willie Jones and his wife Lola Mae Jones sold two tracts — including the 2.25-acre parcel — to W. L. Sanderson Realty, recorded in Deed Book 265, page 314. <span class="verdict verdict-doc">Documented</span></p>
+        <p>The parcel&rsquo;s paper trail runs on: the City of Huntsville&rsquo;s 1963 annual report lists &ldquo;Land Acquisition Office — Chief—W. L. Sanderson&rdquo; — a documented position, stated here as fact and nothing more. <span class="verdict verdict-doc">Documented</span> In 1963–64 the land passed through Equity Cause No. 18604, in which the University of Alabama Board of Trustees appeared with a one-eighth interest. <span class="verdict verdict-doc">Documented</span> And the story is not over: from 2023 to 2025, five surviving Jones siblings carried the land-reclamation fight into public view — a partnership with Where Is My Land, a September 18, 2023 press release, news investigations, and City Council follow-up. <span class="verdict verdict-doc">Documented</span></p>
+        <p>Whether Willie was the great-grandson of Reuben Jones — the Reconstruction legislator — is the project&rsquo;s staged hypothesis, not a finding. Deed Book 265, page 314 is the test: the deed that would connect the two names. Until it is read, the kinship is not stated as fact on this page. <span class="verdict verdict-ui">Under investigation</span></p>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Records</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">1954–1956</span>
+          <h4>The condemnation — Probate Cause No. 12257 <span class="verdict verdict-doc">Documented</span></h4>
+          <p>The City of Huntsville condemns the sixty-by-forty-foot well site on the Jones family&rsquo;s 2.25-acre Athens Pike parcel. Decree December 30, 1954: $900. Raised to $1,250 on appeal.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">October 15, 1958</span>
+          <h4>The sale — Deed Book 265, page 314 <span class="verdict verdict-doc">Documented</span></h4>
+          <p>Willie Jones and Lola Mae Jones sell two tracts, including the 2.25-acre parcel, to W. L. Sanderson Realty. This is the deed the great-grandson hypothesis turns on.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1963–1964</span>
+          <h4>Equity Cause No. 18604 <span class="verdict verdict-doc">Documented</span></h4>
+          <p>The land moves through equity litigation in which the University of Alabama Board of Trustees appears with a one-eighth interest. The City&rsquo;s 1963 annual report lists W. L. Sanderson as chief of the Land Acquisition Office.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2023–2025</span>
+          <h4>The reclamation fight <span class="verdict verdict-doc">Documented</span></h4>
+          <p>Five surviving Jones siblings take the land-reclamation case public: the Where Is My Land partnership, the September 18, 2023 #ActivateHuntsville press release, news investigations, and City Council follow-up. Living memory, still in motion.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Kinship</h2>
+      <div class="kin-grid">
+        <div class="kin-card">
+          <span class="rel">Wife</span>
+          <h4>Lola Mae Jones</h4>
+          <p>Co-seller of the 1958 deed with Willie — her name is on the transfer. <span class="verdict verdict-doc">Documented</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Family context — brother</span>
+          <h4>Lloyd Jones</h4>
+          <p>Identified as Willie&rsquo;s brother. Appears here as family context, not a separate page. <span class="verdict verdict-doc">Documented</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Family context — sister</span>
+          <h4>Reva Jones Boyd</h4>
+          <p>Identified as Willie&rsquo;s sister. Appears here as family context, not a separate page. <span class="verdict verdict-doc">Documented</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Family context — cousin</span>
+          <h4>Charlie Eldridge</h4>
+          <p>Identified as Willie&rsquo;s cousin. His own related condemnation — Cause No. 6147 in 1956 — is a different case and is not merged with Willie&rsquo;s. <span class="verdict verdict-doc">Documented</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Family context — niece</span>
+          <h4>Lillie Mae Crawford</h4>
+          <p>Identified as Willie&rsquo;s niece. Appears here as family context, not a separate page. <span class="verdict verdict-doc">Documented</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Hypothesis — not stated as fact</span>
+          <h4>Reuben Jones, possible great-grandfather</h4>
+          <p>The staged hypothesis says Willie may be the great-grandson of Reuben Jones, the Reconstruction legislator. Deed Book 265, page 314 is the test. Until it is read, this stays a hypothesis. <span class="verdict verdict-ui">Under investigation</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Do not merge</span>
+          <h4>Willie May Jones (1916)</h4>
+          <p><em>L. M. Jones v. Willie May Jones</em> (1916) concerns a different Willie — kept separate. <span class="verdict verdict-doc">Documented</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Do not merge</span>
+          <h4>Willie Lee (1920)</h4>
+          <p>A Willie Lee appears in the 1920 Morgan County, Georgia census — a different person, kept separate. <span class="verdict verdict-doc">Documented</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Places</h2>
+      <div class="place-row">
+        <strong>The 2.25-acre Athens Pike parcel</strong>
+        <span>About three miles northwest of Huntsville — the family land, the family well, the condemnation, the sale.</span>
+      </div>
+      <div class="place-row">
+        <strong>The well site — 60 × 40 feet</strong>
+        <span>The condemned ground at the center of Probate Cause No. 12257.</span>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>What the record doesn&rsquo;t say</h2>
+      <div class="silence-box">
+        <h3>The silence ledger for Willie (Fay) Jones</h3>
+        <ul>
+          <li>Whether Willie was Reuben Jones&rsquo;s great-grandson is untested. Deed Book 265, page 314 is the document that would settle it, and it has not yet been read firsthand.</li>
+          <li>Why the family sold in 1958 — four years after the condemnation cut the well out of the parcel — is not in the records this project has read. The deed records the transfer; it does not record the reason.</li>
+          <li>The full text of Probate Cause No. 12257 and Equity Cause No. 18604 has not yet been pulled. The case files may name every party, every award, and every acre.</li>
+          <li>W. L. Sanderson&rsquo;s positions are documented; his motives are not. This page alleges nothing beyond what the records state.</li>
+          <li>Willie&rsquo;s birth and death dates are not yet in the project&rsquo;s records. He enters the written record as a landowner defending — and then selling — his family&rsquo;s ground.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Sources</h2>
+      <ol class="source-list">
+        <li>Madison County Probate Cause No. 12257 (1954–56) — City of Huntsville condemnation of the 60×40-ft well site; decree December 30, 1954 ($900); raised to $1,250 on appeal.</li>
+        <li>Madison County Deed Book 265, p. 314 — Willie Jones and Lola Mae Jones to W. L. Sanderson Realty, October 15, 1958, two tracts including the 2.25-acre parcel.</li>
+        <li>Madison County Equity Cause No. 18604 (1963–64) — University of Alabama Board of Trustees, one-eighth interest.</li>
+        <li>City of Huntsville annual report, 1963 — &ldquo;Land Acquisition Office — Chief—W. L. Sanderson.&rdquo;</li>
+        <li>Where Is My Land partnership materials; #ActivateHuntsville press release, September 18, 2023; 2023–25 news investigations and City Council follow-up — five surviving Jones siblings&rsquo; land-reclamation activism.</li>
+      </ol>
+    </div>
+
+    <p style="margin-top: var(--space-10);"><a href="./index.html">&larr; Back to the People directory</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:var(--space-3);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" style="width:28px;height:28px;">
+            <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Beyond Avalon
+        </div>
+        <p style="max-width:44ch; color:var(--color-text-muted); font-size:var(--text-sm);">A public-history and genealogy project reclaiming the names, families, and legacy of the people enslaved at Avalon Plantation, Huntsville, Alabama — and following where the wealth and power went afterward.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="../index.html#history">The History</a></li>
+          <li><a href="../index.html#erasure">The Argument</a></li>
+          <li><a href="../index.html#registry">Names Registry</a></li>
+          <li><a href="../index.html#documents">Documents</a></li>
+          <li><a href="../index.html#lineage">Family &amp; Findings</a></li>
+          <li><a href="../map.html">Plantations Map</a></li>
+          <li><a href="../uah-campus-map.html">UAH Campus Map</a></li>
+          <li><a href="./index.html">People</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Project</h5>
+        <ul>
+          <li><a href="../index.html#support">Support This Research</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://www.alabamahistory.net/madison" target="_blank" rel="noopener noreferrer">AHA Marker Text ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Beyond Avalon · Independent research by Alexis Bendickson</span>
+      <span>All findings are subject to ongoing verification.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>
