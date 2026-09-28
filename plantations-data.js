@@ -21,14 +21,19 @@
   2026-09-27 UPDATE: 4 new sites added (harvest-road-moore-cemetery,
   blow-cunningham-sec29-patent, lewis-anderson-sec18-patent,
   lewellen-jones-t4s-patents; ids collision-checked against all existing ids).
-  restoredCount is now 85, originalCount 98. Also: the arthur-jones-sec17-al
+  restoredCount is now 85, originalCount 98.
+  2026-09-28 UPDATE: 22 new sites added from the staged map-data batches (parts 4–7, 9–11, 13–14 of the
+  2026-09-20 additions file, plus the Elizabeth Berry 1842 Mobile letter anchor from the 2026-09-23 website plan;
+  ids collision-checked against all existing ids). Parts 12, 15, and 16 of the staged batch were NOT pasted
+  (stale/deferred/duplicate), nor were 11 staged entries that carry no coordinates (context-only notes stay in the
+  batch file until tract-level placement resolves). restoredCount is now 107, originalCount 120. Also: the arthur-jones-sec17-al
   entry was expanded with the Jan 15, 1832 Evalina B. Jones deed (the site's
   own Findings log, Sep 27, covers the same instrument) instead of a duplicate
   point for the same parcel.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 85,
-  originalCount: 98,
+  restoredCount: 107,
+  originalCount: 120,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
   /* ---------- Network connections ----------
@@ -1020,6 +1025,267 @@ window.PLANTATIONS_DATA = {
       precise: false, // APPROXIMATE: midpoint of T4S R1W / T4S R1E township centroids on the BLM PLSS grid; patents span Secs 1 & 12 (T4S R1W) and Sec 6 (T4S R1E)
       summary: "LEAD. Seven patents, all issued November 20, 1818 — three with Leroy Pope, four with David Moore — all in Township 4 South (Secs 1 & 12 T4S R1W; Sec 6 T4S R1E), Huntsville Meridian. Zero patents to Irby Jones or any Llewellin/Llewellyn spelling. Coordinates approximate: township-level centroid.",
       citation: "BLM GLO records; Beyond Avalon 2026-09-27."
+    },
+
+    // ---------- 2026-09-28 paste: staged map batch PART-4 (2026-09-20/21/22, user-approved) ----------
+ {
+   id: "priscilla-parker-limestone-al",
+   name: "William Cosby's 1832 will naming Priscilla Parker (Limestone County, AL)",
+   tier: 2,
+   county: "Limestone",
+   lat: 34.8133,
+   lng: -86.9685,
+   precise: false, // approximate: Limestone County courthouse area; no tract named
+   summary: "William Cosby of Limestone County, will dated May 19, 1832, probated Aug 9, 1834 (Madison Co. PR 6, p. 665): wife Frances's property in fee simple (codicil, p. 666); names 'Priscilla Parker' as another child of the testator. A Parker lead on the Limestone–Madison County edge from Valley Leaves v09n02 (Dec 1974); no link to Edward T. Parker established. Tier 2: lead only.",
+   citation: "Valley Leaves, v09n02 (Dec 1974), 'Abstracts of Wills in Probate Record 6' (Madison Co. PR 6, p. 665); DB1 row 610."
+ },
+ {
+   id: "enslaved-charles-william-gray-al",
+   name: "'one negro man named Charles' — William Gray's will, Madison County, AL",
+   tier: 3,
+   county: "Madison",
+   lat: 34.7304,
+   lng: -86.5861,
+   precise: false, // approximate: Huntsville (county seat); no tract named
+   summary: "William Gray's will, dated Mar 16, 1834, probated May 21, 1834 (Madison Co. PR 6, p. 678): seven heirs (incl. wife Milly Gray's children) are to share 'one negro man named Charles,' to be 'equally divided' among them. Charles is named — he was a human being — and his fate is undocumented; abstracted from Valley Leaves v09n02 (Dec 1974). Note also: Thomas J. Johnston's will (PR 6, p. 464) directs executors to hire out his 'negroes' privately to men who would treat them 'with Humanity' (unnamed), and Elizabeth Frazar's will (PR 6, p. 692) names 'faithful servants James & Patsy' — legal status unstated, do not assume. Tier 3: context.",
+   citation: "Valley Leaves, v09n02 (Dec 1974), 'Abstracts of Wills in Probate Record 6' (Madison Co. PR 6, pp. 464, 678, 692); DB1 row 611."
+ },
+ {
+   id: "thompson-texas-letter-1847-tx",
+   name: "Thompson–Bassett–Jones negotiation, Lake Austin / Matagorda, Texas (1847)",
+   tier: 3,
+   county: "Matagorda", // Texas — outside Alabama; see header note on the county filter
+   lat: 28.9867,
+   lng: -95.9693,
+   precise: false, // approximate: Lake Austin (Travis County) dateline / Matagorda postmark; plantation not precisely located
+   summary: "Elbert A. Thompson to Dr. J. Y. Bassett, Lake Austin, Jul 18, 1847 (postmarked Matagorda, Jul 19): 'Ellick Jones holds a note against the Estate for near $1500 which was due in 1836.' Thompson proposes western Texas land at $1/acre for the note, via Bassett and possibly B. McLaure [?] of New Orleans, the matter kept quiet. Ellick negotiates as a financial equal — keep separate from (a) the APJ-'Ellick' nickname claim and (b) the enslaved Ellick (James T. Jones estate); estate identity Unresolved. Thompson's family sugar/cotton plantation near the Gulf + prairie summer residence (eight miles from the plantation): a Madison County family in the Texas plantation economy (Thompson left Alabama ~1840). Context only — no precise coords. UNC SHC, John Young Bassett Papers, Z Box 78, Folder 3.",
+   citation: "Elbert A. Thompson to J. Y. Bassett, Jul 18, 1847 (UNC SHC; local transcription: research_notes/elbert-thompson-1847/transcription.md); DB1 rows 613–614; paper [179]."
+ },
+
+    // ---------- 2026-09-28 paste: staged map batch PART-5 (2026-09-20/21/22, user-approved) ----------
+ {
+   id: "avalon-plantation-core-al",
+   name: "Avalon plantation core — Alexander P. Jones (Madison County, AL)",
+   tier: 1,
+   county: "Madison",
+   lat: 34.7223,
+   lng: -86.6388,
+   precise: false, // approximate: UAH campus area; refine against the reported 2,827-acre share at map-build time
+   summary: "Alexander P. Jones's 2,827-acre share of Lewellen Jones's estate (present-day UAH campus + Redstone Arsenal, per annotated will transcription). 1860 slave schedule (NARA M653, roll 30, pp. 483–484), read entry by entry from the manuscript: 96 enslaved people. The published transcription's 'JONES, Alex. P., 106 slaves' is SUPERSEDED, as is the AHA marker's '106 enslaved persons' — do not quote either figure. The 96 belong to Avalon (Northwestern Division, WEST of Huntsville), never 'in Huntsville.' DB1 rows 616, 618, 691–700; paper [180], [196]; biblio Section AE.",
+   citation: "1860 slave schedule transcription (M653 roll 30); AHA marker text; UAH news (14122); APJ investigation 2026-09-21."
+ },
+ {
+   id: "apj-sec9-t4r1w-al",
+   name: "APJ's 1833 Section 9 purchase (Madison County, AL)",
+   tier: 2,
+   county: "Madison",
+   lat: 34.7304,
+   lng: -86.5861,
+   precise: false, // approximate: Huntsville (county seat); refine against E1/2 NE1/4 Sec 9 T4S R1W at map-build time
+   summary: "James Ware to Alexander P. Jones, E1/2 NE1/4 Section 9, T4 R1W, Dec 31, 1833 (Deed Bk O:619); witnesses B. T. Moore and Wm. Barker. Prior owner Alexander M. McClung (Bk K:10, 1825) vs. abstract's 'Alexander W. McClung' — discrepancy, manuscript check owed. Tier 2: abstract only.",
+   citation: "Madison County Deed Bk O:619 (abstract); DB1 row 620; paper [181]."
+ },
+ {
+   id: "fountain-row-lots-41-42-al",
+   name: "APJ's Fountain Row town lots 41–42 (Huntsville, AL)",
+   tier: 2,
+   county: "Madison",
+   lat: 34.7304,
+   lng: -86.5861,
+   precise: false, // approximate: downtown Huntsville; refine against Fountain Row at map-build time
+   summary: "APJ's Huntsville town lots 41 and 42, Fountain Row (per annotated Lewellen Jones will transcription) — likely the 'two Huntsville town lots' in his 1866 estate-sale petition (administrator: nephew Paul Lewellen Jones). Tier 2: project report, chancery case number unknown.",
+   citation: "APJ investigation 2026-09-21; DB1 row 621; paper [181]."
+ },
+ {
+   id: "druids-grove-limestone-al",
+   name: "Druid's Grove — John N. S. Jones (Limestone County, AL)",
+   tier: 3,
+   county: "Limestone",
+   lat: 34.8028,
+   lng: -86.9653,
+   precise: false, // approximate: Athens (county seat); refine at map-build time
+   summary: "Home of John N. S. Jones (APJ's brother, 1793–1853). 'Uncle Isaac' — formerly enslaved coachman in J. N. S. Jones's household — ran a plantation after the war (1876 newspaper column). Tier 3: context.",
+   citation: "APJ investigation 2026-09-21; DB1 row 623."
+ },
+ {
+   id: "jones-donnell-cemetery-greenbrier-al",
+   name: "Jones-Donnell family cemetery, Greenbrier (Limestone County, AL)",
+   tier: 2,
+   county: "Limestone",
+   lat: 34.6333,
+   lng: -86.8667,
+   precise: false, // approximate: Greenbrier area; refine at map-build time
+   summary: "Alexander Thomas Jones tombstone (b. Jan 29, 1834, d. Jun 3, 1857) — the ruled-out 1857 'Alexander P. Jones, deceased' of the Limestone County division (mis-transcribed). Tier 2: ruled-out identity marker.",
+   citation: "APJ investigation 2026-09-21; DB1 row 624; paper [182]."
+ },
+
+    // ---------- 2026-09-28 paste: staged map batch PART-6 (2026-09-20/21/22, user-approved) ----------
+ {
+   id: "triana-al-lowe",
+   name: "Triana — Prof. R. M. Lowe's school (Madison County, AL)",
+   tier: 3,
+   county: "Madison",
+   lat: 34.58345,
+   lng: -86.73542,
+   precise: false, // approximate: Triana (city match); refine at map-build time
+   summary: "Prof. R. M. Lowe (working lead: Reuben M. Lowe, spelled out in five Gazette notices) taught school at Triana; teachers' institute secretary/president and Masonic officer, 1881-1894. Tier 3: identity lead, not a merged identity.",
+   citation: "Gazette register 2026-09-21 (L207-L314); DB1 row 626; paper [183]."
+ },
+ {
+   id: "madison-al-lowe",
+   name: "Madison (town) — Prof. R. M. Lowe's school (Madison County, AL)",
+   tier: 3,
+   county: "Madison",
+   lat: 34.67686,
+   lng: -86.7514,
+   precise: false, // approximate: Madison Blvd geocoder match; refine at map-build time
+   summary: "R. M. Lowe taught at Madison (town) in addition to Triana and Gurleys; same Gazette educator cluster. Tier 3: identity lead.",
+   citation: "Gazette register 2026-09-21; DB1 row 626; paper [183]."
+ },
+
+    // ---------- 2026-09-28 paste: staged map batch PART-7 (2026-09-20/21/22, user-approved) ----------
+ {
+   id: "lowes-chapel-umc-huntsville",
+   name: "Lowe's Chapel UMC — 460 Sanderson St NW, Huntsville (Madison County, AL)",
+   tier: 2,
+   county: "Madison",
+   lat: 34.734764,
+   lng: -86.655956,
+   precise: false, // approximate: church's own listing; refine at map-build time
+   summary: "Reuben M. Lowe and his wife Maria deeded land for $1 to Felix Weeden and Mandifer Jones, trustees of the Methodist Episcopal Church of the Lincoln charge, Madison County — deed recorded February 15, 1896. All-Black Central Alabama Conference of the ME Church; Felix Weeden the church's founder. Confirms the middle initial M, wife Maria, landownership, and the Black Methodist connection. Tier 2: verified at the secondary level (church history + Roberts Collection deed index 'Lowe, Reuben M. 7'); deed book/page still owed.",
+   citation: "loweschapelumc.org/about-us; UAH Roberts Collection r04b08c01.pdf Image 7; DB1 row 639; paper [188]; biblio Section W."
+ },
+
+    // ---------- 2026-09-28 paste: staged map batch PART-9 (2026-09-20/21/22, user-approved) ----------
+ {
+   id: "buck-jones-plantation-lead-al",
+   name: "'Buck Jones plantation,' ~3 miles from Huntsville (lead, direction unknown)",
+   tier: 2,
+   county: "Madison",
+   lat: 34.7304,
+   lng: -86.5861,
+   precise: false, // APPROXIMATE: ~3 miles from Huntsville, direction unknown — Lead, do not present as exact. These coords are Huntsville (county seat) only; do NOT place a precise point until the direction is established.
+   summary: "Two independent October 1867 Freedman's Bank references, same distance from Huntsville. William Henry Walker's record (rec. 34, Oct 2, 1867): the clerk wrote across the master/mistress fields, 'Lives in Huntsville - was borne about 3 miles from Huntsville on Buck Jones plantation' (Walker was 32, born Huntsville, a dining-room servant — was waiter, 37th Ind. Co. C — living with the widow Bradford near the Institute; wife Sallie Walker). The next day, Henry Hobbs's record (rec. 35, Oct 3, 1867) places his brother Clayburn Hobbs 'about 3 miles from town on Jones Plantation' — same distance, possibly the same plantation and possibly the same Jones ('Buck Jones'?). Lead, not proof: identify Buck Jones in the 1860 Madison County census/slave schedules. Tier 2: Jones-surname lead, identity unresolved.",
+   citation: "Freedman's Bank, Huntsville, frame 4098141_00016, records 34–35 (Oct 2–3, 1867; transcriptions/images 2026-09-21)."
+ },
+ {
+   id: "arthur-w-jones-will-1833-al",
+   name: "Arthur W. Jones's 1833 will + 1855 probate follow-up (Madison County, AL)",
+   tier: 2,
+   county: "Madison",
+   lat: 34.7304,
+   lng: -86.5861,
+   precise: false, // approximate: Madison County probate (Huntsville); no tract named in the will — probate record, not a land site
+   summary: "Arthur W. Jones's will, dated 19 Sep 1833, probated 21 Oct 1833 (Madison Co. PR 6, p. 362; abstracted in Valley Leaves v09n02, Dec 1974). The estate is 'to be held together until oldest child becomes of age or marries, then to draw equal part'; the children are unnamed in the abstract except son William Arthur ('my gold watch when he is 21') and son James Monroe ('also mentioned'). Executors: 'my friends Friley Jones & Oliver D. Sledge.' Witnesses: John R. B. Eldridge, James S. Jones, Walter T. Keeble — a FAN cluster new to the research. Follow-up, Nov Term 1855 (PR 19, p. 501): Friley Jones, executor, v. Evaline B. Coyle, widow, & other legatees — Evalina B. Coyle, widow; Mary W. Clopton; Agnes T. Kinkle; William Arthur Jones, dec'd (adm. James Monroe Jones); James Monroe Jones — 'all of whom are of full age.' Marriage notes as printed: Arthur m. 'Evelina B. Jones' 22 Oct 1820 (transcribe as printed — not 'Sullivan'); she m. Benjamin Coyle 18 May 1837. FENCED: an Arthur W. Jones appears as grantee in the 1830s Madison deed-index pass (N395/1831, O377/1833) — possible same man as the testator, UNRESOLVED, do not merge. Tier 2: identity fenced — lead only.",
+   citation: "Valley Leaves, v09n02 (Dec 1974), printed p. 79 (Madison Co. PR 6, p. 362; PR 19, p. 501); abstracted by Mr. & Mrs. Ezell Terry."
+ },
+
+    // ---------- 2026-09-28 paste: staged map batch PART-10 (2026-09-20/21/22, user-approved) ----------
+ {
+   id: "orlando-jones-house-lot16-va",
+   name: "Orlando Jones House, Lot 16, Duke of Gloucester Street (Williamsburg, VA)",
+   tier: 2,
+   county: "York", // Virginia — see header note on the county filter
+   lat: 37.2707,
+   lng: -76.7029,
+   precise: true, // colonial lot number certain per CW research reports (RR1201, RR1211); verify the on-map point against the CW lot plan at map-build time
+   summary: "Orlando Jones's Williamsburg house (Lots 16 & 17; Jones family property before the Alabama chain). His 1719 will ordered 'my house and two lotts in Williamsburgh' sold toward his debts and a £100-sterling legacy to his wife Mary (York Co. Deeds, Orders, Wills XV, 517; probated Nov 16, 1719). Widow Mary Jones sold Lots 16 & 17 to watchmaker John James Flournoy on Jan 16, 1719/20 for £100 current money + £100 sterling (York Co. Deeds & Bonds III, 326); Flournoy married Mary June 23, 1720 — a 1933 letter's 'Mary Elizabeth Jones' vs. the deed's 'Mary Jones' is NOT merged (lead). Flournoy → widow Joanna Archer, Sept 13, 1729, £160, house on the south side of Duke of Gloucester Street (Deeds & Bonds III, 528); Archer d. 1732; the estate was leased by Dr. Kenneth MacKenzie; the May 16, 1745 Virginia Gazette ad offered the dwelling-house, kitchen, meat-house, stable, garden and 2 lots for sale — 'the last positive reference' to the Orlando Jones property. Archaeology: the Jones house foundation (16 x 22 ft) on the Lot-16 Duke-of-Gloucester frontage; a smaller Lot-17 house erected after 1699, gone by 1719 (RR1213).",
+   citation: "Colonial Williamsburg Block 10 research reports RR1201, RR1210, RR1211, RR1213, RR1214, RR1219, RR1223 (document-blitz synthesis 2026-09-21)."
+ },
+ {
+   id: "mary-stith-shop-lot17-va",
+   name: "Mary Stith Shop and Tin Shop, Lot 17 (Williamsburg, VA)",
+   tier: 2,
+   county: "York", // Virginia — see header note on the county filter
+   lat: 37.2707,
+   lng: -76.7029,
+   precise: true, // colonial lot number certain per CW research reports (RR1216, RR1219); verify the on-map point against the CW lot plan at map-build time
+   summary: "Mary Stith's freed community on Lot 17 (Buildings 21 and 21A). Stith (daughter of William & Mary president William Stith; never married) held enslaved people 1769–1815; her 1813 will (recorded 1816) liberated her household: 'All the coloured people in my family being born my slaves, but now liberated, I think it my duty not to leave them destitute nor leave them unrecompensed for past services rendered to me.' Named freedpeople: Benjamin White and William White (emancipation deeds Mar 8, 1791); Sarah Gillet with children Jane and Peter Gillet (deed Oct 2, 1793); Patty/Martha Gillett (born free after the 1793 deed); Beverley Rowsey (taxed for enslaved people himself 1815–1842); Jenny, granddaughters Jenny and Patty Gillett (tin-shop devisees), Nelly Bolling and sisters Eve and Sally (Woods-shop devisees; married names Eve Mitchell, Sally Skinner). All three Stith parcels were completely destroyed by fire in 1842 (1843 tax); by 1844 Robert Anderson — Stith's executor — owned all three. Unresolved: the two Benjamin Whites, Sarah Gillet's race ascription (deed says 'Negro Woman', report heading says 'mulatto'), the Peter Gillett transfer transcription conflict.",
+   citation: "Colonial Williamsburg Block 10 research reports RR1210, RR1211, RR1216, RR1219, RR1220 (document-blitz synthesis 2026-09-21)."
+ },
+ {
+   id: "brick-house-tavern-lot19-va",
+   name: "Brick House Tavern (Dr. Carter's Brick House), Lot 19 (Williamsburg, VA)",
+   tier: 2,
+   county: "York", // Virginia — see header note on the county filter
+   lat: 37.2707,
+   lng: -76.7029,
+   precise: true, // colonial lot number certain per CW research reports (RR1206); verify the on-map point against the CW lot plan at map-build time
+   summary: "Lot 19's Brick House Tavern, with documented enslaved labor: Dr. William Carter was taxed for 7 slaves, 1 horse and 3 cattle (RR1206 — first documented enslaved-labor count for the Brick House property). Chain: Ravenscroft → Cole Digges (1723) → Dudley Digges → William Withers → William Carter (1761) → … → Thomas Sands → Robert Anderson; Carter sold ca. 1799. Robert Anderson's 1857 will (recorded 1871): '…at which time they are to be taken and divided equally between the said four now minor children [emancipated negro children 7/8th white]…'; Anderson 'remembered liberally slaves and children of slaves' (parentage unresolved). Caution: 'slave hands employed at the Brick House Tavern' is author speculation only (RR1209) — not evidence.",
+   citation: "Colonial Williamsburg Block 10 research reports RR1203–RR1209 (document-blitz synthesis 2026-09-21)."
+ },
+ {
+   id: "barraud-house-lot19s-va",
+   name: "Barraud House, Lot 19 South (Williamsburg, VA)",
+   tier: 2,
+   county: "York", // Virginia — see header note on the county filter
+   lat: 37.2707,
+   lng: -76.7029,
+   precise: true, // colonial lot number certain per CW research reports (RR1191–RR1193); verify the on-map point against the CW lot plan at map-build time
+   summary: "Enslaved labor on Lot 19 South. Susannah Riddell (widow of Dr. George Riddell of Yorktown), pre-Barraud owner: 1782 census — household of four whites and one black; 1783–84 tax — 15 slaves (8 under 16), a horse, and a four-wheeled carriage. Named: Lewis, Cromwell, David, Celia, Judy, Arrabella, Peg, Tristam/Tristram Shandy, Arriana, Betty, Lucy, Jan, Bella, Aggrapina, Amy, A[razena?]/Arazena. 1781 self-liberation at Yorktown: PRO memorial (Sir James Riddell, May 25, 1784; PRO AO 12/71) records Susannah's loss of 'many valuable Negro Servants who took the advantage of the confusion by their leaving her' — names/number unresolved. Dr. Philip Barraud's household: Billy (1783); Billy, Ciscilla, Moll (1784); Cis, Tristum, Rachel, Nanny (1786); 5–7 unnamed 1788–1799; gone by 1800. 'Cis' likely = 'Ciscilla'; 'Tristum' possibly = Riddell's 'Tristram Shandy' (Barraud bought Riddell's house — unresolved, not merged). Executors' 1785 sale ad: 'a number of valuable negroes are for immediate sale.'",
+   citation: "Colonial Williamsburg Block 10 research reports RR1191, RR1192, RR1193 (document-blitz synthesis 2026-09-21)."
+ },
+ {
+   id: "james-anderson-house-lot18-va",
+   name: "James Anderson House (Ravenscroft/Nancy Camp House), Lot 18 (Williamsburg, VA)",
+   tier: 2,
+   county: "York", // Virginia — see header note on the county filter
+   lat: 37.2707,
+   lng: -76.7029,
+   precise: true, // colonial lot number certain per CW research reports (RR1690, RR1695, RR1222–RR1225); verify the on-map point against the CW lot plan at map-build time
+   summary: "James Anderson's armory on Lot 18 — documented enslaved and hired Black labor. Nat, 'a Negro man blacksmith,' sold at the Nov 1, 1803 estate sale ($600; buyer appears to be Robert Anderson). Apr 16, 1779 Virginia Gazette hire ad: 'I am in want of six likely young NEGRO FELLOWS for six months, for which I will give 100£. each' — the hires materialized (Apr 26, 1779 Day Book: baize 'for approns for the Negroes hired by the Publick'). Anderson acquired 'the use of state owned slaves' plus five apprentice nailors; the workforce ran ~40–50, including American and French soldiers, slaves, Highland POWs, convict labor, free blacks, and indentured servants (RR1690). James Banks, free mulatto, apprenticed to Anderson Feb 23, 1763 (York Co. Judgments and Orders 3:470); Harry, an enslaved carpenter, ran away Apr 1777 (VG Purdie, Apr 25, 1777); Philip Moody rented five enslaved people (£111, state footing the bill). The shop was publicly funded and operated by Anderson on state contract (July 1776 Council agreement) — not Anderson's own building; most probable builder Philip Moody (lead).",
+   citation: "Colonial Williamsburg Block 10 research reports RR1690, RR1695, RR1222–RR1225 (document-blitz synthesis 2026-09-21)."
+ },
+ {
+   id: "lewis-lot-lot16-francis-va",
+   name: "Lewis Lot, Lot 16 Francis-Street side (Williamsburg, VA)",
+   tier: 2,
+   county: "York", // Virginia — see header note on the county filter
+   lat: 37.2707,
+   lng: -76.7029,
+   precise: true, // colonial lot number certain per the CW Lewis House report (RR1201); verify the on-map point against the CW lot plan at map-build time
+   summary: "The post-Jones chain on Lot 16's Francis Street side: Charles Lewis → John Orrill (deed of trust 1814; trustee sale to Richard Coke 1815) → Anna Byrd/Anna Field/Thomas Sands → Richard W. & Charles C. Hansford → Peyton A. Southall → Robert Anderson (1853, $150 down + $450 in installments; rented to Johnson Sands for $60) → Maria Griffin → Mercer/Sloan/Shewmake → Rockefeller 1939 (RR1201, Stephenson 1946 — verified deed/account-book quotes). Maria Griffin, identified as Robert Anderson's servant: his 1857 will (probated Oct 12, 1871) bequeaths her '$300 and all the bedding and furniture in the room usually occupied by her, and I lend to her for her life to live in the House and Lot about ninety feet square on Frances and Cross Streets' — race not stated, do not infer (lead on her relationship).",
+   citation: "Colonial Williamsburg Block 10 research report RR1201 (document-blitz synthesis 2026-09-21)."
+ },
+ {
+   id: "timsons-neck-york-river-va",
+   name: "Timson's Neck, York River (Orlando Jones's residence; location unconfirmed)",
+   tier: 2,
+   county: "York", // Virginia — see header note on the county filter
+   lat: 37.235,
+   lng: -76.5097,
+   precise: false, // APPROXIMATE: York River area; Orlando Jones's residence per RR1211 but the precise location is unconfirmed — do NOT place a precise point
+   summary: "Orlando Jones's residence per RR1211 (p. 3, citing VMHB Vol. 32, p. 400): 'He lived at Timson's Neck on York River… Through the marriage of his daughter, Frances, to John Dandridge in 1730, he became the grandfather of George Washington's wife.' Buried in Bruton Parish Church (WMQ Vol. 5(1), p. 192, via RR1211). Connects the Juxon-deed (Queen's Creek) neighborhood to the later Jones household; precise location unconfirmed. Lead, not a placed point.",
+   citation: "Colonial Williamsburg Block 10 research report RR1211 (document-blitz synthesis 2026-09-21)."
+ },
+
+    // ---------- 2026-09-28 paste: staged map batch PART-11 (2026-09-20/21/22, user-approved) ----------
+ {
+   id: "limestone-county-lead-al",
+   name: "Limestone County (Athens area) — Reuben A. Jones–Phoeba R. Gray marriage research lead",
+   tier: 2,
+   county: "Limestone",
+   lat: 34.8042,
+   lng: -86.9684,
+   precise: false, // approximate: Athens (county seat); on-map placement needs refinement — no precise point until tract-level evidence exists
+   summary: "Research-county Tier-2 lead, not the thesis family: 'Reuben A. Jones to Phoeba R. Gray,' licensed Dec 19, 1838, solemnized Dec 20, 1838 by Wm. McDonaldson, J.P. — CORRECTED 2026-09-22 from the original (Limestone County Marriage Book 1832-1862, p. 256; license no. 1610, bond no. 1611; bride 'Phoeba R Gray' on the license, 'Pheby R Gray' in the return). The printed Valley Leaves v09n02 abstract said 'James Simpson, J.P.' — kept as a contradicted reading. FENCED: do NOT merge with Reuben Parker Jones (Madison Co.) without direct evidence. Companion Limestone leads: Alexander S. Perkins estate lands (ADDED 2026-09-22; Turrentine v. Perkins, Ala. S. Ct. SC00287) — 320 acres of the John Webb home place (SW1/4 Sec 4 + NW1/4 Sec 9, T4 R3) plus Madison County parcels (T3 R2/T3 R1), explaining widow Bettie F. Perkins's Madison SCC claim 21,755 ($9,753, disallowed); Alexander S. Perkins is a NEW separate Perkins line (no link to John R./Abraham/Samuel & Susan/Starkey); Samuel & Susan Perkins, minors (guardian Gardner Gill, Nov 15, 1841); Starkey Perkins, deed witness on Madison County land (Mar 1, 1828 McClung deed — closest geographic bridge to the Madison Perkinses); Limestone Eldridge sightings (incl. Sally E. Eldridge m. George R. Phillins, Mar 16, 1835) with no John R. B. Eldridge in the volume; Limestone Jones sightings (Henry Jones inventory 1841, Richard J. Jones estate-division petition, Clinton Jones, Parthenia J. Jones divorce 1849, four Jones marriages 1832–1852) — none is Reuben A. Jones. VERIFIED negative: Phoeba is NOT a daughter of Walter Gray (d. ~1841; seven children fully enumerated, Dec 13, 1841 final settlement — no Phoeba/Phebe). Future source: Limestone County Archives master index (limestonecounty-al.gov/departments/archives/, 350,000+ entries; marriages 1832–1900) — searches still owed for 'Jones, Reuben', 'Gray, Phoebe' (+ Phebe/Phoeba), 'Simpson, James'; form-based, needs a live-browser session or her own search ($1/document mail-order fallback).",
+   citation: "Limestone County marriage records via Valley Leaves v09n02 (Dec 1974), printed pp. 65–68; Kathleen Paul Jones & Pauline Jones Gandrud, Alabama Records, Vol. 24: Limestone County (1934), Internet Archive OCR (research_notes/limestone-lead-20260921/findings.md, staged 2026-09-21)."
+ },
+
+
+    // ---------- 2026-09-28 paste: staged map batch PART-14 (2026-09-20/21/22, user-approved) ----------
+
+    // ---------- 2026-09-28: Elizabeth Berry 1842 letter anchor (website plan 2026-09-23 section 5, user-approved) ----------
+    {
+      id: "mobile-al-berry-letter",
+      name: "Mobile, AL \u2014 Elizabeth Berry's 1842 letter",
+      tier: 1,
+      county: "Mobile",
+      lat: 30.6954,
+      lng: -88.0399,
+      precise: false, // approximate: city center
+      summary: "Elizabeth Berry wrote to S. G. Berry on May 1, 1842 from her brother M. T. Levert's house in Mobile, after a nine-day journey \u2014 signing 'Elizabeth Berry or Jones.' Diary/correspondence-class material; the double surname is a research lead, not a conclusion.",
+      citation: "DB1 row 1454; DB4 row 564; paper [386]."
     }
 
   ]
