@@ -142,8 +142,14 @@
         <p><strong>169 rows × 10 columns.</strong> The to-search list: names that <em>might</em> belong in the enslaved-names table once verified, with the record that would confirm or kill each lead. The overwhelming majority are unverified — this tab is a finding aid, not a finding.</p>
         <p><a class="btn" href="./data/db2-research-leads-20260928-redacted.csv" download>Download CSV · 0.1 MB</a></p>
       </article>
+      <article class="download-card">
+        <h3>FAN Graph — Edges Pilot</h3>
+        <p class="file-meta"><code>fan-graph-edges-pilot-20260928.csv</code></p>
+        <p><strong>100 edges × 84 nodes.</strong> The friends–associates–neighbors network behind the research: who witnessed whose deeds, stood surety, posted bonds, and where enslaved people's lives crossed white capital. Every edge carries a confidence level — <em>confirmed_primary</em> (read from the manuscript) is citable; <em>lead</em> and <em>unresolved</em> are not. Identity safeguards are built in: same-name people are distinct nodes (Turner Anderson ≠ Turner Moore ≠ Turner Jones; Nelson A. Thompson ≠ Nelson Anderson).</p>
+        <p><a class="btn" href="./data/fan-graph-edges-pilot-20260928.csv" download>Download CSV · 25 KB</a></p>
+      </article>
     </div>
-    <p style="margin-top: var(--space-4);"><a href="./data/DATA-DICTIONARY.md" download>Download the full data dictionary (Markdown)</a> — every column defined, hypothesis codes, and the complete data-quality caveats.</p>
+    <p style="margin-top: var(--space-4);"><a href="./data/DATA-DICTIONARY.md" download>Download the full data dictionary (Markdown)</a> — every column defined, hypothesis codes, and the complete data-quality caveats. <a href="./data/FAN-GRAPH-SCHEMA.md" download>Download the FAN graph schema (Markdown)</a> — node and edge types, the confidence vocabulary, and the do-not-merge discipline.</p>
 
     <h2 id="reading-guide">How to read this data — verified vs. hypothesis</h2>
     <p>No row may be cited as fact on its own authority. The verification level of each row is encoded in the table itself — read it before you quote anything:</p>
@@ -152,6 +158,7 @@
       <li><strong>DB1 H1–H8 hypothesis columns</strong> — each cell assesses what the row's source says about one of eight research hypotheses (<em>Supports</em>, <em>Refutes</em>, <em>Mixed</em>, <em>Context</em>, <em>Unresolved</em>). A row can support H3 and be unresolved on H5.</li>
       <li><strong>DB2 <em>Evidence</em> / <em>Notes</em></strong> — verification status is stated in prose. There is no separate confidence column; the do-not-merge warnings in <em>Notes</em> are load-bearing. Names that look alike are not the same person until a source says so.</li>
       <li><strong>Leads <em>Verification Status</em></strong> — nearly all values begin <em>Unverified</em>. Treat accordingly.</li>
+      <li><strong>FAN graph <em>confidence</em></strong> — the edge's confidence column is the claim. <em>confirmed_primary</em> (read from the manuscript) and <em>confirmed_secondary</em> are citable; <em>lead</em> and <em>unresolved</em> are not — never display them as fact. <em>do_not_merge</em> edges are project decisions keeping same-name people distinct; the do-not-merge warnings in <em>notes</em> are load-bearing.</li>
     </ul>
     <p><strong>Thin-evidence convention:</strong> where evidence is thin, cells are left <strong>blank</strong>. A blank cell means "no data" — never "no," never "unknown person."</p>
 
