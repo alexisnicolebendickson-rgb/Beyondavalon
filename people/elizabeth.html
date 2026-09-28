@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elizabeth — Beyond Avalon</title>
+<meta name="description" content="Elizabeth, a woman enslaved in the Lewellen Jones network and freed by act of the Alabama legislature on December 11, 1820. A Beyond Avalon counter-archive person page (draft)." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../base.css" />
+<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../map.css" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238A3A22'/%3E%3Cpath d='M32 12c8 6 12 14 12 22 0 8-5 14-12 16-7-2-12-8-12-16 0-8 4-16 12-22z' fill='%23F3EDE2'/%3E%3Cline x1='32' y1='16' x2='32' y2='48' stroke='%238A3A22' stroke-width='2'/%3E%3C/svg%3E">
+
+<style>
+/* ---------- Person-page additions (draft) ---------- */
+.draft-banner {
+  background: #fdf6e3;
+  border: 1px solid #e0c36a;
+  border-left: 4px solid #8a5a00;
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+.draft-banner strong { color: #8a5a00; }
+.person-section { margin-top: var(--space-12); }
+.person-section > h2 { margin-bottom: var(--space-6); }
+.kin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: var(--space-4);
+}
+.kin-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.kin-card .rel {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+.kin-card h4 { font-size: var(--text-base); margin-bottom: var(--space-2); }
+.kin-card p { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 0; }
+.silence-box {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+}
+.silence-box h3 { margin-top: 0; }
+.silence-box ul { list-style: disc; padding-left: var(--space-6); color: var(--color-text-muted); font-size: var(--text-md); }
+.silence-box li { margin-bottom: var(--space-2); }
+.source-list { counter-reset: src; padding: 0; }
+.source-list li {
+  counter-increment: src;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-8);
+  position: relative;
+  list-style: none;
+}
+.source-list li::before {
+  content: "[" counter(src) "]";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.place-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: baseline;
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-md);
+}
+.place-row:last-child { border-bottom: none; }
+.place-row strong { min-width: 220px; }
+.place-row a { color: var(--color-primary); font-size: var(--text-sm); }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="../index.html#top" class="brand" aria-label="Beyond Avalon home">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+        <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Beyond Avalon
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="../index.html#history">The History</a></li>
+        <li><a href="../index.html#erasure">The Argument</a></li>
+        <li><a href="../index.html#registry" aria-current="true">Names Registry</a></li>
+        <li><a href="../index.html#documents">Documents</a></li>
+        <li><a href="../index.html#lineage">Family &amp; Findings</a></li>
+        <li><a href="./index.html">People</a></li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Maps</button>
+          <ul class="dropdown">
+            <li><a href="../map.html">Plantations Map</a></li>
+            <li><a href="../uah-campus-map.html">UAH Campus Map</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Topics</button>
+          <ul class="dropdown">
+            <li><a href="../exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
+            <li><a href="../leasing.html">Slave &amp; Convict Leasing</a></li>
+            <li><a href="../institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
+            <li><a href="../philanthropy.html">Institutional Philanthropy</a></li>
+            <li><a href="../voyages.html">The Middle Passage &amp; Landing Stops</a></li>
+            <li><a href="../archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a></li>
+            <li><a href="../debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a></li>
+            <li><a href="../eminent-domain.html">Eminent Domain</a></li>
+            <li><a href="../scc.html">Southern Claims Commission</a></li>
+          </ul>
+        </li>
+        <li><a href="../glossary.html">Thesis Glossary</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#support">Support</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html#history">The History</a>
+    <a href="../index.html#erasure">The Argument</a>
+    <a href="../index.html#registry">Names Registry</a>
+    <a href="../index.html#documents">Documents</a>
+    <a href="../index.html#lineage">Family &amp; Findings</a>
+    <a href="./index.html">People</a>
+    <span class="mobile-menu-label" aria-hidden="true">Maps</span>
+    <a href="../map.html">Plantations Map</a>
+    <a href="../uah-campus-map.html">UAH Campus Map</a>
+    <span class="mobile-menu-label" aria-hidden="true">Topics</span>
+    <a href="../exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a>
+    <a href="../leasing.html">Slave &amp; Convict Leasing</a>
+    <a href="../institutional-knowledge.html">What UAH & Huntsville Knew</a>
+    <a href="../philanthropy.html">Institutional Philanthropy</a>
+    <a href="../voyages.html">The Middle Passage &amp; Landing Stops</a>
+    <a href="../archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a>
+    <a href="../debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a>
+    <a href="../eminent-domain.html">Eminent Domain</a>
+    <a href="../scc.html">Southern Claims Commission</a>
+    <a href="../glossary.html">Thesis Glossary</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#support">Support</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" style="padding-bottom: var(--space-6);">
+    <div class="container">
+      <span class="eyebrow">Counter-archive &middot; Person page</span>
+      <h1>Elizabeth</h1>
+      <p class="lede">A woman enslaved in the Lewellen Jones network in Madison County, Alabama, freed — with three children named in the act — by special act of the Alabama legislature on December 11, 1820. The act calls her &ldquo;a mulatto woman, named Elizabeth, aged forty years.&rdquo;</p>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: var(--space-12);">
+
+    <div class="draft-banner"><strong>DRAFT — not for publication.</strong> Staged for review September 2026. Nothing on this page goes live without the researcher&rsquo;s word. Evidence levels: <span class="verdict verdict-doc">Documented</span> <span class="verdict verdict-ui">Under investigation</span> <span class="verdict verdict-unv">Unresolved</span></div>
+
+    <div class="term-box" style="margin-top:0;">
+      <strong>How to read this page.</strong> Every claim names its source. Where the record is silent, this page says so instead of filling the gap. Elizabeth is kept separate from Eliza Jones — the mother named in Columbus and Reuben Jones&rsquo;s bank records — because no document connects the two women. <span class="verdict verdict-doc">Documented</span>
+    </div>
+
+    <div class="person-section">
+      <h2>Life in brief</h2>
+      <div class="prose" style="max-width:74ch;">
+        <p>Elizabeth was enslaved in Madison County in the Jones network; Lewellen Jones&rsquo;s estate held forty-seven enslaved people at his death in 1820. <span class="verdict verdict-doc">Documented</span> She was freed by &ldquo;An Act to Authorize John N. S. Jones and Alexander P. Jones to Emancipate Certain Slaves therein Named,&rdquo; approved December 11, 1820 — Alabama had entered the Union the year before, and under state law a legislative act was the lawful route to manumission. <span class="verdict verdict-doc">Documented</span> The act freed Elizabeth, described as forty years old, with three children named in the act: Evelina, thirteen; Ann, six; and Shandy, three — the act itself states no relationships. <span class="verdict verdict-doc">Documented</span> It required John N. S. Jones and Alexander P. Jones — Lewellen Jones&rsquo;s sons — to post a bond with the Madison County Court that the freed people would never become chargeable to the state. <span class="verdict verdict-doc">Documented</span> No trace of Elizabeth&rsquo;s life after 1820 has been found. <span class="verdict verdict-unv">Unresolved</span> She remains the researcher&rsquo;s only maternal lead, and the maternity question stays open — no merge, no closure. <span class="verdict verdict-unv">Unresolved</span></p>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Records</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">c. 1780</span>
+          <h4>Born <span class="verdict verdict-doc">Documented</span></h4>
+          <p>The 1820 act describes her as &ldquo;aged forty years,&rdquo; placing her birth around 1780. No birth record names her.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1820</span>
+          <h4>Lewellen Jones estate inventory <span class="verdict verdict-doc">Documented</span></h4>
+          <p>Taken October 19, 1820, the inventory of Lewellen Jones&rsquo;s estate lists forty-seven enslaved people as an unnamed group (Hoksbergen &amp; DeNeefe, citing the estate file).</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">December 11, 1820</span>
+          <h4>Manumission act approved <span class="verdict verdict-doc">Documented</span></h4>
+          <p><em>Acts of the General Assembly of Alabama</em>, 2nd session (Cahawba, November 1820), p. 62: the act authorizes John N. S. Jones and Alexander P. Jones to emancipate &ldquo;a mulatto woman, named Elizabeth, aged forty years&rdquo; with Evelina, Ann, and Shandy, once the brothers execute a bond with the Madison County Court that &ldquo;the said slaves &hellip; shall never become chargable to the state.&rdquo; The act names no estate, states no relationships, and gives no reasons.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1820–1821</span>
+          <h4>Manumission bond <span class="verdict verdict-ui">Under investigation</span></h4>
+          <p>The bond the act required has not been located. It would likely sit in Madison County court minutes or deed books, and it is the one record that could confirm the emancipation was perfected or add post-act detail.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1830–1860</span>
+          <h4>No trace in Madison County free-colored records <span class="verdict verdict-doc">Documented</span></h4>
+          <p>Nancy Rohr&rsquo;s transcription of Madison County&rsquo;s free people of color, 1830–1860, contains no Eliza, Elizabeth, Evelina, Ann, or Shandy Jones — only Kiziah, Nancy (twice), Sarah, and Sye (twice) appear as Jones entries. Absence is negative evidence only: she may have left the county, died, changed names, or evaded enumerators.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1865</span>
+          <h4>No trace in the Huntsville Black census <span class="verdict verdict-doc">Documented</span></h4>
+          <p>The 1865 Huntsville Black census (Rohr, Appendix II) lists sixty-one people surnamed Jones; none is Eliza or Elizabeth.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Kinship</h2>
+      <div class="kin-grid">
+        <div class="kin-card">
+          <span class="rel">Daughter (presumed)</span>
+          <h4>Evelina</h4>
+          <p>Aged thirteen in the 1820 act. The act does not state the relationship; Hoksbergen and DeNeefe describe the children as presumably Elizabeth&rsquo;s. <span class="verdict verdict-ui">Under investigation</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Daughter (presumed)</span>
+          <h4>Ann</h4>
+          <p>Aged six in the 1820 act. A 2017 Alabama Senate joint resolution calls Ann and Evelina Shandy&rsquo;s sisters. <span class="verdict verdict-ui">Under investigation</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Son (presumed)</span>
+          <h4><a href="./shandy-wesley-jones.html">Shandy Wesley Jones</a></h4>
+          <p>Aged three in the 1820 act. No document names his father; Hoksbergen and DeNeefe note descendants identify John N. S. Jones as the probable father, and float Lewellen Jones himself — speculation, not evidence. <span class="verdict verdict-unv">Unresolved</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Claimed kin — do not merge</span>
+          <h4>Eliza Jones</h4>
+          <p>Family oral history and a commissioned genealogy associate Eliza — the mother named in Columbus and Reuben Jones&rsquo;s bank records — with Elizabeth. Elizabeth would have been about forty-seven at Columbus&rsquo;s birth (~1827), fifty-three at Reuben&rsquo;s (~1833), and sixty-three when brother Turner was reportedly born (~1843). Hoksbergen and DeNeefe call the maternity theory &ldquo;remote&rdquo; on age grounds. Eliza died in fall 1861; the two women are kept separate pending direct evidence. <span class="verdict verdict-unv">Unresolved</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Places</h2>
+      <div class="place-row">
+        <strong>Madison County, Alabama</strong>
+        <span>The Jones plantation along Athens Pike, about three miles from Huntsville, where Elizabeth and Shandy were manumitted. (The name &ldquo;Avalon&rdquo; is a modern convention — no known primary source applies it to the plantation.)</span>
+        <a href="../map.html">View on the Plantations Map &rarr;</a>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>What the record doesn&rsquo;t say</h2>
+      <div class="silence-box">
+        <h3>The silence ledger for Elizabeth</h3>
+        <ul>
+          <li>No record of her life before the 1820 act: no birth record, no bill of sale, no estate listing her by name.</li>
+          <li>No record of her life after December 11, 1820. She does not appear in Madison County&rsquo;s free-colored censuses (1830–1860) or the 1865 Huntsville Black census.</li>
+          <li>The manumission bond the act required has not been located — the one document that could confirm the emancipation took effect.</li>
+          <li>No document names the father of her children. Published speculation about Lewellen Jones or John N. S. Jones is conjecture, not evidence.</li>
+          <li>No document connects her to Eliza Jones, the mother named in Columbus and Reuben Jones&rsquo;s bank records. The maternity theory rests on family oral history and one commissioned genealogy, and published scholarship calls it &ldquo;remote.&rdquo;</li>
+          <li>The 1859 Tuscaloosa free-Black registration (mayor&rsquo;s register and $100 bonds, cited via Hubbs) has not been located — if it survives, it could carry post-1820 traces.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Sources</h2>
+      <ol class="source-list">
+        <li><em>Acts of the General Assembly of the State of Alabama</em>, 2nd session (Cahawba, November 1820), p. 62 — &ldquo;An Act to Authorize John N. S. Jones and Alexander P. Jones to Emancipate Certain Slaves therein Named,&rdquo; approved December 11, 1820.</li>
+        <li>Ben Hoksbergen and Jane DeNeefe, &ldquo;Keeping Up with the Joneses: Tracing the Lives and Legacies of Two Reconstruction-Era Legislators from Madison County,&rdquo; <em>Alabama Review</em> 79, no. 3 (July 2026).</li>
+        <li>Nancy Rohr, <em>Free People of Color in Madison County, Alabama</em>, Appendices I–III (Huntsville History Collection).</li>
+        <li>Jacquelyn Proctor Reeves, &ldquo;Lewellen Jones Estate,&rdquo; <em>Valley Leaves</em> 44, no. 3 (2010): 92.</li>
+        <li>G. Ward Hubbs, &ldquo;On the Razor&rsquo;s Edge: Shandy Jones Makes His Way through the Nineteenth Century,&rdquo; <em>Alabama Heritage</em> (Fall 2020): 20–29.</li>
+      </ol>
+    </div>
+
+    <p style="margin-top: var(--space-10);"><a href="./index.html">&larr; Back to the People directory</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:var(--space-3);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" style="width:28px;height:28px;">
+            <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Beyond Avalon
+        </div>
+        <p style="max-width:44ch; color:var(--color-text-muted); font-size:var(--text-sm);">A public-history and genealogy project reclaiming the names, families, and legacy of the people enslaved at Avalon Plantation, Huntsville, Alabama — and following where the wealth and power went afterward.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="../index.html#history">The History</a></li>
+          <li><a href="../index.html#erasure">The Argument</a></li>
+          <li><a href="../index.html#registry">Names Registry</a></li>
+          <li><a href="../index.html#documents">Documents</a></li>
+          <li><a href="../index.html#lineage">Family &amp; Findings</a></li>
+          <li><a href="../map.html">Plantations Map</a></li>
+          <li><a href="../uah-campus-map.html">UAH Campus Map</a></li>
+          <li><a href="./index.html">People</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Project</h5>
+        <ul>
+          <li><a href="../index.html#support">Support This Research</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://www.alabamahistory.net/madison" target="_blank" rel="noopener noreferrer">AHA Marker Text ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Beyond Avalon · Independent research by Alexis Bendickson</span>
+      <span>All findings are subject to ongoing verification.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

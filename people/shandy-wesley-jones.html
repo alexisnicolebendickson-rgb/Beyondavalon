@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shandy Wesley Jones — Beyond Avalon</title>
+<meta name="description" content="Shandy Wesley Jones, free Black barber and Reconstruction-era legislator from Tuscaloosa County, Alabama. A Beyond Avalon counter-archive person page (draft)." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../base.css" />
+<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../map.css" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238A3A22'/%3E%3Cpath d='M32 12c8 6 12 14 12 22 0 8-5 14-12 16-7-2-12-8-12-16 0-8 4-16 12-22z' fill='%23F3EDE2'/%3E%3Cline x1='32' y1='16' x2='32' y2='48' stroke='%238A3A22' stroke-width='2'/%3E%3C/svg%3E">
+
+<style>
+.draft-banner {
+  background: #fdf6e3;
+  border: 1px solid #e0c36a;
+  border-left: 4px solid #8a5a00;
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+.draft-banner strong { color: #8a5a00; }
+.person-section { margin-top: var(--space-12); }
+.person-section > h2 { margin-bottom: var(--space-6); }
+.kin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: var(--space-4);
+}
+.kin-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.kin-card .rel {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+.kin-card h4 { font-size: var(--text-base); margin-bottom: var(--space-2); }
+.kin-card p { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 0; }
+.silence-box {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+}
+.silence-box h3 { margin-top: 0; }
+.silence-box ul { list-style: disc; padding-left: var(--space-6); color: var(--color-text-muted); font-size: var(--text-md); }
+.silence-box li { margin-bottom: var(--space-2); }
+.source-list { counter-reset: src; padding: 0; }
+.source-list li {
+  counter-increment: src;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-8);
+  position: relative;
+  list-style: none;
+}
+.source-list li::before {
+  content: "[" counter(src) "]";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.place-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: baseline;
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-md);
+}
+.place-row:last-child { border-bottom: none; }
+.place-row strong { min-width: 220px; }
+.place-row a { color: var(--color-primary); font-size: var(--text-sm); }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="../index.html#top" class="brand" aria-label="Beyond Avalon home">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+        <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Beyond Avalon
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="../index.html#history">The History</a></li>
+        <li><a href="../index.html#erasure">The Argument</a></li>
+        <li><a href="../index.html#registry" aria-current="true">Names Registry</a></li>
+        <li><a href="../index.html#documents">Documents</a></li>
+        <li><a href="../index.html#lineage">Family &amp; Findings</a></li>
+        <li><a href="./index.html">People</a></li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Maps</button>
+          <ul class="dropdown">
+            <li><a href="../map.html">Plantations Map</a></li>
+            <li><a href="../uah-campus-map.html">UAH Campus Map</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Topics</button>
+          <ul class="dropdown">
+            <li><a href="../exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
+            <li><a href="../leasing.html">Slave &amp; Convict Leasing</a></li>
+            <li><a href="../institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
+            <li><a href="../philanthropy.html">Institutional Philanthropy</a></li>
+            <li><a href="../voyages.html">The Middle Passage &amp; Landing Stops</a></li>
+            <li><a href="../archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a></li>
+            <li><a href="../debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a></li>
+            <li><a href="../eminent-domain.html">Eminent Domain</a></li>
+            <li><a href="../scc.html">Southern Claims Commission</a></li>
+          </ul>
+        </li>
+        <li><a href="../glossary.html">Thesis Glossary</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#support">Support</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html#history">The History</a>
+    <a href="../index.html#erasure">The Argument</a>
+    <a href="../index.html#registry">Names Registry</a>
+    <a href="../index.html#documents">Documents</a>
+    <a href="../index.html#lineage">Family &amp; Findings</a>
+    <a href="./index.html">People</a>
+    <span class="mobile-menu-label" aria-hidden="true">Maps</span>
+    <a href="../map.html">Plantations Map</a>
+    <a href="../uah-campus-map.html">UAH Campus Map</a>
+    <span class="mobile-menu-label" aria-hidden="true">Topics</span>
+    <a href="../exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a>
+    <a href="../leasing.html">Slave &amp; Convict Leasing</a>
+    <a href="../institutional-knowledge.html">What UAH & Huntsville Knew</a>
+    <a href="../philanthropy.html">Institutional Philanthropy</a>
+    <a href="../voyages.html">The Middle Passage &amp; Landing Stops</a>
+    <a href="../archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a>
+    <a href="../debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a>
+    <a href="../eminent-domain.html">Eminent Domain</a>
+    <a href="../scc.html">Southern Claims Commission</a>
+    <a href="../glossary.html">Thesis Glossary</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#support">Support</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" style="padding-bottom: var(--space-6);">
+    <div class="container">
+      <span class="eyebrow">Counter-archive &middot; Person page</span>
+      <h1>Shandy Wesley Jones</h1>
+      <p class="lede">Free Black barber and Reconstruction-era legislator from Tuscaloosa County, Alabama — born in Madison County, moved south by 1837, and elected to the state house in 1868.</p>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: var(--space-12);">
+
+    <div class="draft-banner"><strong>DRAFT — not for publication.</strong> Staged for review September 2026. Nothing on this page goes live without the researcher&rsquo;s word. Evidence levels: <span class="verdict verdict-doc">Documented</span> <span class="verdict verdict-ui">Under investigation</span> <span class="verdict verdict-unv">Unresolved</span></div>
+
+    <div class="term-box" style="margin-top:0;">
+      <strong>How to read this page.</strong> Published scholarship treats the Madison County Shandy and the Tuscaloosa Shandy as one man — Shandy Wesley Jones. He is not merged with Columbus Jones&rsquo;s deceased brother Shandy, whom the 1867 bank register lists as already dead; the legislator was alive in 1868. <span class="verdict verdict-doc">Documented</span>
+    </div>
+
+    <div class="person-section">
+      <h2>Life in brief</h2>
+      <div class="prose" style="max-width:74ch;">
+        <p>Shandy Wesley Jones was born in Madison County, Alabama — scholarship gives 1816–1886 — and moved to Tuscaloosa by 1837, where he built a barbershop into the free Black community&rsquo;s most visible institution. <span class="verdict verdict-doc">Documented</span> He served as Tuscaloosa County&rsquo;s representative in the Alabama legislature from 1868 to 1870. <span class="verdict verdict-doc">Documented</span> Scholarship associates him with the Jones network through family oral history and a professional genealogy, while flagging the age problem at its center — but no document names his father. <span class="verdict verdict-unv">Unresolved</span></p>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Records</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">c. 1816</span>
+          <h4>Born, Madison County, Alabama <span class="verdict verdict-doc">Documented</span></h4>
+          <p>Published scholarship gives 1816–1886 for Shandy Wesley Jones.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">By 1837</span>
+          <h4>Move to Tuscaloosa <span class="verdict verdict-doc">Documented</span></h4>
+          <p>Established in Tuscaloosa by 1837 as a free Black barber.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1860</span>
+          <h4>Tuscaloosa household <span class="verdict verdict-doc">Documented</span></h4>
+          <p>The 1860 federal census places Shandy&rsquo;s family in Tuscaloosa, next door to <a href="./columbus-jones.html">Columbus Jones</a>&rsquo;s household in a mostly white neighborhood; both men are listed as barbers or blacksmiths (Hoksbergen &amp; DeNeefe, citing the 1860 census).</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1867</span>
+          <h4>Constitutional convention delegate <span class="verdict verdict-doc">Documented</span></h4>
+          <p>Delegate to Alabama&rsquo;s 1867 constitutional convention — one of the two legislators this project tracks (the other being Columbus Jones).</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1868–1870</span>
+          <h4>Tuscaloosa County representative <span class="verdict verdict-doc">Documented</span></h4>
+          <p>Served in the Alabama legislature from Tuscaloosa County. While the Madison County bank register of October 1867 lists a brother &ldquo;Shandy&rdquo; of Columbus as deceased, Shandy Wesley Jones was alive and legislating in 1868 — the two are not merged.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1886</span>
+          <h4>Death <span class="verdict verdict-doc">Documented</span></h4>
+          <p>Died 1886, per published scholarship.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Kinship</h2>
+      <div class="kin-grid">
+        <div class="kin-card">
+          <span class="rel">Father</span>
+          <h4>Unnamed in any document</h4>
+          <p>No document names Shandy Wesley Jones&rsquo;s father. <span class="verdict verdict-unv">Unresolved</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Claimed kin — unproven</span>
+          <h4>The Jones-network link</h4>
+          <p>Hoksbergen and DeNeefe report family oral history and a professional genealogy making Columbus and Reuben the half-brothers of Shandy, associating Eliza with Elizabeth, the woman manumitted in 1820 — while flagging the age problem: Elizabeth would have been about 47 at Columbus&rsquo;s birth, about 53 at Reuben&rsquo;s, with younger siblings born as late as 1843. Kept unresolved; no merge. <span class="verdict verdict-unv">Unresolved</span></p>
+        </div>
+        <div class="kin-card">
+          <span class="rel">Do not merge with</span>
+          <h4>The deceased brother Shandy</h4>
+          <p><a href="./columbus-jones.html">Columbus Jones</a>&rsquo;s 1867 bank register lists a brother Shandy as already dead. The legislator lived and legislated in 1868–1870. <span class="verdict verdict-doc">Documented</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Places</h2>
+      <div class="place-row">
+        <strong>Madison County, Alabama</strong>
+        <span>Birthplace.</span>
+        <a href="../map.html">View on the Plantations Map &rarr;</a>
+      </div>
+      <div class="place-row">
+        <strong>Tuscaloosa, Alabama</strong>
+        <span>Home from by 1837; the barbershop and the legislative district he served.</span>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>What the record doesn&rsquo;t say</h2>
+      <div class="silence-box">
+        <h3>The silence ledger for Shandy Wesley Jones</h3>
+        <ul>
+          <li>No document names his father. The Jones-network link rests on oral history and a professional genealogy, not on a primary record.</li>
+          <li>The dates and occupation given in earlier drafts of this project — 1812–1874, Huntsville barber — are unsupported; scholarship gives 1816–1886, Tuscaloosa barber. The unsupported figures are not repeated here.</li>
+          <li>His relationship to the Madison County Jones family, if any, is unresolved — including the claimed half-brother link to Columbus and Reuben.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="person-section">
+      <h2>Sources</h2>
+      <ol class="source-list">
+        <li>Ben Hoksbergen and Jane DeNeefe, &ldquo;Keeping Up with the Joneses: Tracing the Lives and Legacies of Two Reconstruction-Era Legislators from Madison County,&rdquo; <em>Alabama Review</em> 79, no. 3 (July 2026).</li>
+        <li>G. Ward Hubbs, &ldquo;On the Razor&rsquo;s Edge,&rdquo; <em>Alabama Heritage</em> (Fall 2020), as cited in Hoksbergen and DeNeefe.</li>
+        <li>1860 U.S. Federal Census, Tuscaloosa, Alabama (NARA M653), as cited in Hoksbergen and DeNeefe.</li>
+      </ol>
+    </div>
+
+    <p style="margin-top: var(--space-10);"><a href="./index.html">&larr; Back to the People directory</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:var(--space-3);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" style="width:28px;height:28px;">
+            <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Beyond Avalon
+        </div>
+        <p style="max-width:44ch; color:var(--color-text-muted); font-size:var(--text-sm);">A public-history and genealogy project reclaiming the names, families, and legacy of the people enslaved at Avalon Plantation, Huntsville, Alabama — and following where the wealth and power went afterward.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="../index.html#history">The History</a></li>
+          <li><a href="../index.html#erasure">The Argument</a></li>
+          <li><a href="../index.html#registry">Names Registry</a></li>
+          <li><a href="../index.html#documents">Documents</a></li>
+          <li><a href="../index.html#lineage">Family &amp; Findings</a></li>
+          <li><a href="../map.html">Plantations Map</a></li>
+          <li><a href="../uah-campus-map.html">UAH Campus Map</a></li>
+          <li><a href="./index.html">People</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Project</h5>
+        <ul>
+          <li><a href="../index.html#support">Support This Research</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://www.alabamahistory.net/madison" target="_blank" rel="noopener noreferrer">AHA Marker Text ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Beyond Avalon · Independent research by Alexis Bendickson</span>
+      <span>All findings are subject to ongoing verification.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>
