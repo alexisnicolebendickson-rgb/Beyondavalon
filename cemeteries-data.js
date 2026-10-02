@@ -1,0 +1,62 @@
+/*
+  Avalon Project — Cemetery Map data (staged)
+  Only points with a verified location are plotted. Locations without a
+  verified coordinate live in `unverified` and are listed in the page panel,
+  not pinned to the map — this project does not fabricate coordinates.
+*/
+(function () {
+  "use strict";
+
+  window.CEMETERIES_DATA = {
+    campusCenter: { lat: 34.791, lng: -86.71 },
+    sites: [
+      {
+        id: "moore-plantation-cemetery",
+        name: "Moore Plantation slave cemetery (Harvest Road)",
+        lat: 34.858,
+        lng: -86.7787,
+        precise: true,
+        verdict: "verified",
+        verdictNote:
+          "Location fixed 2026-09-27: the cemetery GPS falls in Section 19, Township 2 South, Range 2 West (Huntsville Meridian), checked against the BLM National PLSS CadNSDI service; reverse-geocode gives 1808 Harvest Rd, Harvest, AL 35749.",
+        summary:
+          "Slave graveyard of the \"old Moore Plantation\" on Harvest Road, south of the road where the plantation home stood on the north side. The land owner's late husband allowed burials here until about 1950. Research identifies Benjamin T. Moore's Madison County plantation as very likely the \"old Moore Plantation\" behind this cemetery — the link to Turner Moore himself is the one missing piece and is not claimed here.",
+        citation:
+          "C. Wayne Austin, \"Moore (Herman) Cemetery\" survey (photos 6 Jun 2012; page added 3 Jun 2014), via the Madison County cemeteries survey project; BLM National PLSS CadNSDI service (2026-09-27); Turner Moore plantation memo, Beyond Avalon research notes, 2026-09-27."
+      },
+      {
+        id: "jones-perkins-cemetery",
+        name: "Jones-Perkins Family Cemetery",
+        lat: 34.7247,
+        lng: -86.6408,
+        precise: false,
+        verdict: "approximate",
+        verdictNote:
+          "Approximate placement behind present-day Morton Hall, next to Union Grove Gallery — not a surveyed GPS point.",
+        summary:
+          "Family burial ground of the Jones/Perkins enslaver family, including Lewellen Jones's unmarked grave (later marked by the Twickenham Town Chapter, DAR, in the 1970s). A 2022 UAH/Tennessee Valley Archaeological Research (TVAR) ground-penetrating radar survey scanned this area, and a second site near University Drive, seeking unmarked graves of enslaved people.",
+        citation:
+          "UAH News, \"UAH Archives and Department of History to Erect Historical Marker on Campus\"; Huntsville History Collection, \"From a Kingdom in Wales to a Cotton Farm in Alabama\"; WAFF 48, \"Uncovering the history of unmarked slave graves at UAH\"; TVAR, \"GIS Remote Sensing & Mapping Services — Avalon Plantation.\""
+      }
+    ],
+
+    /* Not plotted — listed on the page with their verification status. */
+    unverified: [
+      {
+        name: "Jones (Mary) Cemetery — near the daycare",
+        status: "Location unverified — not plotted",
+        summary:
+          "A Jones cemetery referenced in project notes in connection with a daycare-adjacent location. No verified location (no address, GPS, or PLSS description) was found in the research files or in the site's campus location data. Listed here so the lead is not lost; a location must be documented before it can be pinned.",
+        citation: "Beyond Avalon research notes (status check 2026-10-02)."
+      },
+      {
+        name: "Ben Graves Drive — reported ~60 grave anomalies",
+        status: "Reported, unverified — not plotted",
+        summary:
+          "An initial GPR survey reported anomalies near the north entrance of campus that fit the pattern of graves, but a subsequent survey did NOT replicate the results, and a September 2026 assessment reports no grave-pattern anomalies near the known cemetery. The \"approximately 60 possible grave anomalies south of campus along Ben Graves Drive\" figure could not be located in a survey report. This project does not pin unverified anomalies to the map.",
+        citation:
+          "Beyond Avalon research notes; UAH Campus Map page (\"Landscape, burial, and selective preservation\"), which records the corrected, unreplicated anomaly set."
+      }
+    ]
+  };
+})();
