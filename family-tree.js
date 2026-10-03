@@ -1,9 +1,12 @@
 /*
-  Beyond Avalon — Jones core family tree renderer.
-  Reads window.FAMILY_TREE_DATA ({meta, nodes, links}) and draws a generational
-  tree with d3: manual slot layout, pan/zoom, click-to-inspect detail panel,
-  confidence-styled links (same vocabulary as the FAN graph), search, and
-  toggles for uncertain links and the manumitted-individuals cluster.
+  Beyond Avalon — Jones core family tree renderer (v2).
+  Left-to-right generational layout: earliest generation at left, descendants
+  flow right. Manual slot layout, pan/zoom, click-to-inspect detail panel,
+  collapsible branches, confidence-styled links (same vocabulary as the FAN
+  graph), search, and toggles for uncertain links and the manumitted-
+  individuals cluster.
+
+  DATA (window.FAMILY_TREE_DATA) is read-only here — presentation only.
 */
 (function () {
   "use strict";
@@ -16,6 +19,7 @@
     return;
   }
 
+  // ---- Style vocabularies (same as FAN graph; unchanged) ----
   var GROUP_STYLE = {
     jones:            { fill: "#F3EDE2", stroke: "#8A3A22", label: "Jones line" },
     spouse:           { fill: "#ffffff", stroke: "#33513E", label: "Married into the Jones line" },
@@ -37,8 +41,50 @@
   var nodeById = {};
   nodes.forEach(function (n) { nodeById[n.id] = n; });
 
-  // ---- Manual generational slot layout ----
-  // Each generation is an ordered list of units; a unit is one person or a couple.
+  // ---- Relationship indexes ----
+  var parentsOf = {}, childrenOf = {}, spouseOf = {};
+  DATA.links.forEach(function (e) {
+    if (e.relationship === "parent_of") {
+      (parentsOf[e.target] = parentsOf[e.target] || []).push(e.source);
+      (childrenOf[e.source] = childrenOf[e.source] || []).push(e.target);
+    } else if (e.relationship === "spouse_of") {
+      spouseOf[e.source] = e.target; spouseOf[e.target] = e.source;
+    }
+  });
+
+  // ---- Collapse state ----
+  var collapsed = {};
+  var hiddenSet = {};
+  function computeHidden() {
+    hiddenSet = {};
+    nodes.forEach(function (n) {
+      var seen = {}, stack = (parentsOf[n.id] || []).slice(), hide = false;
+      while (stack.length && !hide) {
+        var p = stack.pop();
+        if (seen[p]) continue; seen[p] = true;
+        if (collapsed[p]) { hide = true; break; }
+        (parentsOf[p] || []).forEach(function (g) { stack.push(g); });
+      }
+      if (hide) hiddenSet[n.id] = true;
+    });
+    // The Bedford ghost follows the Madison Lewellen.
+    if (hiddenSet["lewellen-jones"]) hiddenSet["lewellen-bedford-ghost"] = true;
+  }
+  function isHidden(id) { return !!hiddenSet[id]; }
+  function expandAncestors(id) {
+    var seen = {}, stack = (parentsOf[id] || []).slice(), changed = false;
+    while (stack.length) {
+      var p = stack.pop();
+      if (seen[p]) continue; seen[p] = true;
+      if (collapsed[p]) { delete collapsed[p]; changed = true; }
+      (parentsOf[p] || []).forEach(function (g) { stack.push(g); });
+    }
+    return changed;
+  }
+
+  // ---- Manual left-to-right slot layout ----
+  // Generations are columns (left = earliest); units stack vertically.
+  // A unit is one person or a married couple.
   var GEN = [
     [["john-jones-sr"], ["frances-barber"], ["nelson-anderson"], ["frances-jackson-anderson"]],
     [["lewellen-jones", "mary-anderson-jones"]],
@@ -64,72 +110,155 @@
      ["john-haywood-donnell"], ["robert-smith-donnell"], ["maria-louisa-donnell"],
      ["susan-tanner-donnell"]]
   ];
-  var SLOT_W = 196, ROW_H = 168, BOX_W = 176, BOX_H = 62;
+  var MARGIN_X = 40, MARGIN_TOP = 48;
+  var COL_W = 250, ROW_H = 124, BOX_W = 210, BOX_H = 64;
+  // Vertical routing channels in the gaps between generation columns.
+  var boxL = function (g) { return MARGIN_X + g * COL_W + (COL_W - BOX_W) / 2; };
+  var boxR = function (g) { return boxL(g) + BOX_W; };
+  var CH_JNS   = (boxR(2) + boxL(3)) / 2;          // 790 — John N.S. manumission links
+  var CH_APJ   = (boxR(3) + boxL(4)) / 2;          // 1040 — Alexander P. manumission links
+  var CH_GAP01 = (boxR(0) + boxL(1)) / 2;          // 290 — left-side channel
+  var CH_GHOST = CH_GAP01 - 8;                     // ghost safeguard route
+  var CH_LWZ   = CH_GAP01 + 8;                     // Lewellen→Elizabeth hypothesis route
+  var CLUSTER_IDS = ["elizabeth-enslaved", "evelina-enslaved", "ann-enslaved", "shandy-wesley-jones"];
+  var GHOST_ID = "lewellen-bedford-ghost";
 
-  var cursor, gi, ui, unit, id;
-  var mariaUnitX = 0;
-  for (gi = 0; gi < GEN.length; gi++) {
-    // Generation 4 (Donnell children) is centered under the Maria/JWS couple.
-    if (gi === 4) {
-      var totalW = GEN[gi].length * SLOT_W;
-      cursor = mariaUnitX - totalW / 2;
-    } else {
-      cursor = 0;
-    }
-    for (ui = 0; ui < GEN[gi].length; ui++) {
-      unit = GEN[gi][ui];
-      for (var k = 0; k < unit.length; k++) {
-        id = unit[k];
-        if (!nodeById[id]) { console.warn("Family tree: unknown node id " + id); continue; }
-        nodeById[id].x = cursor + SLOT_W / 2;
-        nodeById[id].y = gi * ROW_H + 60;
-        nodeById[id].gen = gi;
-        cursor += SLOT_W;
+  var treeW = 0, treeH = 0;
+  function layout() {
+    computeHidden();
+    var gi, ui, k, id, unit;
+    for (gi = 0; gi < 4; gi++) {
+      var cursor = MARGIN_TOP;
+      for (ui = 0; ui < GEN[gi].length; ui++) {
+        unit = GEN[gi][ui];
+        for (k = 0; k < unit.length; k++) {
+          id = unit[k];
+          if (!nodeById[id]) { console.warn("Family tree: unknown node id " + id); continue; }
+          if (isHidden(id)) continue;
+          nodeById[id].x = MARGIN_X + gi * COL_W + COL_W / 2;
+          nodeById[id].y = cursor + ROW_H / 2;
+          nodeById[id].gen = gi;
+          cursor += ROW_H;
+        }
       }
-      if (gi === 3 && unit[0] === "maria-louisa-jones") mariaUnitX = cursor - SLOT_W; // couple center
     }
+    // Generation 4 (Donnell children): top-aligned column.
+    var cursor4 = MARGIN_TOP;
+    for (ui = 0; ui < GEN[4].length; ui++) {
+      unit = GEN[4][ui];
+      for (k = 0; k < unit.length; k++) {
+        id = unit[k];
+        if (!nodeById[id] || isHidden(id)) continue;
+        nodeById[id].x = MARGIN_X + 4 * COL_W + COL_W / 2;
+        nodeById[id].y = cursor4 + ROW_H / 2;
+        nodeById[id].gen = 4;
+        cursor4 += ROW_H;
+      }
+    }
+    // Ghost node: directly below the Lewellen couple; connector routed via the
+    // left channel so it never crosses Mary's box.
+    var lew = nodeById["lewellen-jones"], mary = nodeById["mary-anderson-jones"],
+        gh = nodeById[GHOST_ID];
+    var refY = isHidden(mary.id) ? lew.y : mary.y;
+    gh.x = lew.x;
+    gh.y = refY + ROW_H;
+    gh.gen = 1; gh.cluster = true;
+    // Manumitted cluster: horizontal row below everything, centered on gen-2.
+    var maxY = MARGIN_TOP;
+    nodes.forEach(function (n) {
+      if (isHidden(n.id) || n.id === GHOST_ID || CLUSTER_IDS.indexOf(n.id) !== -1) return;
+      if (typeof n.y === "number" && n.y > maxY) maxY = n.y;
+    });
+    if (!isHidden(GHOST_ID) && gh.y > maxY) maxY = gh.y;
+    var cy = maxY + 150;
+    var gap = 28, totalW = CLUSTER_IDS.length * BOX_W + (CLUSTER_IDS.length - 1) * gap;
+    var startX = (MARGIN_X + 2 * COL_W + COL_W / 2) - totalW / 2;
+    CLUSTER_IDS.forEach(function (cid, i) {
+      var n = nodeById[cid];
+      n.x = startX + i * (BOX_W + gap) + BOX_W / 2;
+      n.y = cy; n.cluster = true; n.gen = "cluster";
+    });
+    treeW = MARGIN_X * 2 + 5 * COL_W;
+    treeH = cy + BOX_H / 2 + 90;
   }
 
-  // Manumitted cluster: vertical stack to the right of the tree, near generations 2-3.
-  var clusterIds = ["elizabeth-enslaved", "evelina-enslaved", "ann-enslaved", "shandy-wesley-jones"];
-  var maxX = d3.max(nodes, function (n) { return n.x || 0; });
-  clusterIds.forEach(function (cid, i) {
-    nodeById[cid].x = maxX + 320;
-    nodeById[cid].y = 2 * ROW_H + 60 + i * 96;
-    nodeById[cid].cluster = true;
-  });
-  // Ghost node: left of Lewellen.
-  nodeById["lewellen-bedford-ghost"].x = -300;
-  nodeById["lewellen-bedford-ghost"].y = 1 * ROW_H + 60;
-  nodeById["lewellen-bedford-ghost"].cluster = true;
-
-  // Normalize so min x >= 60.
-  var minX = d3.min(nodes, function (n) { return n.x; });
-  nodes.forEach(function (n) { n.x = n.x - minX + 60; });
-  var treeW = d3.max(nodes, function (n) { return n.x; }) + 160;
-  var treeH = 4 * ROW_H + 60 + 120;
-
-  // Spouse map from S-links.
-  var spouseOf = {};
-  DATA.links.forEach(function (e) {
-    if (e.relationship === "spouse_of") { spouseOf[e.source] = e.target; spouseOf[e.target] = e.source; }
-  });
-
-  function coupleMid(a, b) { return { x: (a.x + b.x) / 2, y: a.y }; }
-
-  function elbowPath(x1, y1, x2, y2) {
-    var my = (y1 + y2) / 2;
-    return "M" + x1 + "," + (y1 + BOX_H / 2) +
-           "V" + my + "H" + x2 + "V" + (y2 - BOX_H / 2);
+  // ---- Orthogonal link paths ----
+  function elbowH(x1, y1, x2, y2) {           // horizontal-first (parent → child)
+    if (Math.abs(y1 - y2) < 1) return "M" + x1 + "," + y1 + "H" + x2;
+    if (Math.abs(x1 - x2) < 1) return "M" + x1 + "," + y1 + "V" + y2;
+    var mx = (x1 + x2) / 2;
+    return "M" + x1 + "," + y1 + "H" + mx + "V" + y2 + "H" + x2;
   }
-  function curvePath(x1, y1, x2, y2, bend) {
-    var mx = (x1 + x2) / 2 + (bend || 0);
-    return "M" + x1 + "," + y1 + "Q" + mx + "," + ((y1 + y2) / 2) + " " + x2 + "," + y2;
+  function chanRoute(x1, y1, x2, y2, ch) {    // via a vertical routing channel
+    var my = y2 - 56;
+    return "M" + x1 + "," + y1 + "H" + ch + "V" + my + "H" + x2 + "V" + y2;
+  }
+  function bow(x1, y1, x2, y2, lift) {        // short arc between neighbors
+    var mx = (x1 + x2) / 2;
+    return "M" + x1 + "," + y1 + "Q" + mx + "," + (Math.min(y1, y2) - (lift || 26)) + " " + x2 + "," + y2;
+  }
+  function linkKey(e) { return e.source + "|" + e.target + "|" + e.relationship; }
+
+  function computeDrawLinks() {
+    var out = [];
+    // parent_of: merge two-parent couples into one elbow.
+    var byTarget = {};
+    DATA.links.forEach(function (e) {
+      if (e.relationship !== "parent_of") return;
+      if (isHidden(e.source) || isHidden(e.target)) return;
+      (byTarget[e.target] = byTarget[e.target] || []).push(e);
+    });
+    Object.keys(byTarget).forEach(function (t) {
+      var arr = byTarget[t], child = nodeById[t];
+      var x2 = child.x - BOX_W / 2, y2 = child.y;
+      if (arr.length === 2 && spouseOf[arr[0].source] === arr[1].source) {
+        var a = nodeById[arr[0].source], b = nodeById[arr[1].source];
+        out.push({ key: linkKey(arr[0]) + "+couple", kind: "elbow",
+          d: elbowH(a.x + BOX_W / 2, (a.y + b.y) / 2, x2, y2),
+          confidence: arr[0].confidence, tag: "", data: arr[0] });
+      } else {
+        arr.forEach(function (e) {
+          var p = nodeById[e.source];
+          out.push({ key: linkKey(e), kind: "elbow",
+            d: elbowH(p.x + BOX_W / 2, p.y, x2, y2),
+            confidence: e.confidence, tag: "", data: e });
+        });
+      }
+    });
+    DATA.links.forEach(function (e) {
+      if (isHidden(e.source) || isHidden(e.target)) return;
+      var s = nodeById[e.source], t = nodeById[e.target];
+      if (e.relationship === "spouse_of") {
+        var top = s.y < t.y ? s : t, bot = s.y < t.y ? t : s, x = s.x;
+        out.push({ key: linkKey(e), kind: "spouse",
+          d: "M" + (x - 5) + "," + (top.y + BOX_H / 2 + 3) + "V" + (bot.y - BOX_H / 2 - 3) +
+             "M" + (x + 5) + "," + (top.y + BOX_H / 2 + 3) + "V" + (bot.y - BOX_H / 2 - 3),
+          confidence: e.confidence, tag: "", data: e });
+      } else if (e.relationship === "manumitted_by") {
+        var ch = (s.id === "john-n-s-jones") ? CH_JNS : CH_APJ;
+        out.push({ key: linkKey(e), kind: "chan",
+          d: chanRoute(s.x, s.y + BOX_H / 2, t.x, t.y - BOX_H / 2, ch),
+          confidence: e.confidence, tag: "manumitted", data: e });
+      } else if (e.relationship === "associated_with") {
+        var dd = (t.cluster && s.cluster)
+          ? bow(s.x + BOX_W / 2, s.y, t.x - BOX_W / 2, t.y, 30)
+          : chanRoute(s.x, s.y + BOX_H / 2, t.x, t.y - BOX_H / 2, CH_LWZ);
+        out.push({ key: linkKey(e), kind: "chan",
+          d: dd, confidence: e.confidence, tag: "uncertain", data: e });
+      } else if (e.relationship === "not_the_same_person") {
+        var lew = nodeById["lewellen-jones"], gh = nodeById[GHOST_ID];
+        out.push({ key: linkKey(e), kind: "chan",
+          d: "M" + (lew.x - BOX_W / 2) + "," + lew.y + "H" + CH_GHOST +
+             "V" + gh.y + "H" + (gh.x - BOX_W / 2),
+          confidence: e.confidence, tag: "safeguard", data: e });
+      }
+    });
+    return out;
   }
 
   // ---- SVG ----
   var width = wrap.clientWidth || 1100;
-  var height = Math.max(600, Math.min(780, Math.round(width * 0.62)));
+  var height = Math.max(Math.round(window.innerHeight * 0.72), 560);
   var svg = d3.select(wrap).append("svg")
     .attr("width", "100%").attr("height", height)
     .attr("role", "img")
@@ -144,72 +273,29 @@
     var tx = (width - treeW * s) / 2, ty = (height - treeH * s) / 2;
     svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(s));
   }
+  function focusNode(d, scale) {
+    var s = scale || 1;
+    var tx = width / 2 - d.x * s, ty = height / 2 - d.y * s;
+    svg.call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(s));
+  }
 
-  // ---- Links ----
-  // Group parent_of links by target to merge two-parent couples into one elbow.
-  var parentLinks = DATA.links.filter(function (e) { return e.relationship === "parent_of"; });
-  var byTarget = {};
-  parentLinks.forEach(function (e) {
-    (byTarget[e.target] = byTarget[e.target] || []).push(e);
-  });
-  var drawLinks = [];
-  Object.keys(byTarget).forEach(function (t) {
-    var arr = byTarget[t];
-    if (arr.length === 2 && spouseOf[arr[0].source] === arr[1].source) {
-      var a = nodeById[arr[0].source], b = nodeById[arr[1].source];
-      var mid = coupleMid(a, b);
-      drawLinks.push({ x1: mid.x, y1: mid.y, x2: nodeById[t].x, y2: nodeById[t].y,
-        confidence: arr[0].confidence, kind: "elbow", data: arr[0] });
-    } else {
-      arr.forEach(function (e) {
-        drawLinks.push({ x1: nodeById[e.source].x, y1: nodeById[e.source].y,
-          x2: nodeById[e.target].x, y2: nodeById[e.target].y,
-          confidence: e.confidence, kind: "elbow", data: e });
-      });
-    }
-  });
-  DATA.links.forEach(function (e) {
-    if (e.relationship === "spouse_of") {
-      var a = nodeById[e.source], b = nodeById[e.target];
-      drawLinks.push({ x1: a.x, y1: a.y, x2: b.x, y2: b.y, confidence: e.confidence, kind: "spouse", data: e });
-    } else if (e.relationship === "manumitted_by") {
-      var s = nodeById[e.source], t = nodeById[e.target];
-      drawLinks.push({ x1: s.x + BOX_W / 2, y1: s.y, x2: t.x - BOX_W / 2, y2: t.y,
-        confidence: e.confidence, kind: "curve", data: e, tag: "manumitted" });
-    } else if (e.relationship === "associated_with") {
-      var s2 = nodeById[e.source], t2 = nodeById[e.target];
-      drawLinks.push({ x1: s2.x, y1: s2.y, x2: t2.x, y2: t2.y,
-        confidence: e.confidence, kind: "curve", data: e, tag: "uncertain" });
-    } else if (e.relationship === "not_the_same_person") {
-      var s3 = nodeById[e.source], t3 = nodeById[e.target];
-      drawLinks.push({ x1: s3.x - BOX_W / 2, y1: s3.y, x2: t3.x + BOX_W / 2, y2: t3.y,
-        confidence: e.confidence, kind: "curve", data: e, tag: "safeguard" });
-    }
-  });
-
+  // ---- Links layer (below nodes) ----
   var linkLayer = g.append("g").attr("class", "t-links");
-  var linkSel = linkLayer.selectAll("path").data(drawLinks).enter().append("path")
-    .attr("d", function (d) {
-      if (d.kind === "elbow") return elbowPath(d.x1, d.y1, d.x2, d.y2);
-      if (d.kind === "spouse") {
-        return "M" + (d.x1 + BOX_W / 2 + 4) + "," + (d.y1 - 3) +
-               "L" + (d.x2 - BOX_W / 2 - 4) + "," + (d.y2 - 3) +
-               "M" + (d.x1 + BOX_W / 2 + 4) + "," + (d.y1 + 3) +
-               "L" + (d.x2 - BOX_W / 2 - 4) + "," + (d.y2 + 3);
-      }
-      return curvePath(d.x1, d.y1, d.x2, d.y2, 60);
-    })
-    .attr("stroke", function (d) { return CONF_STYLE[d.confidence].color; })
-    .attr("stroke-width", function (d) { return d.kind === "spouse" ? 1.2 : CONF_STYLE[d.confidence].width; })
-    .attr("fill", "none")
-    .attr("stroke-dasharray", function (d) { return CONF_STYLE[d.confidence].dash; })
-    .attr("data-conf", function (d) { return d.confidence; })
-    .attr("data-tag", function (d) { return d.tag || ""; })
-    .append("title").text(function (d) {
+  function paintLink(sel) {
+    sel.attr("fill", "none")
+      .attr("pointer-events", "none")
+      .attr("stroke", function (d) { return CONF_STYLE[d.confidence].color; })
+      .attr("stroke-width", function (d) { return d.kind === "spouse" ? 1.2 : CONF_STYLE[d.confidence].width; })
+      .attr("stroke-dasharray", function (d) { return CONF_STYLE[d.confidence].dash; })
+      .attr("data-conf", function (d) { return d.confidence; })
+      .attr("data-tag", function (d) { return d.tag || ""; });
+    sel.append("title").text(function (d) {
       var e = d.data;
       return nodeById[e.source].label + " —" + e.relationship.replace(/_/g, " ") + "→ " +
              nodeById[e.target].label + " (" + e.confidence + ")";
     });
+    return sel;
+  }
 
   // ---- Nodes ----
   function wrapLabel(label) {
@@ -222,12 +308,11 @@
     return lines.slice(0, 2);
   }
   var nodeLayer = g.append("g").attr("class", "t-nodes");
-  var nodeSel = nodeLayer.selectAll("g").data(nodes).enter().append("g")
+  var nodeSel = nodeLayer.selectAll("g.t-node").data(nodes).enter().append("g")
     .attr("class", "t-node")
-    .attr("transform", function (d) { return "translate(" + (d.x - BOX_W / 2) + "," + (d.y - BOX_H / 2) + ")"; })
     .attr("data-id", function (d) { return d.id; })
-    .attr("data-tag", function (d) { return d.cluster ? "manumitted" : ""; })
     .style("cursor", "pointer")
+    .attr("pointer-events", "all")
     .on("click", function (event, d) { showDetail(d); highlight(d); });
 
   nodeSel.append("rect")
@@ -255,14 +340,37 @@
         .attr("fill", CONF_STYLE[d.confidence].color).attr("opacity", 0.85)
         .append("title").text(CONF_STYLE[d.confidence].label);
     }
+    // Collapse chevron: toggles this person's descendant branch.
+    var hasKids = childrenOf[d.id] && childrenOf[d.id].length > 0;
+    var chev = s.append("g").attr("class", "chev")
+      .attr("transform", "translate(" + (BOX_W + 2) + "," + (BOX_H / 2) + ")")
+      .style("display", hasKids ? null : "none")
+      .attr("pointer-events", "all");
+    chev.append("circle").attr("r", 11)
+      .attr("fill", "#fffdf8").attr("stroke", "#8A3A22").attr("stroke-width", 1.5);
+    chev.append("text").attr("text-anchor", "middle").attr("dy", "0.35em")
+      .attr("font-size", "13px").attr("font-weight", "700").attr("fill", "#8A3A22")
+      .text("▾");
+    chev.on("click", function (event) {
+      event.stopPropagation();
+      collapsed[d.id] = !collapsed[d.id];
+      refresh(true);
+    });
   });
 
   // ---- Detail panel ----
-  var detail = document.getElementById("tree-detail");
+  var detailBody = document.getElementById("tree-detail-body");
+  var detailClose = document.getElementById("tree-detail-close");
   function confBadge(c) { return '<span class="conf conf-' + c + '">' + c.replace(/_/g, " ") + "</span>"; }
   function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function detailPlaceholder() {
+    if (!detailBody) return;
+    detailBody.innerHTML = "<h3>Person details</h3>" +
+      '<p style="color:var(--color-text-muted); font-size:var(--text-sm);">' +
+      "Click any person in the tree to see dates, confidence levels, and sources.</p>";
+  }
   function showDetail(d) {
-    if (!detail) return;
+    if (!detailBody) return;
     var rels = DATA.links.filter(function (e) { return e.source === d.id || e.target === d.id; });
     var relHtml = rels.map(function (e) {
       var other = e.source === d.id ? nodeById[e.target] : nodeById[e.source];
@@ -271,7 +379,7 @@
         esc(e.relationship.replace(/_/g, " ")) + (e.date ? " · " + esc(e.date) : "") + " " +
         confBadge(e.confidence) + "</span></li>";
     }).join("");
-    detail.innerHTML =
+    detailBody.innerHTML =
       '<h3>' + esc(d.label) + "</h3>" +
       '<p class="detail-type">' + esc(GROUP_STYLE[d.group].label) + " " + confBadge(d.confidence) + "</p>" +
       (d.dates ? "<p><strong>" + esc(d.dates) + "</strong></p>" : "") +
@@ -283,6 +391,10 @@
     nodeSel.select("rect").attr("stroke-width", function (n) { return n.group === "jones" ? 2.2 : 1.6; });
     d3.select(nodeSel.nodes()[nodes.indexOf(d)]).select("rect").attr("stroke-width", 3.5);
   }
+  if (detailClose) detailClose.addEventListener("click", function () {
+    detailPlaceholder();
+    nodeSel.select("rect").attr("stroke-width", function (n) { return n.group === "jones" ? 2.2 : 1.6; });
+  });
 
   // ---- Controls ----
   function applyToggles() {
@@ -294,8 +406,9 @@
         if ((d.confidence === "lead" || d.confidence === "unresolved") && !showUncertain) return "none";
         return null;
       });
-    nodeLayer.selectAll("g")
+    nodeLayer.selectAll("g.t-node")
       .style("display", function (d) {
+        if (isHidden(d.id)) return "none";
         if (d.cluster && d.group === "manumitted" && !showManumitted) return "none";
         return null;
       });
@@ -314,6 +427,7 @@
   var searchInput = document.getElementById("tree-search");
   var resultsBox = document.getElementById("tree-search-results");
   function centerOn(d) {
+    if (expandAncestors(d.id)) refresh(true);
     var s = 1.1;
     var tx = width / 2 - d.x * s, ty = height / 2 - d.y * s;
     svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(s));
@@ -344,7 +458,26 @@
     });
   }
 
-  // Default detail: Lewellen.
-  showDetail(nodeById["lewellen-jones"]);
-  fitView();
+  // ---- Refresh: re-layout + reposition + rejoin links ----
+  function refresh(animate) {
+    layout();
+    var drawLinks = computeDrawLinks();
+    var nt = animate === false ? nodeSel : nodeSel.transition().duration(350);
+    nodeSel.style("display", function (d) { return isHidden(d.id) ? "none" : null; });
+    nt.attr("transform", function (d) { return "translate(" + (d.x - BOX_W / 2) + "," + (d.y - BOX_H / 2) + ")"; });
+    nodeSel.select(".chev text").text(function (d) { return collapsed[d.id] ? "▸" : "▾"; });
+    var paths = linkLayer.selectAll("path").data(drawLinks, function (d) { return d.key; });
+    paths.exit().remove();
+    var enter = paintLink(paths.enter().append("path"));
+    paths = enter.merge(paths);
+    if (animate === false) paths.attr("d", function (d) { return d.d; });
+    else paths.transition().duration(350).attr("d", function (d) { return d.d; });
+    applyToggles();
+  }
+
+  // ---- Init: Lewellen centered at readable scale; Reset shows the full tree ----
+  refresh(false);
+  var lew0 = nodeById["lewellen-jones"];
+  showDetail(lew0); highlight(lew0);
+  focusNode(lew0, 1);
 })();

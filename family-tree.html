@@ -26,7 +26,14 @@
   #fan-search-results .no-hit { padding: var(--space-2) var(--space-3); color: var(--color-text-muted); }
   #fan-filters { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
   #fan-filters label { display: inline-flex; align-items: center; gap: var(--space-1); font-size: var(--text-sm); cursor: pointer; }
-  #family-tree { border: 1px solid var(--color-border); border-radius: 10px; background: #faf9f6; overflow: hidden; cursor: grab; min-height: 420px; }
+  #family-tree { border: 1px solid var(--color-border); border-radius: 10px; background: #faf9f6; overflow: hidden; cursor: grab; min-height: 72vh; }
+  main .hero { padding-top: var(--space-8); }
+  main, main section { scroll-margin-top: 92px; }
+  #tree-detail { position: relative; }
+  #tree-detail-close { position: absolute; top: 10px; right: 12px; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); font-size: 18px; line-height: 1; cursor: pointer; }
+  #tree-detail-close:hover { background: var(--color-surface-2); }
+  .t-node { pointer-events: all; }
+  .t-links path { pointer-events: none; }
   #family-tree:active { cursor: grabbing; }
   #family-tree svg text { font-family: "Source Sans 3", sans-serif; }
   .fan-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-4); }
@@ -188,7 +195,7 @@
     <div class="container">
       <span class="eyebrow">Interactive research graph</span>
       <h1>Jones Family Tree</h1>
-      <p class="lede">The Jones core family, generation by generation: Capt. Lewellen Jones and Mary Anderson (married 22 Oct 1792, Louisa Co., VA) through the John N.S. Jones and Alexander P. Jones lines, with the Haywood, Perkins, and Donnell marriages that connect them. Elizabeth, Evelina, Ann, and Shandy — manumitted by legislative act in December 1820 — appear as named individuals, not footnotes. Scroll to zoom, drag to pan, click any person for dates, sources, and notes.</p>
+      <p class="lede">The Jones core family, generation by generation: Capt. Lewellen Jones and Mary Anderson (married 22 Oct 1792, Louisa Co., VA) through the John N.S. Jones and Alexander P. Jones lines, with the Haywood, Perkins, and Donnell marriages that connect them. Elizabeth, Evelina, Ann, and Shandy — manumitted by legislative act in December 1820 — appear as named individuals, not footnotes. Generations read left to right, earliest first. Scroll to zoom, drag to pan, click any person for dates, sources, and notes. Click the ▾ badge on a person to collapse or expand their branch.</p>
       <p style="color:var(--color-text-muted); font-size:var(--text-sm); max-width:70ch;">
         <strong>Reading rule:</strong> every link carries a confidence level. <em>confirmed_primary</em> (read from the manuscript) and <em>confirmed_secondary</em> are citable; <em>lead</em> and <em>unresolved</em> are hypotheses, not facts — never display them as fact. The red dotted <em>do_not_merge</em> link marks the Bedford County Lewellen Jones as a different person from the Madison County Avalon founder. Where the record is thin, the tree says so.
       </p>
@@ -226,6 +233,7 @@
               <li><span class="swatch" style="background:#8A7C6C;"></span> Grandparent generation</li>
               <li><span class="swatch" style="background:#b07a3f;"></span> Descendant (Perkins / Donnell)</li>
               <li><span class="swatch" style="background:#a31621;"></span> Manumitted Dec 1820 — named individual</li>
+              <li><span class="edge-swatch" style="text-align:center; font-weight:700; color:#8A3A22;">▾</span> click to collapse / expand a branch</li>
             </ul>
           </div>
           <div>
@@ -240,8 +248,11 @@
         </div>
       </div>
       <aside id="tree-detail" aria-label="Person details">
-        <h3>Person details</h3>
-        <p style="color:var(--color-text-muted); font-size:var(--text-sm);">Click any person in the tree to see dates, confidence levels, and sources.</p>
+        <button id="tree-detail-close" type="button" aria-label="Clear selection">×</button>
+        <div id="tree-detail-body">
+          <h3>Person details</h3>
+          <p style="color:var(--color-text-muted); font-size:var(--text-sm);">Click any person in the tree to see dates, confidence levels, and sources.</p>
+        </div>
       </aside>
     </div>
 
