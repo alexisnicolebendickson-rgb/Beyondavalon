@@ -62,6 +62,17 @@ window.BLACK_JONES_TREE_DATA = {
       ]
     },
     {
+      "id": "jns-anchor",
+      "label": "John N. S. Jones",
+      "dates": "d. Nov 17, 1853 (tombstone; conflict unresolved)",
+      "group": "anchor",
+      "confidence": "confirmed_secondary",
+      "notes": "John Nelson Spotswood Jones, son of Lewellen Jones; married Ann Eliza Haywood. With Alexander P. Jones he manumitted Elizabeth, Ann, Evelina, and Shandy under the 1820 act. Hubbs's descendant interviews name him as Shandy's probable father. Death date unresolved (tombstone Nov 17, 1853 vs. 1854/1855/1865\u201367). Full profile on the core tree.",
+      "db1_rows": [
+        734
+      ]
+    },
+    {
       "id": "nelson-anderson-anchor",
       "label": "Col. Nelson Anderson",
       "dates": "1735 – 1819/20",
@@ -1370,11 +1381,44 @@ window.BLACK_JONES_TREE_DATA = {
       "target": "shandy-wesley-jones",
       "relationship": "father_of",
       "confidence": "confirmed_secondary",
-      "notes": "Researcher determination 2026-10-03 (pretty certain): Turner Moore \u2014 the father Columbus Jones named in his Freedman's Bank register No. 29 (d. March 1867) \u2014 was Shandy's father. The link is inferential: no document names Shandy's father directly; it rests on the manumission grouping, the census trail, and Columbus's register. Shandy and Columbus are half-brothers (shared father; Elizabeth \u2260 Eliza Jones). DB1 row 2317.",
+      "notes": "Researcher determination 2026-10-03 (pretty certain): Turner Moore \u2014 the father Columbus Jones named in his Freedman's Bank register No. 29 (d. March 1867) \u2014 was Shandy's father. The link is inferential: no document names Shandy's father directly; it rests on the manumission grouping, the census trail, and Columbus's register. Shandy and Columbus are half-brothers (shared father; Elizabeth \u2260 Eliza Jones). DB1 row 2317. Turner Moore is the father per family records (social/legal father). See C17\u2013C19 for the separate biological-father candidacy layer (DB1 row 2318).",
       "db1_row": [
         534,
         1718,
         2317
+      ]
+    },
+    {
+      "id": "C17",
+      "source": "lewellen-anchor",
+      "target": "shandy-wesley-jones",
+      "relationship": "father_of",
+      "confidence": "lead",
+      "notes": "Researcher assessment 2026-10-03: Lewellen Jones is a candidate BIOLOGICAL father of Shandy Wesley Jones \u2014 one of three Jones men (Lewellen, Alexander P., John N.S.); not proven; no ranking among candidates. The Jones core tree carries a tree-sourced Lewellen paternity claim as a dashed lead. Turner Moore is the father per family records (see C16); this link concerns biological paternity only. DB1 row 2318.",
+      "db1_row": [
+        2318
+      ]
+    },
+    {
+      "id": "C18",
+      "source": "apj-anchor",
+      "target": "shandy-wesley-jones",
+      "relationship": "father_of",
+      "confidence": "lead",
+      "notes": "Researcher assessment 2026-10-03: Alexander P. Jones is a candidate BIOLOGICAL father of Shandy Wesley Jones \u2014 one of three Jones men (Lewellen, Alexander P., John N.S.); not proven; no ranking among candidates. The Shandy biographical dossier names A.P. Jones as a possible father, not proven; he was a manumitter under the 1820 act. Turner Moore is the father per family records (see C16); this link concerns biological paternity only. DB1 row 2318.",
+      "db1_row": [
+        2318
+      ]
+    },
+    {
+      "id": "C19",
+      "source": "jns-anchor",
+      "target": "shandy-wesley-jones",
+      "relationship": "father_of",
+      "confidence": "lead",
+      "notes": "Researcher assessment 2026-10-03: John N.S. Jones is a candidate BIOLOGICAL father of Shandy Wesley Jones \u2014 one of three Jones men (Lewellen, Alexander P., John N.S.); not proven; no ranking among candidates. Hubbs's descendant interviews name him as the probable father; he was a manumitter under the 1820 act. Turner Moore is the father per family records (see C16); this link concerns biological paternity only. DB1 row 2318.",
+      "db1_row": [
+        2318
       ]
     },
     {
