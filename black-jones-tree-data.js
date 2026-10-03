@@ -1354,11 +1354,27 @@ window.BLACK_JONES_TREE_DATA = {
       "id": "C15",
       "source": "elizabeth-1820",
       "target": "shandy-wesley-jones",
-      "relationship": "associated_with",
-      "confidence": "lead",
-      "notes": "Scholarship describes her as Shandy's mother; other readings call it 'remote.' Unresolved.",
+      "relationship": "mother_of",
+      "confidence": "confirmed_secondary",
+      "notes": "Researcher determination 2026-10-03: Elizabeth (b. ~1780, manumitted Dec 11, 1820) was Shandy's mother \u2014 the act groups them, and Pinkard & Clark trace his line from her manumission. DB1 row 2317.",
       "db1_row": [
-        15
+        15,
+        159,
+        734,
+        2317
+      ]
+    },
+    {
+      "id": "C16",
+      "source": "turner-moore",
+      "target": "shandy-wesley-jones",
+      "relationship": "father_of",
+      "confidence": "confirmed_secondary",
+      "notes": "Researcher determination 2026-10-03 (pretty certain): Turner Moore \u2014 the father Columbus Jones named in his Freedman's Bank register No. 29 (d. March 1867) \u2014 was Shandy's father. The link is inferential: no document names Shandy's father directly; it rests on the manumission grouping, the census trail, and Columbus's register. Shandy and Columbus are half-brothers (shared father; Elizabeth \u2260 Eliza Jones). DB1 row 2317.",
+      "db1_row": [
+        534,
+        1718,
+        2317
       ]
     },
     {
