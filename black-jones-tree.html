@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Black Jones Family Tree — Beyond Avalon</title>
+<meta name="description" content="Interactive tree of the Black Joneses, freedpeople, and formerly enslaved people connected to the Jones network and the Avalon property: the 1805 deed twelve, the 1820 manumission, the Columbus and Reuben Jones Reconstruction family, the 1870 household cluster and 1880 traces, Plato Jones, and the people the record tried to forget. Every link carries a confidence level." />
+<meta name="google-site-verification" content="jhiERlPNpy3anJ0NUfWdMwd3_V0cvt4goJESA_m7bRA" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./base.css" />
+<link rel="stylesheet" href="./style.css" />
+<style>
+  .fan-controls { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: flex-end; margin: var(--space-4) 0; }
+  .fan-search-wrap { position: relative; min-width: 260px; }
+  .fan-search-wrap input { width: 100%; padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); border-radius: 6px; font: inherit; background: var(--color-bg); color: var(--color-text); }
+  #fan-search-results { position: absolute; z-index: 20; top: 100%; left: 0; right: 0; margin: 4px 0 0; padding: 0; list-style: none; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; box-shadow: var(--shadow-md); }
+  #tree-search-results { position: absolute; z-index: 20; top: 100%; left: 0; right: 0; margin: 4px 0 0; padding: 0; list-style: none; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; box-shadow: var(--shadow-md); }
+  #tree-search-results:empty { display: none; }
+  #fan-search-results li button { width: 100%; text-align: left; padding: var(--space-2) var(--space-3); background: none; border: 0; font: inherit; color: var(--color-text); cursor: pointer; }
+  #fan-search-results li button:hover { background: var(--color-surface-2); }
+  #fan-search-results .hit-type { color: var(--color-text-muted); font-size: var(--text-sm); }
+  #fan-search-results .no-hit { padding: var(--space-2) var(--space-3); color: var(--color-text-muted); }
+  #fan-filters { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+  #fan-filters label { display: inline-flex; align-items: center; gap: var(--space-1); font-size: var(--text-sm); cursor: pointer; }
+  #black-jones-tree { border: 1px solid var(--color-border); border-radius: 10px; background: #faf9f6; overflow: hidden; cursor: grab; min-height: 72vh; }
+  main .hero { padding-top: var(--space-8); }
+  main, main section { scroll-margin-top: 92px; }
+  #tree-detail { position: relative; }
+  #tree-detail-close { position: absolute; top: 10px; right: 12px; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); font-size: 18px; line-height: 1; cursor: pointer; }
+  #tree-detail-close:hover { background: var(--color-surface-2); }
+  .t-node { pointer-events: all; }
+  .t-links path { pointer-events: none; }
+  #black-jones-tree:active { cursor: grabbing; }
+  #black-jones-tree svg text { font-family: "Source Sans 3", sans-serif; }
+  .fan-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-4); }
+  @media (min-width: 1000px) { .fan-layout { grid-template-columns: 1fr 340px; } }
+  #fan-legend { display: flex; flex-wrap: wrap; gap: var(--space-5); padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border); border-radius: 10px; font-size: var(--text-sm); }
+  #fan-legend ul { list-style: none; margin: var(--space-1) 0 0; padding: 0; }
+  #fan-legend li { display: flex; align-items: center; gap: var(--space-2); margin-bottom: 4px; }
+  .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 50%; flex: none; }
+  .edge-swatch { display: inline-block; width: 26px; flex: none; }
+  #tree-detail { border: 1px solid var(--color-border); border-radius: 10px; padding: var(--space-4); background: var(--color-surface-1, var(--color-bg)); align-self: start; }
+  #tree-detail h3 { margin-top: 0; }
+  #tree-detail h4 { margin: var(--space-4) 0 var(--space-1); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-muted); }
+  #tree-detail .detail-type { color: var(--color-text-muted); font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+  #tree-detail .detail-edges { list-style: none; margin: var(--space-1) 0 0; padding: 0; max-height: 560px; overflow-y: auto; }
+  #tree-detail .detail-edges li { padding: var(--space-2) 0; border-top: 1px solid var(--color-border); font-size: var(--text-sm); }
+  #tree-detail .src { color: var(--color-text-muted); font-size: var(--text-xs, 0.8em); }
+  .conf { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: var(--text-xs, 0.78em); font-weight: 600; background: var(--color-surface-2); }
+  .conf-lead, .conf-unresolved { background: #f7e8c9; color: #7a4d0b; }
+  .conf-do_not_merge { background: #f5d7d7; color: #a31621; }
+  .conf-confirmed_primary { background: #dde7f0; color: #1d4e79; }
+  .conf-confirmed_secondary { background: #e2e8f0; color: #3d5a73; }
+</style>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238A3A22'/%3E%3Cpath d='M32 12c8 6 12 14 12 22 0 8-5 14-12 16-7-2-12-8-12-16 0-8 4-16 12-22z' fill='%23F3EDE2'/%3E%3Cline x1='32' y1='16' x2='32' y2='48' stroke='%238A3A22' stroke-width='2'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="./index.html#top" class="brand" aria-label="Beyond Avalon home">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+        <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M32 24c3 2 5 5 5 8M32 34c-3 2-5 5-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Beyond Avalon
+    </a>
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li class="has-dropdown">
+              <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Start Here</button>
+              <ul class="dropdown">
+                <li><a href="./index.html#start-here">30-Second Version</a></li>
+                <li><a href="./index.html#history">The History</a></li>
+                <li><a href="./index.html#timeline">Timeline</a></li>
+                <li><a href="./index.html#erasure">The Argument</a></li>
+                <li><a href="./index.html#registry">Names Registry</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">The Thesis</button>
+              <ul class="dropdown">
+                <li><a href="./archival-violence.html">Archival Violence</a></li>
+                <li><a href="./debt-labor.html">Debt &amp; Labor</a></li>
+                <li><a href="./eminent-domain.html">Eminent Domain</a></li>
+                <li><a href="./exploitation.html">Exploitation</a></li>
+                <li><a href="./leasing.html">Leasing</a></li>
+                <li><a href="./voyages.html">Voyages</a></li>
+                <li><a href="./scc.html">Shadow Court</a></li>
+                <li><a href="./philanthropy.html">Philanthropy</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">What UAH Knew</button>
+              <ul class="dropdown">
+                <li><a href="./institutional-knowledge.html">Institutional Knowledge</a></li>
+                <li><a href="./uah-knew.html">What UAH Knew</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Maps</button>
+              <ul class="dropdown">
+                <li><a href="./map.html">Plantations</a></li>
+                <li><a href="./uah-campus-map.html">UAH Campus Structures</a></li>
+                <li><a href="./glo-patents.html">GLO Patents</a></li>
+                <li><a href="./cemeteries.html">Cemeteries</a></li>
+                <li><a href="./convict-leasing-map.html">Convict-Leasing Geography</a></li>
+                <li><a href="./migration.html">Migration Path</a></li>
+                <li><a href="./avalon-boundary.html">Avalon Boundary</a></li>
+              </ul>
+            </li>
+            <li><a href="./people/index.html">People</a></li>
+            <li class="has-dropdown">
+              <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Data</button>
+              <ul class="dropdown">
+                <li><a href="./data.html">Open Data</a></li>
+                <li><a href="./findings.html">Recent Findings</a></li>
+                <li><a href="./fan-graph.html">FAN Graph</a></li>
+                <li><a href="./glossary.html">Glossary</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">About</button>
+              <ul class="dropdown">
+                <li><a href="./index.html#about">About</a></li>
+                <li><a href="./index.html#support">Support</a></li>
+                <li><a href="./index.html#contact">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="./index.html">Home</a>
+      <span class="mobile-menu-label" aria-hidden="true">Start Here</span>
+      <a href="./index.html#start-here">30-Second Version</a>
+      <a href="./index.html#history">The History</a>
+      <a href="./index.html#timeline">Timeline</a>
+      <a href="./index.html#erasure">The Argument</a>
+      <a href="./index.html#registry">Names Registry</a>
+      <span class="mobile-menu-label" aria-hidden="true">The Thesis</span>
+      <a href="./archival-violence.html">Archival Violence</a>
+      <a href="./debt-labor.html">Debt &amp; Labor</a>
+      <a href="./eminent-domain.html">Eminent Domain</a>
+      <a href="./exploitation.html">Exploitation</a>
+      <a href="./leasing.html">Leasing</a>
+      <a href="./voyages.html">Voyages</a>
+      <a href="./scc.html">Shadow Court</a>
+      <a href="./philanthropy.html">Philanthropy</a>
+      <span class="mobile-menu-label" aria-hidden="true">What UAH Knew</span>
+      <a href="./institutional-knowledge.html">Institutional Knowledge</a>
+      <a href="./uah-knew.html">What UAH Knew</a>
+      <span class="mobile-menu-label" aria-hidden="true">Maps</span>
+      <a href="./map.html">Plantations</a>
+      <a href="./uah-campus-map.html">UAH Campus Structures</a>
+      <a href="./glo-patents.html">GLO Patents</a>
+      <a href="./cemeteries.html">Cemeteries</a>
+      <a href="./convict-leasing-map.html">Convict-Leasing Geography</a>
+      <a href="./migration.html">Migration Path</a>
+      <a href="./avalon-boundary.html">Avalon Boundary</a>
+      <a href="./people/index.html">People</a>
+      <span class="mobile-menu-label" aria-hidden="true">Data</span>
+      <a href="./data.html">Open Data</a>
+      <a href="./findings.html">Recent Findings</a>
+      <a href="./fan-graph.html">FAN Graph</a>
+      <a href="./glossary.html">Glossary</a>
+      <span class="mobile-menu-label" aria-hidden="true">About</span>
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#support">Support</a>
+      <a href="./index.html#contact">Contact</a>
+    </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" style="padding-bottom: var(--space-6);">
+    <div class="container">
+      <span class="eyebrow">Interactive research graph</span>
+      <h1>Black Jones Family Tree</h1>
+      <p class="lede">The Black Joneses, freedpeople, and formerly enslaved people connected to the Jones network and the Avalon property: the twelve named in Lewellen Jones's 1805 deed of gift, the 1820 manumission, the Columbus and Reuben Jones Reconstruction family, Marshall and Nancy Jones, the 1870 household cluster and its 1880 traces, Plato Jones and the Haywood name. They appear here as named people — never as property, never as footnotes. The bands read left to right as thematic clusters, not generations. Scroll to zoom, drag to pan, click any person for dates, sources, and notes. Click the ▾ badge on a person to collapse or expand their branch.</p>
+      <p style="color:var(--color-text-muted); font-size:var(--text-sm); max-width:70ch;">
+        <strong>Reading rule:</strong> every link carries a confidence level. <em>confirmed_primary</em> (read from the manuscript) and <em>confirmed_secondary</em> are citable; <em>lead</em> and <em>unresolved</em> are hypotheses, not facts — never display them as fact. This tree is sparser and more lead-heavy than the white Jones tree, and that is correct: where the record is thin, the tree says so. The red dotted <em>do_not_merge</em> links are identity safeguards — Turner Jones (Columbus's brother, alive 1867) is not Shandy Wesley Jones; account-29 Columbus is not Linzey's brother Columbus; Reuben's father Simon is not Turner Moore; the four Martha Joneses and the two Lucindas stay distinct people. Diana Terrell and Holiday Jones are shown as sought-but-not-found: missing from the record, not from the story.
+      </p>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: var(--space-8);">
+    <div class="fan-controls">
+      <div class="fan-search-wrap">
+        <label for="tree-search" class="eyebrow" style="display:block; margin-bottom:4px;">Search names</label>
+        <input id="tree-search" type="search" placeholder="Type a name&hellip;" autocomplete="off" aria-label="Search person names" />
+        <ul id="tree-search-results"></ul>
+      </div>
+      <fieldset id="fan-filters" style="border:0; margin:0; padding:0;">
+        <legend class="eyebrow">Show</legend>
+        <label><input type="checkbox" id="toggle-uncertain" checked /> uncertain links (lead / unresolved)</label>
+        <label><input type="checkbox" id="toggle-safeguards" checked /> do-not-merge safeguards</label>
+      </fieldset>
+      <div style="display:flex; gap:var(--space-2);">
+        <button id="tree-zoom-in" class="btn btn-secondary" type="button" aria-label="Zoom in">+</button>
+        <button id="tree-zoom-out" class="btn btn-secondary" type="button" aria-label="Zoom out">&minus;</button>
+        <button id="tree-zoom-reset" class="btn btn-secondary" type="button">Reset view</button>
+      </div>
+    </div>
+
+    <div class="fan-layout">
+      <div>
+        <div id="black-jones-tree" aria-live="polite"></div>
+        <div id="fan-legend" style="margin-top: var(--space-4);">
+          <div>
+            <strong>People</strong>
+            <ul>
+              <li><span class="swatch" style="background:#33513E;"></span> Freedperson — named individual</li>
+              <li><span class="swatch" style="background:#a31621;"></span> Enslaved — named individual</li>
+              <li><span class="swatch" style="background:#b07a3f;"></span> 1867 voter — named individual</li>
+              <li><span class="swatch" style="background:#8A7C6C;"></span> Jones-network anchor (see core tree)</li>
+              <li><span class="swatch" style="background:#8a8a8a;"></span> Unresolved identity / sought, not found</li>
+              <li><span class="edge-swatch" style="text-align:center; font-weight:700; color:#8A3A22;">▾</span> click to collapse / expand a branch</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Links</strong>
+            <ul>
+              <li><span class="edge-swatch" style="border-top:2px solid #1a1a1a;"></span> confirmed primary</li>
+              <li><span class="edge-swatch" style="border-top:2px solid #5b7fa6;"></span> confirmed secondary</li>
+              <li><span class="edge-swatch" style="border-top:2px dashed #c96a12;"></span> lead / unresolved</li>
+              <li><span class="edge-swatch" style="border-top:3px dotted #a31621;"></span> do-not-merge safeguard</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <aside id="tree-detail" aria-label="Person details">
+        <button id="tree-detail-close" type="button" aria-label="Clear selection">×</button>
+        <div id="tree-detail-body">
+          <h3>Person details</h3>
+          <p style="color:var(--color-text-muted); font-size:var(--text-sm);">Click any person in the tree to see dates, confidence levels, and sources.</p>
+        </div>
+      </aside>
+    </div>
+
+    <p style="margin-top: var(--space-6);">
+      <a class="btn" href="./black-jones-tree-data.js" download>Download tree data (JS)</a>
+      <a class="btn btn-secondary" href="./data.html" style="margin-left:var(--space-2);">Open data</a>
+      <a class="btn btn-secondary" href="./family-tree.html" style="margin-left:var(--space-2);">Jones core tree</a>
+    </p>
+
+    <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); max-width: 78ch;"><strong>Data sources:</strong> the 1792 Louisa County, VA marriage register; Lewellen Jones's 1818 will (Madison Co., Ala. Terr.) and 1820 estate file, Case No. 223; the December 1820 Alabama legislative manumission act; the Jones-Donnell Cemetery transcriptions (Valley Leaves); the John N.S. Jones and J.W.S. Donnell family Bible records; the Harrison &amp; Cape family manuscript; and the project's research database (DB1). Every person panel lists its DB1 rows — click any name for the full references.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:var(--space-3);">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" style="width:28px;height:28px;">
+            <path d="M32 8c9 7 15 16 15 25 0 10-6.5 17.5-15 20.5C23.5 50.5 17 43 17 33c0-9 6-18 15-25z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <line x1="32" y1="14" x2="32" y2="52" stroke="currentColor" stroke-width="2.5"/>
+          </svg>
+          Beyond Avalon
+        </div>
+        <p style="max-width:44ch; color:var(--color-text-muted); font-size:var(--text-sm);">A public-history and genealogy project reclaiming the names, families, and legacy of the people enslaved at Avalon Plantation, Huntsville, Alabama — and following where the wealth and power went afterward.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="./index.html#history">The History</a></li>
+          <li><a href="./index.html#erasure">The Argument</a></li>
+          <li><a href="./index.html#registry">Names Registry</a></li>
+          <li><a href="./index.html#documents">Documents</a></li>
+          <li><a href="./index.html#lineage">Family &amp; Findings</a></li>
+          <li><a href="./map.html">Plantations Map</a></li>
+          <li><a href="./uah-campus-map.html">UAH Campus Map</a></li>
+          <li><a href="./exploitation.html">Sexual Exploitation &amp; Reproductive Coercion</a></li>
+          <li><a href="./leasing.html">Slave &amp; Convict Leasing</a></li>
+          <li><a href="./institutional-knowledge.html">What UAH &amp; Huntsville Knew</a></li>
+          <li><a href="./philanthropy.html">Institutional Philanthropy</a></li>
+          <li><a href="./voyages.html">The Middle Passage &amp; Landing Stops</a></li>
+          <li><a href="./archival-violence.html">Archival Violence &amp; Mnemonic Hegemony</a></li>
+          <li><a href="./debt-labor.html">Debt, Labor &amp; Commercial Surveillance</a></li>
+          <li><a href="./eminent-domain.html">Eminent Domain</a></li>
+          <li><a href="./scc.html">Southern Claims Commission</a></li>
+            <li><a href="./data.html">Open Data</a></li>
+          <li><a href="./index.html#restorative-justice">Restorative Justice &amp; Memorialization Gaps</a></li>
+          <li><a href="./glossary.html">Thesis Glossary</a></li>
+          <li><a href="./data.html">Open Data</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Project</h5>
+        <ul>
+          <li><a href="./index.html#support">Support This Research</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
+          <li><a href="https://www.alabamahistory.net/madison" target="_blank" rel="noopener noreferrer">AHA Marker Text ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Beyond Avalon · Independent research by Alexis Bendickson</span>
+      <span>All findings are subject to ongoing verification.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js"></script>
+<script src="./black-jones-tree-data.js"></script>
+<script src="./black-jones-tree.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
