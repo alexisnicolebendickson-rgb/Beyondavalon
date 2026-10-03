@@ -30,10 +30,19 @@
   entry was expanded with the Jan 15, 1832 Evalina B. Jones deed (the site's
   own Findings log, Sep 27, covers the same instrument) instead of a duplicate
   point for the same parcel.
+  2026-10-03 UPDATE: 18 new sites added from the staged map batches (17 PART-11 entries from the
+  2026-09-20 additions file — the 2026-09-22 Bedford-analysis fold-in anchors — plus the Tusculum,
+  Davidson County, TN Haywood plantation anchor staged 2026-10-03; ids collision-checked against all
+  existing ids). Coordinates: project-established county/city anchors where available; geocoded town
+  and address placements otherwise (Amherst VA, Triana AL, ADAH Montgomery, Old Cahawba) — every new
+  entry carries precise:false with the approximation basis stated. 5 staged rollup entries
+  (reuben-s18-s19-block, arthur-jones-t2r1e, hardiman-t4r2w-483ac, huntsville-lots-3-4,
+  buck-doe-creek-trust) were NOT pasted — superseded by finer-grained live entries for the same
+  instruments. restoredCount is now 125, originalCount 138.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 107,
-  originalCount: 120,
+  restoredCount: 125,
+  originalCount: 138,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
   /* ---------- Network connections ----------
@@ -1286,6 +1295,206 @@ window.PLANTATIONS_DATA = {
       precise: false, // approximate: city center
       summary: "Elizabeth Berry wrote to S. G. Berry on May 1, 1842 from her brother M. T. Levert's house in Mobile, after a nine-day journey \u2014 signing 'Elizabeth Berry or Jones.' Diary/correspondence-class material; the double surname is a research lead, not a conclusion.",
       citation: "DB1 row 1454; DB4 row 564; paper [386]."
+    },
+
+    // ---------- 2026-10-03 paste: staged map batch PART-11 (2026-09-22 Bedford-analysis fold-in) + Tusculum (2026-10-03, user-approved go-live) ----------
+    {
+      id: "gw-jones-district1-lead-al",
+      name: "G. W. Jones holding, District 1, Madison County, AL — 69 enslaved (1860), plantation-scale candidate",
+      tier: 2,
+      county: "Madison",
+      lat: 34.73,
+      lng: -86.58,
+      precise: false, // approximate: District 1 of 1860 Madison County; no tract-level evidence yet — do NOT over-place
+      summary: "Largest Jones holding found in 1860 Madison County: 69 enslaved people, NARA M653 Roll 30, leaves 635-636 (stamped 555B), District No. 1, ms pp. 40-41. Plantation-scale research candidate (lead): cross-reference with the 1860 agricultural schedule and District 1 deeds. NOT the Huntsville-city George W. Jones (leaf 474, 1 slave). Tom Blake's '49' at this location is contradicted by the manuscript; 96/106/126 figures for Alex. P. Jones are all currently unverified (conflict under reconciliation).",
+      citation: "1860 U.S. Census, slave schedule, Madison County, Alabama, NARA M653 Roll 30; research_notes/buck-jones-1860/sources/jones-owners-review-20260922.md."
+    },
+    {
+      id: "bedford-county-va-context",
+      name: "Bedford County, VA — Capt. John Jones's county (d. ~1796)",
+      tier: 3, // context only: no tract-level placement
+      county: "Bedford", // Virginia — see header note on the county filter
+      lat: 37.2728,
+      lng: -79.4911,
+      precise: false, // approximate: town of Bedford (county seat); no tract-level placement
+      summary: "Home county of Capt. John Jones, whose 1789 marriage-portion transfer (£180 + ten enslaved people to Philip Burton) is the largest single transfer found in the Bedford batch. Five chancery cases (1805-002, 1808-004, 1821-020, 1816-022, 1846-049). No plantation sites or tracts named; deed work owed.",
+      citation: "LVA Chancery Records Index, Bedford County; research_notes/bedford-analysis-20260922/report.md."
+    },
+    {
+      id: "amherst-county-va-context",
+      name: "Amherst County, VA — Philip Burton's residence",
+      tier: 3, // context only
+      county: "Amherst", // Virginia — see header note on the county filter
+      lat: 37.58517,
+      lng: -79.05202,
+      precise: false, // approximate: town of Amherst (county seat); no tract-level placement
+      summary: "Philip Burton's residence; origin point of the Burton-Jones marriage-portion claim (Burton m. an unnamed daughter of Capt. John Jones ~1782). Burton's 16 Feb 1789 letter names six enslaved people sold for £160: Dan, Harry, Beck, Beck's child, little Beck, little Matt.",
+      citation: "LVA Chancery Records Index, Bedford County: 1805-002; research_notes/bedford-analysis-20260922/report.md."
+    },
+    {
+      id: "liberty-va-tavern-context",
+      name: "Town of Liberty, VA (now Bedford) — Armistead's tavern",
+      tier: 3, // context only
+      county: "Bedford", // Virginia — see header note on the county filter
+      lat: 37.2728,
+      lng: -79.4911,
+      precise: false, // approximate: town of Bedford — the former Town of Liberty; deposition venue, no tract
+      summary: "Armistead's tavern, deposition venue in 1816-022 (Henry Trucks v. William R. Jones) — the case that documents William R. Jones as a Bedford landlord/creditor in 1814-16 (Lead identity link to the 1858-012 William R. Jones).",
+      citation: "LVA Chancery Records Index, Bedford County: 1816-022; research_notes/bedford-analysis-20260922/report.md."
+    },
+    {
+      id: "montgomery-adah-research-site",
+      name: "Montgomery, AL — ADAH (research site)",
+      tier: 3, // research-site lead, not a historical site
+      county: "Montgomery",
+      lat: 32.37591,
+      lng: -86.30079,
+      precise: false, // building address geocoded (624 Washington Ave); research-site marker, not a historical site
+      summary: "Most-likely home of Pickens's May 12, 1825 letter to Jeremiah Austill (Pickens administrative files, 1817-1825, SNAC 8260587) and of the manuscript State Treasury ledgers, 1825-1926 (SNAC 63854316).",
+      citation: "research_notes/treasurer-report-hunt-20260922/report.md; DB1 rows 854-855."
+    },
+    {
+      id: "mobile-austill-context",
+      name: "Mobile, AL — Jeremiah Austill's bank (context)",
+      tier: 3,
+      county: "Mobile",
+      lat: 30.6954,
+      lng: -88.0399,
+      precise: false, // approximate: city of Mobile; context only
+      summary: "Where Pickens's May 12, 1825 letter directed the $3,698.16 1/4 captured-African sale proceeds to the credit of the state treasurer (Clarke 1893, p. 334). Context only.",
+      citation: "Clarke, Memorial Record of Alabama vol. 1 (1893), p. 334; DB1 row 854."
+    },
+    {
+      id: "cahawba-context",
+      name: "Old Cahawba, Dallas Co., AL (context)",
+      tier: 3,
+      county: "Dallas",
+      lat: 32.31932,
+      lng: -87.10488,
+      precise: false, // approximate: Old Cahawba historic site area; context only
+      summary: "Pickens's May 12, 1825 letter written from Cahawba, six months before he left office; the 1825-26 House and Senate Journals were printed here.",
+      citation: "research_notes/treasurer-report-hunt-20260922/report.md; DB1 row 854."
+    },
+    {
+      id: "triana-corroboration",
+      name: "Triana, Madison County, AL — Woodson Jones corroboration",
+      tier: 2, // verified anchor, town-level only
+      county: "Madison",
+      lat: 34.58345,
+      lng: -86.73542,
+      precise: false, // approximate: town of Triana; town-level only, no precise point
+      summary: "Freedman's Bank register (Dec 24, 1867) gives Woodson Jones's birthplace as 'Trianna'; two other corpus records spell 'Triana' — corroborated. Mother Mahala + Ellen Emity + Adeline in Huntsville = the family-anchor set for the 1865 census cluster (M1900 roll 19 target).",
+      citation: "freedmensbureau.com (NARA M816 transcriptions), huntsville3; DB1 row 856."
+    },
+    {
+      id: "jones-lane-limestone",
+      name: "'Jones Lane,' Limestone County, AL (place-name lead)",
+      tier: 3,
+      county: "Limestone",
+      lat: 34.85,
+      lng: -86.95,
+      precise: false, // approximate: Limestone County; no precise point — deed/road-record target
+      summary: "Bank-register residence 'Limestone Co., near Jones Lane, Ala.' — the first named Jones-associated locality in Limestone County. Deed/road-record target; no precise point.",
+      citation: "freedmensbureau.com (NARA M816), huntsville9; DB1 row 860."
+    },
+    {
+      id: "mcdanel-plantation-lead",
+      name: "McDanel Plantation, ~3 mi from Huntsville (lead)",
+      tier: 3,
+      county: "Madison",
+      lat: 34.7304,
+      lng: -86.5861,
+      precise: false, // approximate: Huntsville area (~3 mi radius); no precise point
+      summary: "Hampton Jones Rev.'s 1868 residence; wife Maria Louisia Jones (NOT the Maria Louisa Jones Donnell without direct evidence — same-name caution); NC-born (NC to Madison migration). No precise point.",
+      citation: "freedmensbureau.com (NARA M816), huntsville2; DB1 row 859."
+    },
+    {
+      id: "martin-vaugh-plantation-lead",
+      name: "Martin Vaugh Plantation, near Triana (lead)",
+      tier: 3,
+      county: "Madison",
+      lat: 34.58345,
+      lng: -86.73542,
+      precise: false, // approximate: near Triana; no precise point
+      summary: "Berry Jones's 1870 residence (born 'Near Triana'). No precise point.",
+      citation: "freedmensbureau.com (NARA M816), huntsville20; DB1 row 859."
+    },
+    {
+      id: "seclusion-farm-lead",
+      name: "Seclusion Farm (Donnell plantation, lead)",
+      tier: 3,
+      county: "Madison", // Limestone/Madison area; unresolved
+      lat: 34.7304,
+      lng: -86.5861,
+      precise: false, // approximate: Madison/Limestone County area; location unresolved — no precise point
+      summary: "Donnell plantation named in the letters (sock-making economy, item 09; daily-coach proposal Seclusion Farm to Moorsville Depot via Athens). Location unresolved.",
+      citation: "Donnell Papers, THS 296; research_notes/donnell-transcription-20260922/leads-report.md; DB1 rows 865-868."
+    },
+    {
+      id: "campbell-county-21215-update",
+      name: "Campbell County, VA — item 21215 catalog update (2026-09-22)",
+      tier: 3,
+      county: "Campbell", // Virginia — see header note on the county filter
+      lat: 37.2213,
+      lng: -79.0575,
+      precise: false, // approximate: Campbell County; catalog-level lead, no tract
+      summary: "Catalog-verification pass: manuscript gated at UAH (Series 4, Subseries B, Box 1, Folder 12, never downloaded); twelve enslaved people catalog-verified incl. Sarah 'Big Will's slave wife'; Maria Louisa Jones Donnell = the Maria L. Donnell of the V24/1844 deed (Bedford to Madison migration thread). UAH request drafted, unsent.",
+      citation: "UAH Huntsville History Collection catalog; DB1 row 863; paper [247]; bibliography Section BE."
+    },
+    {
+      id: "limestone-jns-jones-3200ac-lead",
+      name: "Limestone County, AL — 3,200 acres to J.N.S. Jones (lead)",
+      tier: 2,
+      county: "Limestone",
+      lat: 34.85,
+      lng: -86.95,
+      precise: false, // approximate: Limestone County; the tract's legal description is not in the annotation — no precise point
+      summary: "Todd Donnell Harrison's annotation on Lewellen Jones's 1804 bounty-warrant affidavit: before his 1820 death Lewellen deeded 3,200 acres in Limestone County to John Nelson Spotswood Jones. Annotation-only (unconfirmed in deeds); deed-book check owed. Lewellen bounty warrant: 4,000 acres granted Sept 8, 1804 ('WHERE? — Probably NOT in northern Alabama, considering date').",
+      citation: "UAH Folder 12, Image 34 (r04b01-12-000-0094), Harrison annotation; DB1 row 877."
+    },
+    {
+      id: "uah-campus-apj-grant",
+      name: "Present-day UAH campus — section of A.P. Jones's 2,877-acre Madison County grant",
+      tier: 2,
+      county: "Madison",
+      lat: 34.722,
+      lng: -86.639,
+      precise: false, // approximate: UAH campus area; the 1820-era section lines are not mapped
+      summary: "Harrison annotation: Lewellen Jones deeded 2,877 acres in Madison County plus lots 41 and 42 on Fountain Row, Huntsville, to Alexander Pinckney Jones — 'one of the sections of land given to Alexander Pinckney Jones is the land on which the University of Alabama in Huntsville is built.' Annotation-only (unconfirmed in deeds); the Huntsville lots (Fountain Row, lots 41-42) are a deed-book target.",
+      citation: "UAH Folder 12, Image 34 (r04b01-12-000-0094), Harrison annotation; DB1 row 877."
+    },
+    {
+      id: "forest-tract-bedford-va",
+      name: "'Forest Tract,' Bedford County, VA — 811 acres (Lewellen Jones, 1802)",
+      tier: 3, // context: Virginia holding of the thesis family's ancestor
+      county: "Bedford", // Virginia — see header note on the county filter
+      lat: 37.2728,
+      lng: -79.4911,
+      precise: false, // approximate: Elk Creek/Lick Run watershed, Bedford County; metes in DB1 878
+      summary: "Nov 5, 1802 indenture: Lewellen Jones sold Capt. William Irvine 717 acres on the branches of Elk Creek and Lick Run ('his Forest Tract') plus 95 acres (John Menzies & wife to John Jones, Lewellen's father) — 811 acres total, for 2,800 Virginia currency. Acknowledged in Bedford County Court Jan 24, 1803. Metes and bounds in DB1 row 878.",
+      citation: "UAH Folder 12, Image 35 (r04b01-12-000-0095); DB1 row 878."
+    },
+    {
+      id: "limestone-sc00287-webb-tract",
+      name: "John Webb home place, Limestone County, AL — SW1/4 Sec 4 + NW1/4 Sec 9, T4 R3 (~320 ac)",
+      tier: 2,
+      county: "Limestone",
+      lat: 34.85,
+      lng: -86.95,
+      precise: false, // approximate: Limestone County; section aliquots (SW1/4 Sec 4 + NW1/4 Sec 9, T4 R3) not geolocated
+      summary: "Turrentine, Administrator, v. Perkins et al. (Ala. S. Ct. SC00287): ~320 acres, part of John Webb's home place — SW1/4 Sec 4, T4, R3 and NW1/4 Sec 9, T4, R3, Limestone County. Estate administrator Egbert J. Jones; Alexander P. Jones bought estate property ($3,942.50). Alexander S. Perkins d. intestate Jan 23, 1867. Full 61-page ADAH FromThePage transcription verified complete.",
+      citation: "ADAH SC00287 FromThePage transcription; DB1 row 887."
+    },
+    {
+      id: "tusculum-haywood-davidson-tn",
+      name: "Tusculum — Judge John Haywood's plantation (Davidson County, TN)",
+      tier: 1,
+      county: "Davidson", // Tennessee — see header note on the county filter // Tennessee — see county-filter note above
+      lat: 36.06094,
+      lng: -86.71583,
+      precise: false, // approximate: the historical marker at 4930 Nolensville Pike stands on ADJACENT property; the farmhouse site itself is lost. Do NOT place a precise point.
+      summary: "Tusculum, Judge John Haywood's (1762–1826) farm/plantation, circa 1807 — about seven miles southeast of Nashville on Nolensville Road (near present Tusculum Hills Baptist Church). Named from Haywood's reading of Virgil. Marriage venue of Elizabeth Ann Haywood to John Nelson Spotswood Jones, 3 May 1821 — the marriage that brought the Haywood family into the Jones network. Haywood also held a 211-acre Davidson County tract bought from 'one Lynch' (Haywood v. Ensley, Tennessee Chancery, December term 1847) and 350 acres in Rutherford County; their relation to Tusculum is unmapped. Who was enslaved at Tusculum is completely unidentified — Haywood's 1826 will/probate inventory is the top route (TSLA).",
+      citation: "History Through Homes, 'Tusculum farm: Home of Father of Tennessee History' (2026-10-03); Haywood v. Ensley (Tenn. Chancery, Dec. term 1847); DB1 rows 2114–2116; paper [608]; bibliography section HN."
     }
 
   ]
