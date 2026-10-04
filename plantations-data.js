@@ -39,9 +39,11 @@
   (reuben-s18-s19-block, arthur-jones-t2r1e, hardiman-t4r2w-483ac, huntsville-lots-3-4,
   buck-doe-creek-trust) were NOT pasted — superseded by finer-grained live entries for the same
   instruments. restoredCount is now 125, originalCount 138.
+
+2026-10-03 UPDATE: 'Secession Place' merged into 'Seclusion Place' per researcher approval — one Donnell plantation entry (2,000 acres, Lawrence County, Town Creek vicinity); 'Secession' documented as a misreading of the faded 1867 ad print. restoredCount is now 132; originalCount unchanged at 138.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 133,
+  restoredCount: 132,
   originalCount: 138,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
