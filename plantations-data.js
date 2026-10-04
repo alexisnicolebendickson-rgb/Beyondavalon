@@ -1506,8 +1506,8 @@ window.PLANTATIONS_DATA = {
       lat: 34.628,
       lng: -86.880,
       precise: false, // approximate: Mooresville vicinity; the statement gives "882 Acres Land near Mooresville" with no metes
-      summary: "J.W.S. Donnell's Poplar Grove Plantation per an undated plantation statement: '882 Acres Land near Mooresville' valued at $22,200; 11 mules, 10 milch cows and calves, 4 wagons, 100 sheep, 30 hogs; '30 hands' one month's work (status unstated — not inferred); individual liabilities $30,831.82 plus M.P. Tanner & Co. $8,750.43 and 'Liabilities for J. H. Jones $6,457.18' (do not merge), total $44,407.34.",
-      citation: "Donnell Papers, THS 296 ('Poplar Grove Plantation / Dr J.W.S. Donnell' statement, Ancestry capture, researcher's May 2026 scan); DB1 row 2329; paper [686]."
+      summary: "J.W.S. Donnell's Poplar Grove Plantation per an undated plantation statement: '882 Acres Land near Mooresville' valued at $22,200; 11 mules, 10 milch cows and calves, 4 wagons, 100 sheep, 30 hogs; '30 hands' one month's work (status unstated — not inferred); individual liabilities $30,831.82 plus M.P. Tanner & Co. $8,750.43 and 'Liabilities for S. H. Jones $9,657.18' (do not merge), total $44,407.34. Re-read at high resolution, Oct 4, 2026: the so-called '888 account' and this 'Poplar Grove statement' are three photographs of the same faded settlement account — the earlier 'J. H. Jones $6,457.18' reading was a transcription error; no J. H. Jones appears in the document. S. H. Jones remains unidentified; no merge is made.",
+      citation: "Donnell Papers, THS 296 ('Poplar Grove Plantation / Dr J.W.S. Donnell' statement, Ancestry capture, researcher's May 2026 scan); DB1 rows 2329, 2338, 2373, 2380; DB4 rows 1042, 1056; paper [686], [701]."
     },
         {
       id: "greenbrier-donnell-house-al",
