@@ -6,7 +6,7 @@
    1870 household cluster and 1880 traces, Plato Jones and the Haywood name,
    Wilson Jones and Robert Criner. Compiled ONLY from DB1/DB2; nothing invented.
 
-   Confidence vocabulary matches the core tree: confirmed_primary,
+   Confidence vocabulary matches the White Jones tree: confirmed_primary,
    confirmed_secondary, lead, unresolved, do_not_merge. Every link carries one.
    Do-not-merge firewalls: (1) Turner Jones (Columbus's brother, alive 1867) is
    NOT Shandy Wesley Jones; (2) account-29 Columbus is NOT Linzey's brother
@@ -42,7 +42,7 @@ window.BLACK_JONES_TREE_DATA = {
       "dates": "b. 1802",
       "group": "anchor",
       "confidence": "confirmed_secondary",
-      "notes": "Daughter of Lewellen Jones; grantee of the 1805 deed of gift (twelve enslaved people). Full profile on the core tree.",
+      "notes": "Daughter of Lewellen Jones; grantee of the 1805 deed of gift (twelve enslaved people). Full profile on the White Jones tree.",
       "db1_rows": [
         173,
         103
@@ -54,7 +54,7 @@ window.BLACK_JONES_TREE_DATA = {
       "dates": "1795 – Nov 22, 1865",
       "group": "anchor",
       "confidence": "confirmed_secondary",
-      "notes": "Son of Lewellen Jones. Nancy Jones testified she was enslaved by him; his estate's Jan 27, 1868 chancery sale is where Marshall Jones (colored) bought the East Place. The 'A Jones' former-owner in the 1865 Colored Census is consistent with him but not proven on the initial alone. Full profile on the core tree.",
+      "notes": "Son of Lewellen Jones. Nancy Jones testified she was enslaved by him; his estate's Jan 27, 1868 chancery sale is where Marshall Jones (colored) bought the East Place. The 'A Jones' former-owner in the 1865 Colored Census is consistent with him but not proven on the initial alone. Full profile on the White Jones tree.",
       "db1_rows": [
         173,
         215,
@@ -67,7 +67,7 @@ window.BLACK_JONES_TREE_DATA = {
       "dates": "d. Nov 17, 1853 (tombstone; conflict unresolved)",
       "group": "anchor",
       "confidence": "confirmed_secondary",
-      "notes": "John Nelson Spotswood Jones, son of Lewellen Jones; married Ann Eliza Haywood. With Alexander P. Jones he manumitted Elizabeth, Ann, Evelina, and Shandy under the 1820 act. Hubbs's descendant interviews name him as Shandy's probable father. Death date unresolved (tombstone Nov 17, 1853 vs. 1854/1855/1865\u201367). Full profile on the core tree.",
+      "notes": "John Nelson Spotswood Jones, son of Lewellen Jones; married Ann Eliza Haywood. With Alexander P. Jones he manumitted Elizabeth, Ann, Evelina, and Shandy under the 1820 act. Hubbs's descendant interviews name him as Shandy's probable father. Death date unresolved (tombstone Nov 17, 1853 vs. 1854/1855/1865\u201367). Full profile on the White Jones tree.",
       "db1_rows": [
         734
       ]
@@ -78,7 +78,7 @@ window.BLACK_JONES_TREE_DATA = {
       "dates": "1735 – 1819/20",
       "group": "anchor",
       "confidence": "confirmed_secondary",
-      "notes": "Bedford Co., VA. His 1819/20 will named seven enslaved people and explicitly emancipated Lindsay Bonapartte. Full profile on the core tree.",
+      "notes": "Bedford Co., VA. His 1819/20 will named seven enslaved people and explicitly emancipated Lindsay Bonapartte. Full profile on the White Jones tree.",
       "db1_rows": [
         323
       ]
@@ -1394,7 +1394,7 @@ window.BLACK_JONES_TREE_DATA = {
       "target": "shandy-wesley-jones",
       "relationship": "father_of",
       "confidence": "lead",
-      "notes": "Researcher assessment 2026-10-03: Lewellen Jones is a candidate BIOLOGICAL father of Shandy Wesley Jones \u2014 one of three Jones men (Lewellen, Alexander P., John N.S.); not proven; no ranking among candidates. The Jones core tree carries a tree-sourced Lewellen paternity claim as a dashed lead. Turner Moore is the father per family records (see C16); this link concerns biological paternity only. DB1 row 2318.",
+      "notes": "Researcher assessment 2026-10-03: Lewellen Jones is a candidate BIOLOGICAL father of Shandy Wesley Jones \u2014 one of three Jones men (Lewellen, Alexander P., John N.S.); not proven; no ranking among candidates. The White Jones tree carries a tree-sourced Lewellen paternity claim as a dashed lead. Turner Moore is the father per family records (see C16); this link concerns biological paternity only. DB1 row 2318.",
       "db1_row": [
         2318
       ]
