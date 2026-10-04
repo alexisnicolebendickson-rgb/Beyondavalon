@@ -41,7 +41,7 @@
   instruments. restoredCount is now 125, originalCount 138.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 125,
+  restoredCount: 133,
   originalCount: 138,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
@@ -111,12 +111,12 @@ window.PLANTATIONS_DATA = {
       id: "seclusion",
       name: "Seclusion",
       tier: 1,
-      county: "Limestone",
-      lat: 34.83,
-      lng: -86.97,
+      county: "Lawrence",
+      lat: 34.677,
+      lng: -87.408,
       precise: false,
-      summary: "Tract/estate associated with James Webb Smith Donnell in Limestone County, referenced in Donnell family letters (1863, 1865) and a Donnell/Seclusion estate financial statement describing roughly 30 enslaved laborers and a blacksmith shop. No street address or deed-level location has yet been confirmed from the reviewed documents; placement here is an approximate placeholder within Limestone County pending further archival research (see also the Donnell House / Pleasant Hill entry on this map).",
-      citation: "Beyond Avalon research dataset (Tier 1 legend, map.html); J.W.S. Donnell letters, Nov. 1863 and Dec. 1865 (Avalon project archive); Donnell, J.W.S. (c. 1860), Property Inventory, cited in project Druid's Grove/Seclusion research memo."
+      summary: "J.W.S. Donnell's Lawrence County plantation near Town Creek — his Nov 14, 1863 letter to his wife was written from 'Seclusion (Lawrence Co.)'. The Fortune memorial (Find a Grave 135690439, quoting the Moulton Advertiser) places the Donnell Slave Cemetery 'a short distance from the site of the once fashionable Donnell plantation home' identified as Seclusion, near Young Cole's brick home by Town Creek; the faded 888 settlement account ('Val[ue] of Stock, Equipment of Seclusion + 1 years Rent') corroborates the name. Kept distinct from the 1867 'Secession Place' trustee's-sale plantation pending evidence. Placement approximate to the Town Creek vicinity; no deed-level location confirmed.",
+      citation: "Donnell Papers, THS 296 (888 settlement account; Ancestry capture, researcher's May 2026 scan); Fortune Donnell memorial (Find a Grave 135690439); J.W.S. Donnell letter Nov 14, 1863, in 'Letters From Another Century,' Huntsville Historical Review 31:1 (2006); DB1 rows 2322, 2338."
     },
     {
       id: "john-haywood-jones-house",
@@ -1423,12 +1423,12 @@ window.PLANTATIONS_DATA = {
       id: "seclusion-farm-lead",
       name: "Seclusion Farm (Donnell plantation, lead)",
       tier: 3,
-      county: "Madison", // Limestone/Madison area; unresolved
-      lat: 34.7304,
-      lng: -86.5861,
-      precise: false, // approximate: Madison/Limestone County area; location unresolved — no precise point
-      summary: "Donnell plantation named in the letters (sock-making economy, item 09; daily-coach proposal Seclusion Farm to Moorsville Depot via Athens). Location unresolved.",
-      citation: "Donnell Papers, THS 296; research_notes/donnell-transcription-20260922/leads-report.md; DB1 rows 865-868."
+      county: "Lawrence",
+      lat: 34.677,
+      lng: -87.408,
+      precise: false, // approximate: Town Creek vicinity, Lawrence County, per the Fortune memorial's placement of the Donnell Slave Cemetery near Young Cole's brick home by Town Creek
+      summary: "Donnell plantation named in the letters (sock-making economy, item 09; daily-coach proposal Seclusion Farm to Moorsville Depot via Athens); J.W.S. Donnell's Nov 14, 1863 letter was written from 'Seclusion (Lawrence Co.)'. Now placed in Lawrence County near Town Creek per the Fortune memorial and the 888 settlement account — see the Tier 1 Seclusion entry. Location still approximate.",
+      citation: "Donnell Papers, THS 296; research_notes/donnell-transcription-20260922/leads-report.md; DB1 rows 865-868, 2322, 2338."
     },
     {
       id: "campbell-county-21215-update",
@@ -1495,7 +1495,95 @@ window.PLANTATIONS_DATA = {
       precise: false, // approximate: the historical marker at 4930 Nolensville Pike stands on ADJACENT property; the farmhouse site itself is lost. Do NOT place a precise point.
       summary: "Tusculum, Judge John Haywood's (1762–1826) farm/plantation, circa 1807 — about seven miles southeast of Nashville on Nolensville Road (near present Tusculum Hills Baptist Church). Named from Haywood's reading of Virgil. Marriage venue of Elizabeth Ann Haywood to John Nelson Spotswood Jones, 3 May 1821 — the marriage that brought the Haywood family into the Jones network. Haywood also held a 211-acre Davidson County tract bought from 'one Lynch' (Haywood v. Ensley, Tennessee Chancery, December term 1847) and 350 acres in Rutherford County; their relation to Tusculum is unmapped. Who was enslaved at Tusculum is completely unidentified — Haywood's 1826 will/probate inventory is the top route (TSLA).",
       citation: "History Through Homes, 'Tusculum farm: Home of Father of Tennessee History' (2026-10-03); Haywood v. Ensley (Tenn. Chancery, Dec. term 1847); DB1 rows 2114–2116; paper [608]; bibliography section HN."
-    }
+    },
+    {
+      id: "poplar-grove-plantation-al",
+      name: "Poplar Grove Plantation (J.W.S. Donnell, Limestone County, AL)",
+      tier: 2,
+      county: "Limestone",
+      lat: 34.628,
+      lng: -86.880,
+      precise: false, // approximate: Mooresville vicinity; the statement gives "882 Acres Land near Mooresville" with no metes
+      summary: "J.W.S. Donnell's Poplar Grove Plantation per an undated plantation statement: '882 Acres Land near Mooresville' valued at $22,200; 11 mules, 10 milch cows and calves, 4 wagons, 100 sheep, 30 hogs; '30 hands' one month's work (status unstated — not inferred); individual liabilities $30,831.82 plus M.P. Tanner & Co. $8,750.43 and 'Liabilities for J. H. Jones $6,457.18' (do not merge), total $44,407.34.",
+      citation: "Donnell Papers, THS 296 ('Poplar Grove Plantation / Dr J.W.S. Donnell' statement, Ancestry capture, researcher's May 2026 scan); DB1 row 2329; paper [686]."
+    },
+    {
+      id: "secession-place-lawrence-al",
+      name: "Secession Place (2,000-acre Donnell plantation, Lawrence County, AL)",
+      tier: 2,
+      county: "Lawrence",
+      lat: 34.682,
+      lng: -87.420,
+      precise: false, // approximate: Jonesboro depot vicinity (geocoded Jonesboro = Jones Rd, Town Creek, Lawrence County); the ad gives no metes
+      summary: "2,000-acre plantation 'immediately adjacent to the depot at Jonesboro, on the Memphis and Charleston Railroad,' advertised Nov 12, 1867 as 'A Very Valuable Cotton Farm' by '[B.?] Sanders, Trustee' — almost certainly J.W.S. Donnell's Lawrence County plantation liquidated in the same 1867 trustee's sale as his Athens residence (deed of trust Feb 18, 1867). Dwelling, cabins, gin house, orchard; equipment incl. looms, spinning jenny, 'Thorn cotton gin,' 50 chopping axes. Kept distinct from 'Seclusion' pending evidence.",
+      citation: "Athens newspaper, Nov 1867 (Ancestry capture, researcher's May 2026 scan); DB1 rows 2335-2336."
+    },
+    {
+      id: "greenbrier-donnell-house-al",
+      name: "Greenbrier — J.W.S. Donnell home (Limestone County, AL)",
+      tier: 2,
+      county: "Limestone",
+      lat: 34.671,
+      lng: -86.843,
+      precise: false, // approximate: Greenbrier district vicinity, near the mapped Jones-Donnell family cemetery at Greenbrier
+      summary: "J.W.S. Donnell's home 'Greenbrier' in Limestone County, where he lived after moving from the Courtland valley following his father Rev. Robert Donnell's 1855 death, and where he died in 1876 (per his Athens Post obituary). The Jones-Donnell family cemetery at Greenbrier is mapped separately.",
+      citation: "Athens Post 'In Memoriam' obituary, 1876 (Ancestry capture, researcher's May 2026 scan); DB1 row 2334; see also jones-donnell-cemetery-greenbrier-al."
+    },
+    {
+      id: "east-place-apj-estate-al",
+      name: "East Place (A.P. Jones estate, Madison County, AL)",
+      tier: 3,
+      county: "Madison",
+      lat: 34.7304,
+      lng: -86.5861,
+      precise: false, // approximate: shared vicinity pin for the named places of A.P. Jones's Madison County plantation (NW Division); no metes for the individual places
+      summary: "Named place of Alexander P. Jones's Madison County plantation: Marshall Jones (colored) worked 'the East Place' ($170, Jan 1866 estate account); A. Pylance rented it for 1867 ($117 promissory note to Paul L. Jones, administrator); Marshall Jones bought it at the Jan 27, 1868 chancery sale (Paul L. Jones, adm'r of Alexander P. Jones, vs. Donnell & Maria et al.) — the post-emancipation conversion of wartime economic agency into fee-simple land.",
+      citation: "A.P. Jones estate accounts Jan 1866/Jan 1867 (Reeves transcription); 1868 Limestone Co. estate case file (Pylance note); DB1 APJ-estate rows."
+    },
+    {
+      id: "rudy-place-apj-estate-al",
+      name: "Rudy place (A.P. Jones estate, Madison County, AL)",
+      tier: 3,
+      county: "Madison",
+      lat: 34.7304,
+      lng: -86.5861,
+      precise: false, // approximate: shared vicinity pin for the named places of A.P. Jones's Madison County plantation; no metes
+      summary: "Named place of Alexander P. Jones's Madison County plantation: Aron Jones bought the 'Rudy place' for $405 at the Jan 5, 1867 estate sale (Paul L. Jones, special administrator) and rented it for 1867. Race of purchaser unstated — not inferred.",
+      citation: "A.P. Jones estate, Madison County, 1865-1867 (administrator's reports); DB1 APJ-estate rows."
+    },
+    {
+      id: "bradford-place-apj-estate-al",
+      name: "Bradford place (A.P. Jones estate, Madison County, AL)",
+      tier: 3,
+      county: "Madison",
+      lat: 34.7304,
+      lng: -86.5861,
+      precise: false, // approximate: shared vicinity pin for the named places of A.P. Jones's Madison County plantation; no metes
+      summary: "Named place of Alexander P. Jones's Madison County plantation: Dredd Jones worked 'the Bradford place' ($5.00, Jan 1866 estate account); Anthony Jones rented it for $102 (Jan 1867 rental report).",
+      citation: "A.P. Jones estate accounts Jan 1866/Jan 1867 (Reeves transcription); DB1 APJ-estate rows."
+    },
+    {
+      id: "king-place-apj-estate-al",
+      name: "King place (A.P. Jones estate, Madison County, AL)",
+      tier: 3,
+      county: "Madison",
+      lat: 34.7304,
+      lng: -86.5861,
+      precise: false, // approximate: shared vicinity pin for the named places of A.P. Jones's Madison County plantation; no metes
+      summary: "Named place of Alexander P. Jones's Madison County plantation: Peterson Jones worked 'the King place' ($63.00, Jan 1866 estate account).",
+      citation: "A.P. Jones estate account Jan 1866 (Reeves transcription); DB1 APJ-estate rows."
+    },
+    {
+      id: "harris-plantation-madison-al",
+      name: "S. Willis Harris plantation (Madison County, AL)",
+      tier: 2,
+      county: "Madison",
+      lat: 34.658,
+      lng: -86.586,
+      precise: false, // approximate: ~5 miles south of Huntsville per the SCC testimony; no metes
+      summary: "Plantation of S. Willis Harris, about five miles south of Huntsville, where Rachael Jones was formerly enslaved; the Southern Claims Commission described Harris as 'a large planter' owning about 150 enslaved people. Rachael's brother David Crow's testimony is a FAN-cluster anchor for the Harris-plantation claimants.",
+      citation: "Rachael Jones SCC Claim No. 18,679 (filed Jan 15, 1873); DB1 rows 1162, 1171."
+    },
 
   ]
 };
