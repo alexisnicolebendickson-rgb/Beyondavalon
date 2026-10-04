@@ -109,14 +109,14 @@ window.PLANTATIONS_DATA = {
     },
     {
       id: "seclusion",
-      name: "Seclusion",
+      name: "Seclusion Place",
       tier: 1,
       county: "Lawrence",
       lat: 34.677,
       lng: -87.408,
       precise: false,
-      summary: "J.W.S. Donnell's Lawrence County plantation near Town Creek — his Nov 14, 1863 letter to his wife was written from 'Seclusion (Lawrence Co.)'. The Fortune memorial (Find a Grave 135690439, quoting the Moulton Advertiser) places the Donnell Slave Cemetery 'a short distance from the site of the once fashionable Donnell plantation home' identified as Seclusion, near Young Cole's brick home by Town Creek; the faded 888 settlement account ('Val[ue] of Stock, Equipment of Seclusion + 1 years Rent') corroborates the name. Kept distinct from the 1867 'Secession Place' trustee's-sale plantation pending evidence. Placement approximate to the Town Creek vicinity; no deed-level location confirmed.",
-      citation: "Donnell Papers, THS 296 (888 settlement account; Ancestry capture, researcher's May 2026 scan); Fortune Donnell memorial (Find a Grave 135690439); J.W.S. Donnell letter Nov 14, 1863, in 'Letters From Another Century,' Huntsville Historical Review 31:1 (2006); DB1 rows 2322, 2338."
+      summary: "J.W.S. Donnell's Lawrence County plantation near Town Creek — his Nov 14, 1863 letter to his wife was written from 'Seclusion (Lawrence Co.)'. The Fortune memorial (Find a Grave 135690439, quoting the Moulton Advertiser) places the Donnell Slave Cemetery 'a short distance from the site of the once fashionable Donnell plantation home' identified as Seclusion, near Young Cole's brick home by Town Creek; the faded 888 settlement account ('Val[ue] of Stock, Equipment of Seclusion + 1 years Rent') corroborates the name. The same plantation is the 2,000-acre 'Secession Place' of the Nov 12, 1867 trustee's-sale advertisement by B. Sanders: Axford & Wellden's quotation of the Athens Weekly Post (Nov 4, 1867) ad reads 'the plantation known as the Seclusion Place, containing 2000 acres more or less,' matching the scanned ad on acreage, trustee, sale date, and owner — 'Secession' is a misreading of the faded print. Merged into one entry per researcher approval, Oct 3, 2026. Placement approximate to the Town Creek vicinity; no deed-level location confirmed.",
+      citation: "Donnell Papers, THS 296 (888 settlement account; Ancestry capture, researcher's May 2026 scan); Fortune Donnell memorial (Find a Grave 135690439); J.W.S. Donnell letter Nov 14, 1863, in 'Letters From Another Century,' Huntsville Historical Review 31:1 (2006); Athens Weekly Post, Nov 4, 1867, via Axford & Wellden, Limestone County After Appomattox 1865–1870 (Fall 1985); Athens newspaper, Nov 1867 (Ancestry capture, researcher's May 2026 scan); DB1 rows 2322, 2338, 2360, 2372; DB4 rows 1041, 1055."
     },
     {
       id: "john-haywood-jones-house",
@@ -1507,18 +1507,7 @@ window.PLANTATIONS_DATA = {
       summary: "J.W.S. Donnell's Poplar Grove Plantation per an undated plantation statement: '882 Acres Land near Mooresville' valued at $22,200; 11 mules, 10 milch cows and calves, 4 wagons, 100 sheep, 30 hogs; '30 hands' one month's work (status unstated — not inferred); individual liabilities $30,831.82 plus M.P. Tanner & Co. $8,750.43 and 'Liabilities for J. H. Jones $6,457.18' (do not merge), total $44,407.34.",
       citation: "Donnell Papers, THS 296 ('Poplar Grove Plantation / Dr J.W.S. Donnell' statement, Ancestry capture, researcher's May 2026 scan); DB1 row 2329; paper [686]."
     },
-    {
-      id: "secession-place-lawrence-al",
-      name: "Secession Place (2,000-acre Donnell plantation, Lawrence County, AL)",
-      tier: 2,
-      county: "Lawrence",
-      lat: 34.682,
-      lng: -87.420,
-      precise: false, // approximate: Jonesboro depot vicinity (geocoded Jonesboro = Jones Rd, Town Creek, Lawrence County); the ad gives no metes
-      summary: "2,000-acre plantation 'immediately adjacent to the depot at Jonesboro, on the Memphis and Charleston Railroad,' advertised Nov 12, 1867 as 'A Very Valuable Cotton Farm' by '[B.?] Sanders, Trustee' — almost certainly J.W.S. Donnell's Lawrence County plantation liquidated in the same 1867 trustee's sale as his Athens residence (deed of trust Feb 18, 1867). Dwelling, cabins, gin house, orchard; equipment incl. looms, spinning jenny, 'Thorn cotton gin,' 50 chopping axes. Kept distinct from 'Seclusion' pending evidence.",
-      citation: "Athens newspaper, Nov 1867 (Ancestry capture, researcher's May 2026 scan); DB1 rows 2335-2336."
-    },
-    {
+        {
       id: "greenbrier-donnell-house-al",
       name: "Greenbrier — J.W.S. Donnell home (Limestone County, AL)",
       tier: 2,
