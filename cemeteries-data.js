@@ -37,6 +37,20 @@
           "Family burial ground of the Jones/Perkins enslaver family, including Lewellen Jones's unmarked grave (later marked by the Twickenham Town Chapter, DAR, in the 1970s). A 2022 UAH/Tennessee Valley Archaeological Research (TVAR) ground-penetrating radar survey scanned this area, and a second site near University Drive, seeking unmarked graves of enslaved people.",
         citation:
           "UAH News, \"UAH Archives and Department of History to Erect Historical Marker on Campus\"; Huntsville History Collection, \"From a Kingdom in Wales to a Cotton Farm in Alabama\"; WAFF 48, \"Uncovering the history of unmarked slave graves at UAH\"; TVAR, \"GIS Remote Sensing & Mapping Services — Avalon Plantation.\""
+      },
+      {
+        id: "donnell-slave-cemetery",
+        name: "Donnell Slave Cemetery (Town Creek)",
+        lat: 34.677,
+        lng: -87.408,
+        precise: false,
+        verdict: "approximate",
+        verdictNote:
+          "Approximate placement in the Town Creek vicinity, Lawrence County — not a surveyed GPS point. Do not treat the pin as the grave locations.",
+        summary:
+          "Burial ground of the people James Webb Smith Donnell enslaved at Seclusion plantation. Fortune, enslaved by Donnell, died February 1859 and is buried here; his headstone reads \"To the virtues and excellencies of a faithful servant this testimony is erected by his master J.W. Donnell.\" A 1968 Moulton Advertiser account describes unmarked graves \"of Negroes who served as Donnell's slaves\" a short distance from the Seclusion plantation home site near Town Creek.",
+        citation:
+          "Find a Grave memorial 135690439 (Fortune Donnell; modern compilation — birth years derived from the 1849 Lawrence County tax assessment, treat as lead); The Moulton Advertiser, June 27, 1968, \"Old Slave Graveyard is Reminder of Pre-Civil War Days Near Town Creek\" (as quoted); DB1 rows 2322, 2338."
       }
     ],
 
