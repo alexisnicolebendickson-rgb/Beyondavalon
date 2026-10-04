@@ -43,8 +43,8 @@
 2026-10-03 UPDATE: 'Secession Place' merged into 'Seclusion Place' per researcher approval — one Donnell plantation entry (2,000 acres, Lawrence County, Town Creek vicinity); 'Secession' documented as a misreading of the faded 1867 ad print. restoredCount is now 132; originalCount unchanged at 138.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 132,
-  originalCount: 138,
+  restoredCount: 133,
+  originalCount: 139,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
   /* ---------- Network connections ----------
@@ -141,6 +141,17 @@ window.PLANTATIONS_DATA = {
       precise: false,
       summary: "Documented as belonging to, or built by, the family of Lewellen Jones of Avalon Plantation or their immediate descendants.",
       citation: "Beyond Avalon research dataset (Tier 1 legend, map.html)."
+    },
+    {
+      id: "poplar-mount-donnell",
+      name: "Poplar Mount (Donnell)",
+      tier: 1,
+      county: "Limestone",
+      lat: 34.78,
+      lng: -86.97,
+      precise: false,
+      summary: "Rev. Robert Donnell's first plantation, acquired about the time of his 1817 marriage to Ann Eliza Smith — 'near the Huntsville-Browns Ferry Road in Limestone.' Predates Pleasant Hill (completed 1831, one mile south of Athens) and the Lawrence County Seclusion plantation. Placement approximate to the Huntsville-Browns Ferry Road corridor; no deed-level location confirmed.",
+      citation: "Madison County Heritage Book (1998), 'Donnell Family,' p. 142 (family-submitted history); DB1 row 2688."
     },
 
     // ---------- TIER 2: Jones-surname sites requiring caution (namesake, not confirmed kin) ----------
