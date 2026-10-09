@@ -1,5 +1,5 @@
 /*
-  Beyond Avalon — shared site behavior
+  The Counter-Archive — shared site behavior
   Handles: dark/light theme toggle, mobile menu toggle, and the Names
   Registry search/render (when REGISTRY_DATA is present on the page).
 */
