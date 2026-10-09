@@ -27,16 +27,30 @@
       {
         id: "jones-perkins-cemetery",
         name: "Jones-Perkins Family Cemetery",
-        lat: 34.7247,
-        lng: -86.6408,
-        precise: false,
-        verdict: "approximate",
+        lat: 34.73237,
+        lng: -86.64207,
+        precise: true,
+        verdict: "verified",
         verdictNote:
-          "Approximate placement behind present-day Morton Hall, next to Union Grove Gallery — not a surveyed GPS point.",
+          "Verified coordinates 2026-10-04: N 34.73237, W 86.64207 (behind present-day Morton Hall, next to Union Grove Gallery). The DAR plaque reads \"1760-1820,\" conflicting with the October 1, 1757 birth date; UAH Archives notes \"some dispute as to whether Jones is actually buried there.\"",
         summary:
           "Family burial ground of the Jones/Perkins enslaver family, including Lewellen Jones's unmarked grave (later marked by the Twickenham Town Chapter, DAR, in the 1970s). A 2022 UAH/Tennessee Valley Archaeological Research (TVAR) ground-penetrating radar survey scanned this area, and a second site near University Drive, seeking unmarked graves of enslaved people.",
         citation:
-          "UAH News, \"UAH Archives and Department of History to Erect Historical Marker on Campus\"; Huntsville History Collection, \"From a Kingdom in Wales to a Cotton Farm in Alabama\"; WAFF 48, \"Uncovering the history of unmarked slave graves at UAH\"; TVAR, \"GIS Remote Sensing & Mapping Services — Avalon Plantation.\""
+          "UAH News, \"UAH Archives and Department of History to Erect Historical Marker on Campus\"; Huntsville History Collection, \"From a Kingdom in Wales to a Cotton Farm in Alabama\"; WAFF 48, \"Uncovering the history of unmarked slave graves at UAH\"; TVAR, \"GIS Remote Sensing & Mapping Services — Avalon Plantation\"; DB1 row 2768 (coordinates verified 2026-10-04)."
+      },
+      {
+        id: "jones-donnell-cemetery",
+        name: "Jones-Donnell Cemetery (Greenbrier, Limestone County)",
+        lat: 34.668725,
+        lng: -86.845446,
+        precise: true,
+        verdict: "verified",
+        verdictNote:
+          "Verified coordinates 2026-10-04: 34.668725, -86.845446 (Greenbrier, Limestone County, Alabama). Not to be confused with the Donnell Slave Cemetery (Town Creek, Lawrence County).",
+        summary:
+          "Burial ground of the Jones-Donnell family. John N. S. Jones (1 Sep 1793 – 17 Nov 1853; son of Llewellyn & Mary Anderson Jones) is buried here, along with Eliza Ann Haywood Jones (wife of J. N. S. Jones) and six Jones children/grandchildren: Mary Louise (1822–23), Alexander Thomas (1834–57), Caesaria Julia (1836–47), Antominda Severa (1838–40), Spotswood Adair (1850–52). Capt. Llewellyn Jones and Mary Anderson Jones are NOT buried here.",
+        citation:
+          "John Parkes, \"Jones-Donnell Cemetery aka Hundley Cemetery, Greenbrier, Al.,\" Southern Middle Tennessee Cemeteries (photo-backed tombstone transcriptions); DB1 rows 2767, 2769–2770."
       },
       {
         id: "donnell-slave-cemetery",
