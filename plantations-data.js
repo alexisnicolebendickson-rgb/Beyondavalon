@@ -1587,5 +1587,39 @@ window.PLANTATIONS_DATA = {
       citation: "Rachael Jones SCC Claim No. 18,679 (filed Jan 15, 1873); DB1 rows 1162, 1171."
     },
 
+    {
+      id: "limewood-tract-madison-al",
+      name: "Limewood tract (Madison County, AL)",
+      tier: 3,
+      county: "Madison",
+      lat: 34.7304,
+      lng: -86.5861,
+      precise: false, // approximate: tract name recovered 2026-10-09 (7.13.26); no metes or section identified yet
+      summary: "Tract name recovered from the Avalon Enslaved Community spreadsheet (7.13.26). Location within Madison County not yet placed to section level — DB4 holds the follow-up.",
+      citation: "fullread-20261009 (7.13.26); DB1."
+    },
+    {
+      id: "jones-1870-landholding-cluster-huntsville",
+      name: "1870 Black Jones landholding cluster (Huntsville)",
+      tier: 2,
+      county: "Madison",
+      lat: 34.7304,
+      lng: -86.5861,
+      precise: false, // approximate: Huntsville area; four adjacent Jones households (Jerry, Phil, Lee + one more) holding $2,150 in property, five years post-emancipation. DB4 holds the plat-mapping follow-up.
+      summary: "Four adjacent Black Jones households holding $2,150 in real and personal property in 1870 — direct evidence of freedpeople landholding five years after emancipation. Jerry, Phil, and Lee Jones named; fourth household under research.",
+      citation: "fullread-20261009 (6.19.26); DB1/DB2."
+    },
+    {
+      id: "phoebe-rice-estate-pulaski-pike",
+      name: "Phoebe Rice estate (Pulaski Pike, Huntsville)",
+      tier: 2,
+      county: "Madison",
+      lat: 34.7500,
+      lng: -86.5900,
+      precise: false, // approximate: Pulaski Pike area, described as "where colored people reside mostly"; 1915 will contest — will to L.M. Jones and Willie May Jones
+      summary: "1915 estate contest: Phoebe Rice's will to L.M. Jones and Willie May Jones. Black Jones-family landholding on Pulaski Pike, in the area described as 'where colored people reside mostly.'",
+      citation: "fullread-20261009 (8.5.26 FamilySearch images); DB1."
+    },
+
   ]
 };

@@ -18,8 +18,8 @@
 window.BLACK_JONES_TREE_DATA = {
   "meta": {
     "title": "Black Jones Family Tree",
-    "version": "1.0",
-    "compiled": "2026-10-03",
+    "version": "1.1",
+    "compiled": "2026-10-09",
     "scope_note": "Black Joneses, freedpeople, and formerly enslaved people connected to the Jones network and the Avalon property, compiled from DB1/DB2. Named people appear as people — never as property. Bands read left to right; they are thematic clusters, not generations."
   },
   "nodes": [
@@ -969,6 +969,97 @@ window.BLACK_JONES_TREE_DATA = {
       "db1_rows": [
         1916
       ]
+    },
+    {
+      "id": "anthony-jones-scc",
+      "label": "Anthony Jones",
+      "dates": "c. 1816 – ?",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "Southern Claims Commission: $125 ALLOWED (correction 2026-10-09 — previously recorded as barred/disallowed). Age 56 in April 1872; farmer, three miles west of Huntsville; enslaved by Alexander P. Jones. Literate — signed his own name. Bought estate property 1866, rented the Bradford place 1867. White-corroborated pre-emancipation property ownership. 1870 census: Township 3 Range 1, Madison County, p. 9, line 34, household 79 — head, 55, with Minerva Jones 49, John Jones 19, Clarisa Boyd 15; all Black, all born Alabama. NOT the Anthony named in Lewellen's 1805 deed of gift — do not merge. FamilySearch ark:/61903/1:1:MHKJ-4JL.",
+      "db1_rows": "fullread-20261009",
+      "db2_rows": "fullread-20261009"
+    },
+    {
+      "id": "minerva-jones-1870",
+      "label": "Minerva Jones",
+      "dates": "c. 1821 – ?",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "1870 census, Township 3 Range 1, Madison County (p. 9, line 34, household 79): Minerva Jones, 49, female, Black, born Alabama, in Anthony Jones's household. Spouse relationship is inference, not index fact — the index states no relationships beyond Anthony as head. FamilySearch ark:/61903/1:1:MHKJ-4JL.",
+      "db1_rows": "fullread-20261009"
+    },
+    {
+      "id": "john-jones-1870",
+      "label": "John Jones",
+      "dates": "c. 1851 – ?",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "1870 census, Township 3 Range 1, Madison County (p. 9, line 34, household 79): John Jones, 19, male, Black, born Alabama, in Anthony Jones's household. Relationship to Anthony unstated in the index. FamilySearch ark:/61903/1:1:MHKJ-4JL.",
+      "db1_rows": "fullread-20261009"
+    },
+    {
+      "id": "clarisa-boyd-1870",
+      "label": "Clarisa Boyd",
+      "dates": "c. 1855 – ?",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "1870 census, Township 3 Range 1, Madison County (p. 9, line 34, household 79): Clarisa Boyd, 15, female, Black, born Alabama, in Anthony Jones's household. Surname differs — relationship unstated. FamilySearch ark:/61903/1:1:MHKJ-4JL.",
+      "db1_rows": "fullread-20261009"
+    },
+    {
+      "id": "jennie-jones-glass",
+      "label": "Jennie Jones Glass",
+      "dates": "fl. 1873",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "11-page memoir transcribed 2026-10-09 (6.19.26). Documents the 1873 trafficking of three Black men to Cuba — eight years after emancipation — and a first-person account of a KKK raid. Book-chapter-grade find. Full transcription in research notes.",
+      "db1_rows": "fullread-20261009"
+    },
+    {
+      "id": "jerry-jones-1870",
+      "label": "Jerry Jones",
+      "dates": "fl. 1870",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "1870 Huntsville Black landholding cluster: Jerry Jones held property as part of a four-household Jones cluster (Jerry, Phil, Lee Jones + one more) holding $2,150 in property five years after emancipation. Direct evidence for freedpeople landholding. DB4 holds the plat-mapping follow-up.",
+      "db1_rows": "fullread-20261009"
+    },
+    {
+      "id": "phil-jones-1870",
+      "label": "Phil Jones",
+      "dates": "fl. 1870",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "1870 Huntsville Black landholding cluster: Phil Jones held property as part of a four-household Jones cluster holding $2,150 in property five years after emancipation.",
+      "db1_rows": "fullread-20261009"
+    },
+    {
+      "id": "lee-jones-1870",
+      "label": "Lee Jones",
+      "dates": "fl. 1870",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "1870 Huntsville Black landholding cluster: Lee Jones held property as part of a four-household Jones cluster holding $2,150 in property five years after emancipation. Do NOT merge with the 1917 WWI draft card Lee Jones — different person, different generation.",
+      "db1_rows": "fullread-20261009"
+    },
+    {
+      "id": "nancy-jones-free-1840",
+      "label": "Nancy Jones",
+      "dates": "fl. 1840",
+      "group": "freedperson",
+      "confidence": "confirmed_secondary",
+      "notes": "Free Black woman, Madison County, 1840: owned one enslaved person (Rohr, Free People of Color in Madison County, 1840 tax data). First documented free Black Jones in the county. Do-not-merge; needs deed/court follow-up.",
+      "db1_rows": "fullread-20261009"
+    },
+    {
+      "id": "martha-jones-1857",
+      "label": "Martha Jones",
+      "dates": "fl. 1857",
+      "group": "freedperson",
+      "confidence": "confirmed_secondary",
+      "notes": "Free woman of color, Whitesburg, Madison County: paid $1 poll tax in the 1857 personal property assessment (Rohr, Free People of Color). Do-not-merge with other Martha Joneses.",
+      "db1_rows": "fullread-20261009"
     }
   ],
   "links": [
