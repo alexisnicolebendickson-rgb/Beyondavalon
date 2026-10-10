@@ -3,6 +3,66 @@
 
 ---
 
+## 2026-10-09 — Tuscaloosa Shandy Jones: do NOT merge with Madison County Shandy Jones
+
+**Searched:** Morris Raymond Boucher, "The Free Negro in Alabama Prior to 1860" (Iowa PhD dissertation, 1950) — text-extracted and searched — for Shandy Jones references.
+**Where:** Boucher (1950) dissertation.
+**When:** October 9, 2026.
+**Result:** Boucher documents a **Tuscaloosa Shandy Jones** — a barber, free man of color, resident of Tuscaloosa on the 1850 state census — who "got into trouble because he permitted white men to use a room over his barber shop for gambling purposes." This is a different person from the Madison County Shandy Jones (enslaved, then freedman, legislator). Different county, different status, different life. Do NOT merge.
+**Bound:** The Boucher dissertation. The Madison County Shandy Jones identities are documented separately in DB1/DB2.
+**Status:** CLOSED — do-not-merge stands.
+**Source:** screenshots-scans-memo (2026-10-09); Boucher (1950).
+
+---
+
+## 2026-10-09 — Plato Jones: Haywood Jones enslaver link FIREWALLED pending verification
+
+**Searched:** The Plato Jones profile (Davis, Nov 12, 2020; IMG_0936/0937) — Athens brick mason, b. 1841/46 TN to Thomas and Mahala Jones — which states his family "had belonged to a wealthy planter named Haywood Jones" prior to emancipation.
+**Where:** Project research files; 7.14.26 read.
+**When:** October 9, 2026.
+**Result:** The enslaver is named only as "Haywood Jones" — no first name, no county, no document. The candidate is John Haywood Jones (J.N.S. Jones's eldest son), but this is inference from the name alone. No bill of sale, will, estate record, or census links Plato's family to John Haywood Jones. The link is FIREWALLED: Plato Jones is a real, documented freedman (1878 land purchase, 11 children, d. 1917), but his enslaver's identity is unverified. Do not assert the John Haywood Jones connection without direct evidence.
+**Bound:** The Davis profile and project files as of this date.
+**Status:** OPEN.
+**Source:** 7.14.26 memo (2026-10-09); DB4.
+
+---
+
+## 2026-10-09 — Alexander P. Jones 4× in the 1850 Slave Schedules Index: contradicts DB1 row 2498
+
+**Searched:** The 1850 Slave Schedules Index (via the 16.10 extraction) for Alexander P. Jones entries.
+**Where:** 1850 Slave Schedules Index.
+**When:** October 9, 2026.
+**Result:** The index contains **four entries for "JONES, ALEXANDER P."** — directly contradicting DB1 row 2498's claim (verified against the A–J index range) that no Alexander Jones appeared. This is a genuine contradiction between two project sources, not a misreading. Both the original row and the new finding are preserved; the resolution is parked for the researcher's call.
+**Bound:** The index entries vs. DB1 row 2498. The 1860 slave-schedule index (with JONES, ALEXANDER — MADISON CO.) is the direct route to test this further.
+**Status:** OPEN — parked for researcher decision.
+**Source:** 7.14.26 read (2026-10-09); DB1 rows 2498 vs. new index entries.
+
+---
+
+## 2026-10-09 — Warrenton NC Jones Bible (fhp_400111203_jones.pdf): do NOT merge with Madison County line
+
+**Searched:** The 6-page Jones family Bible record (William Green Jones, Warrenton, Warren County, North Carolina) — read in full via image rendering.
+**Where:** Avalon archive, 7.31.26 folder.
+**When:** October 9, 2026.
+**Result:** All entries are Warren County, North Carolina ("Warrenton," "Old Bone," "Park Cottage"). No person, place, or date connects this family to the Madison County, Alabama Jones line. Do NOT merge.
+**Bound:** The Bible record itself.
+**Status:** CLOSED — do-not-merge stands.
+**Source:** screenshots-scans-memo (2026-10-09).
+
+---
+
+## 2026-10-09 — Priscilla Jones: John McConnell emancipation newly documented; McConnell still unidentified
+
+**Searched:** Morris Raymond Boucher, "The Free Negro in Alabama Prior to 1860" (Iowa PhD, 1950), colonization chapter — text-extracted and searched.
+**Where:** Boucher (1950) dissertation.
+**When:** October 9, 2026.
+**Result:** Boucher documents that **John McConnell of Madison County emancipated Priscilla Jones**, who emigrated to Liberia with six freeborn children/grandchildren. This is the first documentation of the McConnell–Priscilla Jones link. However: John McConnell himself remains unidentified — no deed, will, census, or court record found; whether he was the emancipator or an intermediary is unknown. Priscilla Jones is definitively not Priscilla Drake (white suffragist, d. 1892).
+**Bound:** The Boucher dissertation. The Gardner (2024) Liberia dataset has no trace of Priscilla Jones (see separate entry — dataset coverage gap, not non-arrival).
+**Status:** OPEN.
+**Source:** screenshots-scans-memo (2026-10-09); Boucher (1950).
+
+---
+
 ## 2026-10-09 — No Anthony/Antony Jones in Limestone County, 1870 census
 
 **Searched:** FamilySearch "United States, Census, 1870" collection — "Anthony" + Limestone County, Alabama + birth 1811–1821; then "Antony" + Limestone County, same birth range.
@@ -440,4 +500,4 @@
 
 ---
 
-*Entry count: 34 search entries + 3 interpretive entries + 5 access gaps. A bound is not a conclusion. October 9 entries staged for researcher approval.*
+*Entry count: 39 search entries + 3 interpretive entries + 5 access gaps. A bound is not a conclusion. October 9 entries staged for researcher approval.*

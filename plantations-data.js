@@ -41,10 +41,12 @@
   instruments. restoredCount is now 125, originalCount 138.
 
 2026-10-03 UPDATE: 'Secession Place' merged into 'Seclusion Place' per researcher approval — one Donnell plantation entry (2,000 acres, Lawrence County, Town Creek vicinity); 'Secession' documented as a misreading of the faded 1867 ad print. restoredCount is now 132; originalCount unchanged at 138.
+
+2026-10-09 UPDATE: 2 new sites added (plato-jones-athens-acre-1878, reuben-jones-drake-land-1871; ids collision-checked against all existing ids). The Avalon entry now records Lewellen Jones's $18,742 land purchase and January 1820 suicide; the T4S patents entry carries the purchase price. Edmund Townsend's 7-plantation estate NOT mapped — parcel locations unrecovered. Count correction: the sites array actually holds 138 entries (bookkeeping had drifted). restoredCount is now 138, originalCount 144.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 133,
-  originalCount: 139,
+  restoredCount: 138,
+  originalCount: 144,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
   /* ---------- Network connections ----------
@@ -95,8 +97,8 @@ window.PLANTATIONS_DATA = {
       lat: 34.7241,
       lng: -86.6402,
       precise: false,
-      summary: "Home plantation of Lewellen (Llewellen) Jones; the enslaved-persons research line at the center of this project. The site is now part of the University of Alabama in Huntsville campus.",
-      citation: "Beyond Avalon research dataset; Lewellen Jones Probate Index (1820); 1966 UAH topographic map overlay."
+      summary: "Home plantation of Lewellen (Llewellen) Jones; the enslaved-persons research line at the center of this project. The site is now part of the University of Alabama in Huntsville campus. Lewellen Jones paid $18,742 for the Huntsville plantation land, buying from a man who owed him $8,000; he died by suicide (hanging) in January 1820, three weeks after moving to Huntsville, in the wake of the 1819 cotton-price collapse and bank failures — 'family histories had taken that out' (Huntsville Times, 5/12/2007, quoting researcher Jacque Reeves; letter to Sen. John Williams Walker dated Jan 27, 1820).",
+      citation: "Beyond Avalon research dataset; Lewellen Jones Probate Index (1820); 1966 UAH topographic map overlay; Huntsville Times 5/12/2007 (Jacque Reeves)."
     },
     {
       id: "druids-grove",
@@ -1045,8 +1047,8 @@ window.PLANTATIONS_DATA = {
       lat: 34.6832,
       lng: -86.5743,
       precise: false, // APPROXIMATE: midpoint of T4S R1W / T4S R1E township centroids on the BLM PLSS grid; patents span Secs 1 & 12 (T4S R1W) and Sec 6 (T4S R1E)
-      summary: "LEAD. Seven patents, all issued November 20, 1818 — three with Leroy Pope, four with David Moore — all in Township 4 South (Secs 1 & 12 T4S R1W; Sec 6 T4S R1E), Huntsville Meridian. Zero patents to Irby Jones or any Llewellin/Llewellyn spelling. Coordinates approximate: township-level centroid.",
-      citation: "BLM GLO records; Beyond Avalon 2026-09-27."
+      summary: "LEAD. Seven patents, all issued November 20, 1818 — three with Leroy Pope, four with David Moore — all in Township 4 South (Secs 1 & 12 T4S R1W; Sec 6 T4S R1E), Huntsville Meridian. Zero patents to Irby Jones or any Llewellin/Llewellyn spelling. Coordinates approximate: township-level centroid. CAPITAL: Lewellen Jones paid $18,742 for the Huntsville plantation land (now the UAH campus), buying from a man who owed him $8,000 (Huntsville Times, 5/12/2007).",
+      citation: "BLM GLO records; Beyond Avalon 2026-09-27; Huntsville Times 5/12/2007 (Jacque Reeves)."
     },
 
     // ---------- 2026-09-28 paste: staged map batch PART-4 (2026-09-20/21/22, user-approved) ----------
@@ -1619,6 +1621,28 @@ window.PLANTATIONS_DATA = {
       precise: false, // approximate: Pulaski Pike area, described as "where colored people reside mostly"; 1915 will contest — will to L.M. Jones and Willie May Jones
       summary: "1915 estate contest: Phoebe Rice's will to L.M. Jones and Willie May Jones. Black Jones-family landholding on Pulaski Pike, in the area described as 'where colored people reside mostly.'",
       citation: "fullread-20261009 (8.5.26 FamilySearch images); DB1."
+    },
+    {
+      id: "plato-jones-athens-acre-1878",
+      name: "Plato Jones one-acre lot (1878, Athens, Limestone County)",
+      tier: 1,
+      county: "Limestone",
+      lat: 34.6031,
+      lng: -86.9717,
+      precise: false, // approximate: Athens area; lot between Brownsferry and Lucas Ferry roads — exact metes unlocated
+      summary: "FIREWALLED. Plato Jones, Athens brick mason (b. 1841/46 TN to Thomas and Mahala Jones), paid $75 to L.A. Roberts in 1878 for a one-acre lot between Brownsferry and Lucas Ferry roads. Family tradition says his family 'had belonged to a wealthy planter named Haywood Jones' prior to emancipation — candidate: John Haywood Jones (J.N.S.'s eldest son) — do NOT merge without direct evidence (DB4). Founding member of Trinity School Society (1880); one of three Black Athenians who kept the vote after the Grandfather Clause; 11 children; d. Apr 1917. Plato Jones Street ('Box Alley') named for him.",
+      citation: "fullread-20261009 (IMG_0936/0937, Davis, Nov 12, 2020); Limestone Democrat obit Apr 1917; DB1/DB2/DB4."
+    },
+    {
+      id: "reuben-jones-drake-land-1871",
+      name: "Reuben Jones Drake-parcel purchase (Jan 1871)",
+      tier: 1,
+      county: "Madison",
+      lat: 34.7241,
+      lng: -86.6402,
+      precise: false, // approximate: placed at the Avalon/Drake parcel area; the Drake holdings (purchased by Priscilla Holmes Drake and James Perry Drake c. 1867–68) adjoined the Jones lands — exact parcel metes unlocated
+      summary: "Reuben Jones, the freedman, bought land from the Drakes in January 1871 — a direct freedpeople land-acquisition on the Avalon/Drake parcel (Big-3 priority #1 cross-source hit). His full family is now on record via Freedman's Bank card No. 1406 (Dec 21, 1872): b. ~1842 Madison Co., wife Mollie, children Emily & Coretina, father Turner, mother Eliza.",
+      citation: "fullread-20261009 (Freedman's Bank No. 1406; Drake deed research); DB1/DB2."
     },
 
   ]

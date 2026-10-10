@@ -425,7 +425,7 @@ window.BLACK_JONES_TREE_DATA = {
       "dates": "1833 – 1898",
       "group": "freedperson",
       "confidence": "confirmed_secondary",
-      "notes": "Born enslaved at Avalon. U.S. Colored Troops — enlisted July 14, 1862 at Greensburg, Indiana; discharged June 20, 1865; blacksmith. His Freedman's Bank account names his father as SIMON — not Turner Moore. Bought plantation land Jan 1871 (Deed Book OO p. 593, Vanderventer to Reuben Jones, 1870); leased land to a freedmen's school 1869–70. Reconstruction-era AL legislator with his brother Columbus. Married Mollie Richardson Oct 1872.",
+      "notes": "Born enslaved at Avalon. U.S. Colored Troops — enlisted July 14, 1862 at Greensburg, Indiana; discharged June 20, 1865; blacksmith. Freedman's Bank card No. 1406 (Dec 21, 1872): b. ~1842 Madison Co., wife Mollie, children Emily & Coretina, father Turner, mother Eliza — full family now on record. Bought plantation land Jan 1871 (Deed Book OO p. 593, Vanderventer to Reuben Jones, 1870); bought Drake-parcel land Jan 1871; leased land to a freedmen's school 1869–70. Reconstruction-era AL legislator with his brother Columbus. Married Mollie Richardson Oct 1872.",
       "db1_rows": [
         151,
         166,
@@ -435,7 +435,7 @@ window.BLACK_JONES_TREE_DATA = {
     },
     {
       "id": "simon-reuben",
-      "label": "Simon",
+      "label": "Turner (father of Reuben)",
       "dates": "father of Reuben Jones",
       "group": "freedperson",
       "confidence": "confirmed_secondary",
@@ -781,7 +781,7 @@ window.BLACK_JONES_TREE_DATA = {
       "dates": "b. 1841–46, Tennessee",
       "group": "freedperson",
       "confidence": "confirmed_secondary",
-      "notes": "Born Tennessee 1841–46; his family belonged to Haywood Jones before emancipation. Founding member of the Trinity School Society; brick mason remembered for building his home with salvaged Trinity school lumber (Trinity School est. 1865; Trinity Hall built 1881–82). Married Lizzie Garrett 1869; eleven children: Lela, Irene, Ananias, Lizzie, Plato Jr., Hansel, Eva, Myrtle, and three more.",
+      "notes": "Born Tennessee 1841–46 to Thomas and Mahala Jones; his family belonged to Haywood Jones before emancipation (FIREWALLED — the Haywood Jones identity is unverified; candidate John Haywood Jones on name alone, do not merge without direct evidence). Founding member of the Trinity School Society; brick mason remembered for building his home with salvaged Trinity school lumber (Trinity School est. 1865; Trinity Hall built 1881–82). Paid $75 to L.A. Roberts in 1878 for a one-acre lot between Brownsferry and Lucas Ferry roads, Athens. Married Lizzie Garrett 1869; eleven children: Lela, Irene, Ananias, Lizzie, Plato Jr., Hansel, Eva, Myrtle, Teddie, Arthur, Charles R. One of three Black Athenians who kept the vote after the Grandfather Clause. D. Apr 1917. Plato Jones Street ('Box Alley') named for him.",
       "db1_rows": [
         1047,
         1055,
@@ -1381,7 +1381,7 @@ window.BLACK_JONES_TREE_DATA = {
       "target": "reuben-jones",
       "relationship": "associated_with",
       "confidence": "lead",
-      "notes": "Scholarship calls them brothers; their Freedman's Bank accounts name different fathers (Turner Moore / Simon). Unresolved.",
+      "notes": "Scholarship calls them brothers; their Freedman's Bank accounts name their father as Turner.",
       "db1_row": [
         15
       ]
@@ -1414,7 +1414,7 @@ window.BLACK_JONES_TREE_DATA = {
       "target": "turner-moore",
       "relationship": "not_the_same_person",
       "confidence": "do_not_merge",
-      "notes": "Firewall: Reuben's father Simon is not Turner Moore.",
+      "notes": "Reuben's father Turner (per bank register).",
       "db1_row": [
         253
       ]
