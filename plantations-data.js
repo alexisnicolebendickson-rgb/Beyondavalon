@@ -43,10 +43,11 @@
 2026-10-03 UPDATE: 'Secession Place' merged into 'Seclusion Place' per researcher approval — one Donnell plantation entry (2,000 acres, Lawrence County, Town Creek vicinity); 'Secession' documented as a misreading of the faded 1867 ad print. restoredCount is now 132; originalCount unchanged at 138.
 
 2026-10-09 UPDATE: 2 new sites added (plato-jones-athens-acre-1878, reuben-jones-drake-land-1871; ids collision-checked against all existing ids). The Avalon entry now records Lewellen Jones's $18,742 land purchase and January 1820 suicide; the T4S patents entry carries the purchase price. Edmund Townsend's 7-plantation estate NOT mapped — parcel locations unrecovered. Count correction: the sites array actually holds 138 entries (bookkeeping had drifted). restoredCount is now 138, originalCount 144.
+2026-10-11 UPDATE: 4 new sites added (lawrence-county-al-benjamin-jones-lead, lawrence-county-tn-deed-index-lead, franklin-county-nc-haywood-lead, oglethorpe-county-ga-spotswood-lead — six-state expansion anchors; ids collision-checked against all existing ids). The two new federal patents (Spotswood Jones 1818, Haywood warrant 1875) live on the GLO patent map — no plantations-map pin, since section-center coordinates could not be verified against the BLM PLSS grid. restoredCount is now 142, originalCount 148.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 138,
-  originalCount: 144,
+  restoredCount: 142,
+  originalCount: 148,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
   /* ---------- Network connections ----------
@@ -1644,6 +1645,52 @@ window.PLANTATIONS_DATA = {
       summary: "Reuben Jones, the freedman, bought land from the Drakes in January 1871 — a direct freedpeople land-acquisition on the Avalon/Drake parcel (Big-3 priority #1 cross-source hit). His full family is now on record via Freedman's Bank card No. 1406 (Dec 21, 1872): b. ~1842 Madison Co., wife Mollie, children Emily & Coretina, father Turner, mother Eliza.",
       citation: "fullread-20261009 (Freedman's Bank No. 1406; Drake deed research); DB1/DB2."
     },
+
+    // ---------- 2026-10-11 paste: six-state expansion + Haywood/Spotswood patent finds ----------
+    {
+      id: "lawrence-county-al-benjamin-jones-lead",
+      name: "Lawrence County, AL (Moulton) — Benjamin B. Jones estate-division lead",
+      tier: 1,
+      county: "Lawrence",
+      lat: 34.47516,
+      lng: -87.2879,
+      precise: false, // approximate: Moulton (county seat); the archives index is online, the documents are not
+      summary: "Lawrence County is the richest free Alabama county found: deed indexes 1818–1850 and inventory-and-will indexes 1829–1934, no login. Headline: \"Benjamin B Jones dec'd, division of slaves & land,\" Orphans Court Book E p.298 (1835–1840) — the index names the heirs (Chamberlayne Jones; Mary L. F. Jones, now Baker) and maps twelve parcels, but the enslaved people appear only as \"Slaves Jones divided\" — their names exist in the full page-298 document (mail-order from Moulton: $10 search + $1/page). Also: Benjamin Jones deeds across Books B–M; hiring-out records (\"M Jones\" 1829–35; \"A S Jones\" 1846–50); the \"Aldridge & Jones former plantation in Franklin Co\" note; Alexander S. Jones's 1856 deed of trust (180 acres + steam saw/grist mill, $1,000 debt); James W. S. Donnell's deed (Book M p.342); Elijah Haywood's deed (Book I p.8); Hugh A. Anderson's extensive holdings. Not to be confused with Benjamin A. Jones (void 1825 patent, Sec. 12 T4 R11W).",
+      citation: "Lawrence County Archives indexes (lawrencecoarchives.com — free); DB1 rows 3718, 3720; paper notes [1093], [1095]."
+    },
+    {
+      id: "lawrence-county-tn-deed-index-lead",
+      name: "Lawrence County, TN (Lawrenceburg) — free deed index with Enslaved Persons field",
+      tier: 2,
+      county: "Lawrence", // Tennessee — outside Alabama; see header note on the county filter
+      lat: 35.27217,
+      lng: -87.31963,
+      precise: false, // approximate: Lawrenceburg (county seat); refine at map-build time
+      summary: "The Lawrence County Archives (Leoma, TN) hosts a free searchable Index to Deed Books A–H, abstracted by Vicky L. Hutchings, with an explicit \"Enslaved Persons\" search field — the first such field found in the project. Full extraction yielded 55 named enslaved people (the largest single haul): the richest document is an 1828 mortgage, Nicholas Perkins Sr. to Charles G. Olmsted, listing 42 people in eight or more family groups; plus Martha Jones (deed of gift, 1840), Nelly (~12, 1842 judgment settlement), and Allen (~14, 1843 bill of sale). Alexander S. Jones of Giles County appears in these deeds and in Lawrence County, AL — possibly the same man, not merged without evidence.",
+      citation: "Lawrence County Archives, TN (lawcotnarchives.org — free); DB1 rows 3712, 3719; DB2 rows 5907–5961; paper notes [1087], [1094]."
+    },
+    {
+      id: "franklin-county-nc-haywood-lead",
+      name: "Franklin County, NC (Louisburg) — Haywood wills and the \"choose\" bequests",
+      tier: 2,
+      county: "Franklin", // North Carolina — outside Alabama; see header note on the county filter
+      lat: 35.9816,
+      lng: -78.2795,
+      precise: false, // approximate: Louisburg (county seat); same placement as the Franklin County, NC deeds anchor
+      summary: "Eliza Ann Haywood was born in Franklin County in 1807; the 1816 Madison County docket shows \"Eliza Ann Haywood, by her next friend, John Haywood,\" suing the Wyches — the earliest Haywood sighting in the project. The Mitchell Will Index holds two Haywood wills: John Haywood, 1826 (Will Book H p.154 — names son John; his \"negro woman Vicy\" is \"to be at liberty to choose with whom she will live,\" DB2 row 6855; Eliza Ann neither confirmed nor excluded as his daughter) and M. W. Haywood, 1872. Bound in the same book: the 1794 will of Lewelling Jones — nine enslaved named, with Frank (\"one negro woman\") granted the right \"to choose her master or mistress\" after the widow's death (DB2 row 6867) — and the 1826 division of Richard White's ten enslaved people (DB2 rows 6871–6878; not a Haywood estate). The famous treasurer John Haywood (Edgecombe-born) is a DO-NOT-MERGE. The 1826 will text was read through FamilySearch; Eliza Ann's parentage remains open.",
+      citation: "Mitchell Will Index, Franklin Co. NC; FamilySearch DGS 4755064 (White division, image 330); DB1 rows 3731, 3736, 3744, 3748, 3750, 3752; paper notes [1105], [1110], [1118], [1122], [1124], [1126]."
+    },
+    {
+      id: "oglethorpe-county-ga-spotswood-lead",
+      name: "Oglethorpe County, GA (Lexington) — an enslaved man named Spotswood, 1824",
+      tier: 3,
+      county: "Oglethorpe", // Georgia — outside Alabama; see header note on the county filter
+      lat: 33.86979,
+      lng: -83.11262,
+      precise: false, // approximate: Lexington (county seat); the sheriff's sale location within the county is not stated
+      summary: "An 1824 sheriff's sale advertised \"7 negroes — Spotswood 36 years old, Philip 26, Cesar 27, Susan 20, Josiah 27, Matt 11, and Mary 12 years old, levied on as the property of Anthony Foster.\" A Black man named Spotswood, thirty-six — the only enslaved person found anywhere in the expansion bearing one of the target surnames as a given name. Context for the Spotswood naming thread (cf. the 1818 Spotswood Jones patent, GLO map). DB2 rows 6631–6637.",
+      citation: "Georgia historic-newspaper archive (1824 sheriff's sale ad); DB1 row 3742; paper note [1116]."
+    }
 
   ]
 };

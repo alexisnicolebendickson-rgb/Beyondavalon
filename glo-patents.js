@@ -31,6 +31,18 @@
   var groupsById = {};
   DATA.groups.forEach(function (g) { groupsById[g.id] = g; });
 
+  /* Township ids look like "T4S-R1W" or "T18S-R10E"; parse for display. */
+  function townshipLabel(twId) {
+    var m = /^T(\d+)([NS])-R(\d+)([EW])$/.exec(twId || "");
+    return m ? "T" + m[1] + m[2] + " R" + m[3] + m[4] : String(twId);
+  }
+
+  /* Patents default to Madison County; non-Madison entries carry `county`. */
+  function countyOf(p) { return p.county || "Madison"; }
+
+  /* The aliquot may be unrecorded in the source (e.g. the 1875 warrant patent). */
+  function aliquotLabel(p) { return p.aliquot ? p.aliquot : "aliquot not recorded"; }
+
   /* Quarter-position within a cell, in quarter-cell units. */
   function aliquotRect(aliquot, x, y) {
     var h = CELL / 2;
@@ -73,7 +85,7 @@
     html += "<h4>Accession " + esc(patent.accession) + "</h4>";
     html += '<span class="detail-tag" style="background:' + esc(group.color || "#8a3a22") + '22; color:' + esc(group.color || "#8a3a22") + ';">' + esc(group.label || "") + "</span>";
     html += "<p><strong>Patentees:</strong> " + esc(patent.patentees.join(" + ")) + (patent.patenteeNote ? " (" + esc(patent.patenteeNote) + ")" : "") + "</p>";
-    html += "<p><strong>Date:</strong> " + esc(patent.date) + "<br /><strong>Location:</strong> Sec. " + esc(String(patent.section)) + " " + esc(patent.aliquot) + ", T" + esc(patent.township.slice(1, 2)) + "S R" + esc(patent.township.slice(5)) + " — Huntsville Meridian, Madison County, AL<br /><strong>Authority:</strong> " + esc(patent.authority) + "</p>";
+    html += "<p><strong>Date:</strong> " + esc(patent.date) + "<br /><strong>Location:</strong> Sec. " + esc(String(patent.section)) + " " + esc(aliquotLabel(patent)) + ", " + esc(townshipLabel(patent.township)) + " — Huntsville Meridian, " + esc(countyOf(patent)) + " County, AL<br /><strong>Authority:</strong> " + esc(patent.authority) + "</p>";
     if (patent.acres) {
       html += "<p><strong>Acreage:</strong> " + esc(patent.acres) + " acres</p>";
     }
@@ -209,7 +221,7 @@
         "<td style=\"padding:var(--space-2) var(--space-3); border-bottom:1px solid var(--color-border); font-weight:600;\">" + esc(p.accession) + "</td>" +
         "<td style=\"padding:var(--space-2) var(--space-3); border-bottom:1px solid var(--color-border);\">" + esc(p.date) + "</td>" +
         "<td style=\"padding:var(--space-2) var(--space-3); border-bottom:1px solid var(--color-border);\">" + esc(p.patentees.join(" + ")) + "</td>" +
-        "<td style=\"padding:var(--space-2) var(--space-3); border-bottom:1px solid var(--color-border);\">Sec. " + esc(String(p.section)) + " " + esc(p.aliquot) + ", T" + esc(p.township.slice(1, 2)) + "S R" + esc(p.township.slice(5)) + "</td>" +
+        "<td style=\"padding:var(--space-2) var(--space-3); border-bottom:1px solid var(--color-border);\">Sec. " + esc(String(p.section)) + " " + esc(aliquotLabel(p)) + ", " + esc(townshipLabel(p.township)) + "</td>" +
         "<td style=\"padding:var(--space-2) var(--space-3); border-bottom:1px solid var(--color-border);\">" + esc(p.authority) + "</td>" +
         "</tr>";
     });

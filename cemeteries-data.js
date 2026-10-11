@@ -84,6 +84,30 @@
           "An initial GPR survey reported anomalies near the north entrance of campus that fit the pattern of graves, but a subsequent survey did NOT replicate the results, and a September 2026 assessment reports no grave-pattern anomalies near the known cemetery. The \"approximately 60 possible grave anomalies south of campus along Ben Graves Drive\" figure could not be located in a survey report. This project does not pin unverified anomalies to the map.",
         citation:
           "Beyond Avalon research notes; UAH Campus Map page (\"Landscape, burial, and selective preservation\"), which records the corrected, unreplicated anomaly set."
+      },
+      {
+        name: "John Nelson Spotswood Jones family cemetery (moved) — Limestone County",
+        status: "Moved — new location unknown, not plotted",
+        summary:
+          "Transcribed in Valley Leaves v25-n3 (pp. 131–132) at NE¼ Sec. 28, T4S R3W: John Nelson Spotswood Jones (1793–1853), Eliza Ann Haywood (1807–1852), J. Haywood Jones (d. 1866, age 40), Spottswood (1855–1869), infant Spotswood Adair (1850–1852), and James Webb Smith Donnell (1859–1930), whose stone reads \"Son of James Webb Smith Donnell and MARIA LOUISA JONES.\" A later Valley Leaves work-list note states that the Cottonport and Menefee cemeteries, including this Jones cemetery, were moved. FLAG: this may be the same burial ground as the site's pinned \"Jones-Donnell Cemetery (Greenbrier)\" — the pinned location is T5S R3W Sec. 22 (DB1 row 2767), the pre-move transcription is T4S R3W Sec. 28 — the stones' new location is unverified. Researcher decision owed before any pin change.",
+        citation:
+          "Valley Leaves v25-n3, pp. 131–132; DB1 row 3729; paper note [1103]."
+      },
+      {
+        name: "Duncan Hill Cemetery (Peter Thomas Hurt) — Jackson County, AL",
+        status: "Reported, unverified — not plotted",
+        summary:
+          "Peter Thomas Hurt (b. 16 Jul 1845, Bellefonte, Jackson Co. AL; d. 26 Apr 1873, age 27; husband of Harriet Allen Boyd Hurt; mother Amanda F. JONES Hurt) is buried at Duncan Hill Cemetery, Jackson County, per Find a Grave (secondary). No verified GPS or PLSS location on file; a geocode attempt 2026-10-11 returned a Clarke County, AL match and was rejected.",
+        citation:
+          "Find a Grave (secondary — treat as lead); DB1 row 3753; paper note [1127]."
+      },
+      {
+        name: "Harriet Allen Boyd Hurt burial — Windsor, Henry County, MO",
+        status: "Reported, unverified — not plotted",
+        summary:
+          "Harriet Allen Boyd Hurt (b. 21 Sept 1849, Huntsville, AL, to James Allen Boyd and Mary D. Forsey; d. 4 Jan 1938, Windsor, MO, of a fractured femur) is buried at Windsor, Missouri, per her death certificate (Henry Co. #2880) — the cemetery is not named. Do not confuse with Harriett Hurt (d. 18 Sept 1926, Dalton, Chariton Co. MO — Black, husband Lucien), a different person.",
+        citation:
+          "Missouri death certificate (Henry Co. #2880); DB1 row 3753; paper note [1127]."
       }
     ]
   };

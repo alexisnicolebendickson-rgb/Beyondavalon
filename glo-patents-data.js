@@ -5,6 +5,11 @@
   patents in MADISON County — do not attribute them to Morgan County.
   All section placements below are drawn against the standard PLSS
   township grid; no geographic coordinates are claimed.
+  2026-10-11 UPDATE: two new patents added — CV-0109-137 ("Spotswood Jones,
+  assignee of John Clapp," Nov 20, 1818, Madison County) and MW-1129-430
+  (1875 military-warrant patent, Randolph County). MW-1129-430 is the file's
+  FIRST patent outside Madison County; the renderer now reads a per-patent
+  `county` field (default Madison) instead of assuming Madison throughout.
 */
 (function () {
   "use strict";
@@ -73,6 +78,22 @@
         label: "Lewis Anderson (1831)",
         color: "#2e6e5e",
         note: "Sole patentee — the Anderson family link in the land record."
+      },
+      {
+        id: "spotswood-jones-1818",
+        shortLabel: "SJ",
+        label: "Spotswood Jones, assignee of John Clapp (1818)",
+        color: "#1f6e8c",
+        note:
+          "The patent image reads \"Spotswood Jones, assignee of John Clapp\" — Clapp was the original entryman. The BLM index spells the name \"SPOOTSWOOD JONES\"; the discrepancy is preserved. The earliest Jones–Spotswood link in the project."
+      },
+      {
+        id: "haywood-warrant-1875",
+        shortLabel: "HW",
+        label: "Haywood/Stephens military-warrant patent (1875)",
+        color: "#b5651d",
+        note:
+          "Military-warrant patent to the heirs of George C. Haywood (Mexican War) and their assignees the Stephenses — the file's first patent outside Madison County (Randolph County). Race unstated; possible freedwomen/heirs."
       }
     ],
 
@@ -107,6 +128,18 @@
         title: "T3S R3E",
         subtitle: "Township 3 South, Range 3 East — Huntsville Meridian",
         note: "Lewis Anderson's 1831 patent."
+      },
+      {
+        id: "T2S-R1W",
+        title: "T2S R1W",
+        subtitle: "Township 2 South, Range 1 West — Huntsville Meridian",
+        note: "CV-0109-137 (Spotswood Jones, assignee of John Clapp, Nov 20, 1818), Madison County."
+      },
+      {
+        id: "T18S-R10E",
+        title: "T18S R10E",
+        subtitle: "Township 18 South, Range 10 East — Huntsville Meridian",
+        note: "MW-1129-430 (1875 military-warrant patent, Randolph County) — the map's first patent outside Madison County."
       }
     ],
 
@@ -262,6 +295,34 @@
         authority: "BLM GLO record (accession as listed)",
         group: "anderson-1831",
         note: "Lewis Anderson as sole patentee — the east half of the northwest quarter of Section 18."
+      },
+      {
+        accession: "CV-0109-137",
+        date: "November 20, 1818",
+        patentees: ["Spotswood Jones"],
+        patenteeNote: "assignee of John Clapp, the original Huntsville entryman",
+        township: "T2S-R1W",
+        section: 10,
+        aliquot: "SW",
+        county: "Madison",
+        authority: "Credit Volume — Harrison Land Act of April 15, 1800",
+        group: "spotswood-jones-1818",
+        note:
+          "The patent image reads \"Spotswood Jones, assignee of John Clapp\" — Clapp signed his land-office certificate over to Jones before the patent issued; 160 acres, southwest quarter of Section 10, signed by President James Monroe. The BLM index spells the name \"SPOOTSWOOD JONES\" — the discrepancy is preserved. The earliest Jones–Spotswood link in the project; whether the patentee connects to the Avalon Joneses is unresolved — do not merge. A \"Spottswood Jones\" appears in Lawrence County, Alabama in 1825–26 (bondsman, estate appraiser); that identity is fenced separately."
+      },
+      {
+        accession: "MW-1129-430",
+        date: "April 10, 1875",
+        patentees: ["Matilda J Haywood", "Sarah Ann Haywood", "Synthia M A Haywood", "William H Haywood", "David L Stephens", "Harris Stephens"],
+        township: "T18S-R10E",
+        section: 19,
+        aliquot: "",
+        acres: "160.74",
+        county: "Randolph",
+        authority: "Military Warrant — ScripWarrant Act of 1847 (Mexican War)",
+        group: "haywood-warrant-1875",
+        note:
+          "Warrant #78691 (ScripWarrant Act of 1847, Mexican War) to \"Matilda C. Haywood, Cynthia M. A. Haywood, William H. Haywood and Sarah Ann Haywood, children and heirs at law of George C. Haywood, deceased, late a Private in Co. 'C', Regt. U.S.\" — \"duly assigned\" to Harris Stephens and David L. Stephens, who took the 160.74 acres while the Haywood children monetized the warrant. The patent image reads Cynthia M. A. / Matilda C.; the BLM index reads Synthia M. A. / Matilda J. — discrepancies preserved. No race stated in the record; possible freedwomen/heirs (unproven). George C. Haywood is unlinked to the Franklin County Haywoods. Signed by President Ulysses S. Grant."
       }
     ]
   };

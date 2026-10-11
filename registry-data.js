@@ -2119,5 +2119,30 @@ const REGISTRY_DATA = [
     "name": "Junius",
     "meta": "Post-emancipation chancery bill, undated",
     "note": "A Black person named in an undated, post-1900 chancery bill -- a fraud and coercion suit to set aside a deed. The complainant, an unnamed woman who had inherited land and estate from her deceased brother Moses Jones, said Junius had \"for a long time been attempting to get a portion of [her] estate.\" Described in the bill only as \"a negro\" -- sex not stated -- and as an associate of \"Louie Hyter,\" a fraud defendant from Chicago \"or some other Northern city.\" Case caption and complainant's name not yet on the pages read. (DB2 row 1718)"
+  },
+  {
+    "name": "Fifer Jim (Jim Jackson)",
+    "meta": "Runaway ad, Mar 28, 1806 · Berkeley and Jefferson Intelligencer, Martinsburg, Va.",
+    "note": "\"A Negro Man named Jim, alias Jim Jackson, but better known in this county and Jefferson by the name of Fifer Jim\" — about 40, 5'8\"–9\", who \"has for several years past blowed the fife for the militia companies about Martinsburg and other places\" and played the fiddle; lately confined in the Martinsburg jail, \"from which I relieved him\" — the advertiser, Robert Christy, had gotten him out, only to lose him again. $5 reward. (DB2 row 6879)"
+  },
+  {
+    "name": "Frank (1794)",
+    "meta": "1794 will of Lewelling Jones, Franklin Co., NC",
+    "note": "One of nine enslaved people named in Lewelling Jones's will — \"one negro woman,\" lent to the widow Catherine, and after the widow's death \"to choose her master or mistress.\" A choice bequest thirty-two years before Vicy's 1826 bequest in the Haywood will, in the same county. Kinship to the Avalon Joneses unproven — fenced. (DB2 row 6867)"
+  },
+  {
+    "name": "Vicy",
+    "meta": "1826 will of John Haywood, Franklin Co., NC",
+    "note": "\"His negro woman Vicy,\" directed \"to be at liberty to choose with whom she will live\" — an enslaved woman granted choice of residence in 1826 North Carolina. John Haywood of Franklin County (d. Sept 1826) is the prime candidate for Eliza Ann Haywood's father; Eliza Ann is neither confirmed nor excluded as his daughter. The treasurer John Haywood is a do-not-merge. (DB2 row 6855)"
+  },
+  {
+    "name": "Spotswood (36)",
+    "meta": "1824 sheriff's sale, Oglethorpe Co., GA",
+    "note": "Advertised with six others — Philip 26, Cesar 27, Susan 20, Josiah 27, Matt 11, Mary 12 — \"levied on as the property of Anthony Foster.\" The only enslaved person found in the six-state expansion bearing one of the target surnames as a given name. (DB2 row 6631)"
+  },
+  {
+    "name": "Alfren",
+    "meta": "1841 trust deed, Callaway Co., MO",
+    "note": "\"A negro man named Alfren, a slave for life,\" conveyed by Robert Spotswood Russell to his daughter-in-law Zanette Freeland Russell for five dollars — expressly shielded from sale by the grantor's son Anthony or seizure for Anthony's debts. The archive catalog dates the deed \"1849\"; the deed's own hand reads \"this 9th day of Febry 1841\" — the catalog date is retired. (DB2 row 6037)"
   }
 ];
