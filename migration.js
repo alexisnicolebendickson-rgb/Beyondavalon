@@ -72,7 +72,7 @@
     return div.innerHTML;
   }
 
-  var VERDICT_COLORS = { verified: "#3f5a41", review: "#96721c" };
+  var VERDICT_COLORS = { verified: "#1E3A5F", review: "#96721c" };
   var VERDICT_LABELS = { verified: "VERIFIED", review: "UNDER REVIEW" };
 
   var host = document.getElementById("migration-diagram");
@@ -111,7 +111,7 @@
     var a = byId[l.from], b = byId[l.to];
     var line = svgEl("line", {
       x1: a.x, y1: a.y, x2: b.x, y2: b.y,
-      stroke: l.style === "solid" ? "#8a3a22" : "#96721c",
+      stroke: l.style === "solid" ? "#A93226" : "#96721c",
       "stroke-width": 2.5,
       "stroke-dasharray": l.style === "solid" ? "none" : "8 5",
       opacity: l.style === "solid" ? 0.8 : 0.7
