@@ -722,3 +722,4 @@ section { padding-block: var(--space-20); }
 .data-table td:first-child { white-space: nowrap; font-weight: 600; }
 
 .brand-personal { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; margin-left: 10px; }
+.brand-mark { width: 34px; height: 34px; flex-shrink: 0; margin-left: 10px; }
