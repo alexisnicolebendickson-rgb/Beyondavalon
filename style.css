@@ -7,9 +7,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: color-mix(in oklab, var(--color-bg) 88%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  border-bottom: 3px double var(--color-border);
 }
 .nav-row {
   display: flex;
@@ -50,7 +49,7 @@
   font-weight: 600;
   letter-spacing: 0.01em;
 }
-.nav-links a:hover { color: var(--color-primary); }
+.nav-links a:hover { color: var(--color-primary); text-decoration: underline; text-underline-offset: 4px; }
 
 .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
 
@@ -95,9 +94,12 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-full);
-  font-weight: 600;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-weight: 700;
   font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
@@ -113,7 +115,7 @@
 .btn-secondary {
   background: transparent;
   color: var(--color-text);
-  border-color: var(--color-border);
+  border-color: var(--color-text-faint);
 }
 .btn-secondary:hover { border-color: var(--color-primary); color: var(--color-primary); }
 .btn-lg { padding: var(--space-4) var(--space-8); font-size: var(--text-base); }
@@ -141,23 +143,23 @@
 }
 .hero-content { position: relative; z-index: 1; max-width: 760px; }
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
+  display: inline-block;
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-primary);
-  background: color-mix(in oklab, var(--color-primary) 12%, var(--color-surface));
-  border: 1px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: var(--space-6);
 }
 .hero h1 {
   font-size: var(--text-hero);
-  margin-bottom: var(--space-5);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-6);
 }
 .hero p.lede {
   font-size: var(--text-lg);
@@ -175,11 +177,12 @@ section { padding-block: var(--space-20); }
 .section-head h2 { font-size: var(--text-3xl); }
 .section-head .kicker {
   display: block;
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--space-3);
 }
 .section-head p { color: var(--color-text-muted); font-size: var(--text-lg); }
@@ -265,9 +268,10 @@ section { padding-block: var(--space-20); }
   gap: var(--space-6);
 }
 .card {
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-top: 3px solid var(--color-primary);
+  border-radius: 3px;
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
 }
@@ -275,9 +279,10 @@ section { padding-block: var(--space-20); }
 .card p { color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: 0; }
 .card .tag {
   display: inline-block;
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-secondary);
   margin-bottom: var(--space-3);
@@ -285,9 +290,9 @@ section { padding-block: var(--space-20); }
 
 /* ---------- Document viewer cards ---------- */
 .doc-card {
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: 3px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -322,9 +327,9 @@ section { padding-block: var(--space-20); }
   flex: 1;
   min-width: 220px;
   padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-full);
+  border-radius: 3px;
   border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
   color: var(--color-text);
   font-size: var(--text-sm);
   font-family: var(--font-body);
@@ -338,14 +343,14 @@ section { padding-block: var(--space-20); }
   gap: var(--space-4);
 }
 .name-card {
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
   border-left: 3px solid var(--color-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 3px;
   padding: var(--space-4) var(--space-5);
 }
 .name-card h4 { font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: var(--space-1); }
-.name-card .meta { font-size: var(--text-xs); color: var(--color-text-faint); margin-bottom: var(--space-2); text-transform: uppercase; letter-spacing: 0.04em; }
+.name-card .meta { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-faint); margin-bottom: var(--space-2); text-transform: uppercase; letter-spacing: 0.08em; }
 .name-card p { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 0; }
 .name-card.empty-state { text-align: center; color: var(--color-text-faint); border-left-color: var(--color-border); grid-column: 1 / -1; padding: var(--space-10); }
 
@@ -421,9 +426,9 @@ section { padding-block: var(--space-20); }
 }
 @media (min-width: 800px) { .contact-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-16); } }
 .contact-card {
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: 3px;
   padding: var(--space-8);
 }
 .contact-card .row {
@@ -437,7 +442,7 @@ section { padding-block: var(--space-20); }
 .contact-card .row svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; color: var(--color-primary); }
 
 .site-footer {
-  border-top: 1px solid var(--color-border);
+  border-top: 3px double var(--color-border);
   padding-block: var(--space-12) var(--space-8);
   background: var(--color-surface);
 }
@@ -559,9 +564,9 @@ section { padding-block: var(--space-20); }
   margin: 0;
   padding: 6px;
   min-width: 280px;
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: 3px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
 }
 .has-dropdown:hover .dropdown,
@@ -618,10 +623,10 @@ section { padding-block: var(--space-20); }
 }
 .finding-chip {
   display: block;
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
   border-left: 3px solid var(--color-primary);
-  border-radius: var(--radius-md);
+  border-radius: 3px;
   padding: var(--space-3) var(--space-4);
   text-decoration: none;
   color: var(--color-text);
@@ -630,9 +635,10 @@ section { padding-block: var(--space-20); }
 .finding-chip:hover { border-color: var(--color-primary); }
 .finding-chip .chip-date {
   display: block;
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-primary);
   margin-bottom: 2px;
@@ -642,17 +648,18 @@ section { padding-block: var(--space-20); }
 /* ---------- Findings feed entries ---------- */
 .feed-entry {
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
+  border-radius: 3px;
+  background: var(--color-surface-alt);
   padding: var(--space-5) var(--space-6);
   margin-bottom: var(--space-5);
   max-width: 76ch;
 }
 .feed-entry h3 { margin-top: 0; font-size: var(--text-lg); }
 .feed-entry .feed-date {
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-primary);
   display: block;
@@ -679,9 +686,9 @@ section { padding-block: var(--space-20); }
 }
 .download-card {
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: 3px;
   padding: var(--space-6);
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
 }
 .download-card h3 { margin-top: 0; font-size: var(--text-lg); }
 .download-card .file-meta { font-size: var(--text-xs); color: var(--color-text-muted); }
@@ -699,7 +706,135 @@ section { padding-block: var(--space-20); }
   border-bottom: 1px solid var(--color-border);
   vertical-align: top;
 }
-.data-table th { font-weight: 700; color: var(--color-primary); }
+.data-table th { font-family: var(--font-mono); font-weight: 700; font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); }
 .data-table td:first-child { white-space: nowrap; font-weight: 600; }
 
 .brand-personal { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; margin-left: 10px; }
+
+/* ============================================================
+   ARCHIVAL RESKIN (2026-10-11) — catalog-card design language
+   New classes only; all existing classes restyled above.
+   ============================================================ */
+
+/* ---------- Decorative hero catalog card (index.html hero) ---------- */
+.hero-catalog { display: none; }
+
+@media (min-width: 1100px) {
+  .hero-catalog {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    right: max(var(--space-6), 4vw);
+    top: 50%;
+    width: min(400px, 34vw);
+    transform: translateY(-50%) rotate(1.5deg);
+    pointer-events: none;
+  }
+  .hero .hero-content { max-width: 620px; }
+}
+
+.catalog-card {
+  position: relative;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  box-shadow: var(--shadow-md);
+  padding: var(--space-5) var(--space-6) var(--space-6);
+  font-family: var(--font-mono);
+}
+.catalog-head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: var(--space-4);
+}
+.catalog-head span:first-child { color: var(--color-primary); }
+.catalog-head span:last-child { color: var(--color-text-faint); }
+.catalog-rows { margin: 0 0 var(--space-4); }
+.catalog-rows > div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: var(--space-3);
+  padding-block: var(--space-1);
+  font-size: var(--text-xs);
+}
+.catalog-rows dt {
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.catalog-rows dd { margin: 0; color: var(--color-text); }
+.catalog-rows dd.file-no { color: var(--color-primary); font-weight: 700; }
+
+.redact {
+  height: 0.85em;
+  background: var(--color-text);
+  margin-block: 0.35em;
+  opacity: 0.88;
+}
+.redact.red { background: var(--color-primary); opacity: 0.85; }
+
+.stamp {
+  position: absolute;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  width: 76px;
+  height: 76px;
+  border: 2px solid var(--color-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-secondary);
+  transform: rotate(-10deg);
+  opacity: 0.75;
+  box-shadow: inset 0 0 0 3px var(--color-surface-alt), inset 0 0 0 4px var(--color-secondary);
+}
+
+.file-tab {
+  position: absolute;
+  top: -14px;
+  right: -34px;
+  writing-mode: vertical-rl;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #F5EEDA;
+  background: var(--color-secondary);
+  padding: var(--space-4) var(--space-2);
+  border-radius: 0 3px 3px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Archival marginalia / rules ---------- */
+.marginalia {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  writing-mode: vertical-rl;
+}
+.rule-double { border: none; border-top: 3px double var(--color-border); margin-block: var(--space-10); }
+.file-no {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}

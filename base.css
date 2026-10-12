@@ -3,26 +3,28 @@
    ============================================================ */
 
 :root {
-  /* ---- Color: warm archival palette ---- */
-  --color-bg: #FBF7EF;
-  --color-surface: #F3EDE2;
-  --color-surface-2: #ECE3D3;
-  --color-surface-alt: #F7F1E6;
-  --color-border: #DFD3BE;
-  --color-text: #2B2420;
-  --color-text-muted: #5B4F44;
-  --color-text-faint: #8A7C6C;
-  --color-primary: #8A3A22;
-  --color-primary-hover: #6E2E1B;
-  --color-secondary: #33513E;
-  --content-default: #2B2420;
+  /* ---- Color: archival catalog-card palette (reskin 2026-10-11) ---- */
+  --color-bg: #F5EEDA;
+  --color-surface: #EFE5CB;
+  --color-surface-2: #E6D7B4;
+  --color-surface-alt: #F8F3E4;
+  --color-border: #D3C096;
+  --color-text: #231B12;
+  --color-text-muted: #57493A;
+  --color-text-faint: #8A7963;
+  --color-primary: #A93226;
+  --color-primary-hover: #852318;
+  --color-secondary: #1E3A5F;
+  --color-navy: #1E3A5F;
+  --content-default: #231B12;
 
   /* ---- Typography ---- */
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-body: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Courier Prime", "Courier New", ui-monospace, monospace;
 
-  --text-hero: clamp(2.5rem, 4.2vw + 1rem, 4.25rem);
-  --text-3xl: clamp(1.9rem, 2.2vw + 1rem, 2.75rem);
+  --text-hero: clamp(3rem, 7vw + 1rem, 6rem);
+  --text-3xl: clamp(2rem, 3vw + 1rem, 3.25rem);
   --text-2xl: clamp(1.5rem, 1.4vw + 1rem, 2rem);
   --text-xl: clamp(1.25rem, 0.8vw + 1rem, 1.5rem);
   --text-lg: 1.1875rem;
@@ -62,12 +64,14 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 252, 240, 0.55), transparent 70%),
+    repeating-linear-gradient(0deg, transparent 0 3px, rgba(120, 96, 60, 0.012) 3px 4px);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
@@ -137,10 +141,11 @@ section { padding-block: var(--space-20); }
 .section-head .kicker,
 .kicker {
   display: inline-block;
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   color: var(--color-primary);
   margin-bottom: var(--space-3);
 }
