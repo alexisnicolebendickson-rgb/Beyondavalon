@@ -20,6 +20,9 @@
   /* ---- Typography ---- */
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-body: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, SFMono-Regular, Menlo, "Courier New", monospace;
+  --font-typewriter: "Special Elite", "Courier Prime", ui-monospace, monospace;
+  --font-script: "Pinyon Script", "Snell Roundhand", cursive;
 
   --text-hero: clamp(2.5rem, 4.2vw + 1rem, 4.25rem);
   --text-3xl: clamp(1.9rem, 2.2vw + 1rem, 2.75rem);
@@ -153,6 +156,7 @@ section { padding-block: var(--space-20); }
 .section-head .kicker,
 .kicker {
   display: inline-block;
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 700;
   text-transform: uppercase;
@@ -165,6 +169,7 @@ section { padding-block: var(--space-20); }
 
 .tag {
   display: inline-block;
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 700;
   text-transform: uppercase;
@@ -235,15 +240,14 @@ blockquote {
   border-left: 3px solid var(--color-primary);
   background: var(--color-surface);
   border-radius: var(--radius-md);
-  font-family: var(--font-display);
+  font-family: var(--font-typewriter);
   font-size: var(--text-lg);
-  font-style: italic;
   color: var(--color-text);
 }
 blockquote cite {
   display: block;
   margin-top: var(--space-3);
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-style: normal;
   font-size: var(--text-sm);
   color: var(--color-text-faint);
