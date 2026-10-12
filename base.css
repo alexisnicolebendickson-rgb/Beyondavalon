@@ -146,7 +146,7 @@ section { padding-block: var(--space-20); }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin-bottom: var(--space-3);
 }
 .section-head h2 { margin-bottom: var(--space-4); }
@@ -158,7 +158,7 @@ section { padding-block: var(--space-20); }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   background: color-mix(in oklab, var(--color-primary) 12%, transparent);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
@@ -186,7 +186,7 @@ section { padding-block: var(--space-20); }
 .btn-primary {
   background: var(--color-primary);
   color: #FDF8EE;
-  border-color: var(--color-primary);
+  border-color: var(--color-secondary);
 }
 .btn-primary:hover { background: var(--color-primary-hover); color: #FDF8EE; box-shadow: var(--shadow-md); }
 .btn-secondary {
@@ -213,7 +213,7 @@ section { padding-block: var(--space-20); }
   font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
-.term-box strong { color: var(--color-primary); }
+.term-box strong { color: var(--color-secondary); }
 
 .prose h3 { color: var(--color-text); }
 .prose p { color: var(--color-text-muted); }
