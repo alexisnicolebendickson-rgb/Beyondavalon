@@ -181,6 +181,13 @@
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
+/* ---------- Combo theme carry-through (2026-10-11) ---------- */
+/* Bracketed wordmark */
+.brk { color: var(--color-primary); font-weight: 700; }
+/* Archival brackets on every kicker, site-wide */
+.kicker::before { content: "[ "; color: var(--color-primary); }
+.kicker::after { content: " ]"; color: var(--color-primary); }
+
 /* ---------- Combo hero redesign (2026-10-11): her layout bones + catalog-card devices ---------- */
 .hero-combo { padding-block: var(--space-16) var(--space-12); }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-12); align-items: center; }
