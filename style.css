@@ -60,6 +60,35 @@
   color: var(--color-primary);
 }
 
+/* Bracket wordmark lockup */
+.brand-lockup { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-wordmark { height: 40px; width: auto; }
+.brand-lockup .brand-sub {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 5px;
+}
+
+/* About sign-off: her mark + script signature */
+.about-signoff {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.about-signoff img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+.about-signoff .script-accent { margin: 0; }
+
 .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
 
 .theme-toggle {
