@@ -33,6 +33,9 @@
 .brand:hover { color: var(--color-text); }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-sub { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-text-muted); font-family: var(--font-body); margin-top: 2px; }
+.brand-lockup { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; gap: 3px; }
+.brand-logo { height: 36px; width: auto; flex-shrink: 0; }
+[data-theme="dark"] .brand-logo { content: url("./assets/images/counter-archive-logo-cream.png"); }
 
 
 .nav-links {
@@ -722,4 +725,3 @@ section { padding-block: var(--space-20); }
 .data-table td:first-child { white-space: nowrap; font-weight: 600; }
 
 .brand-personal { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; margin-left: 10px; }
-.brand-mark { width: 34px; height: 34px; flex-shrink: 0; margin-left: 10px; }
