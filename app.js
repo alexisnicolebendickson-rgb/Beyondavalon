@@ -1,38 +1,10 @@
 /*
   The Counter-Archive — shared site behavior
-  Handles: dark/light theme toggle, mobile menu toggle, and the Names
+  Handles: mobile menu toggle, and the Names
   Registry search/render (when REGISTRY_DATA is present on the page).
 */
 (function () {
   "use strict";
-
-  /* ---------- Theme toggle ---------- */
-  // In-memory only (no localStorage/sessionStorage) so this behaves
-  // identically everywhere, including sandboxed preview iframes that
-  // disallow web storage APIs.
-  var root = document.documentElement;
-
-  function applyTheme(theme) {
-    if (theme === "dark") {
-      root.setAttribute("data-theme", "dark");
-    } else {
-      root.removeAttribute("data-theme");
-    }
-  }
-
-  (function initTheme() {
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      applyTheme("dark");
-    }
-})();
-
-  var themeToggle = document.getElementById("theme-toggle");
-  if (themeToggle) {
-    themeToggle.addEventListener("click", function () {
-      var isDark = root.getAttribute("data-theme") === "dark";
-      applyTheme(isDark ? "light" : "dark");
-    });
-  }
 
   /* ---------- Mobile menu toggle ---------- */
   var menuToggle = document.getElementById("menu-toggle");

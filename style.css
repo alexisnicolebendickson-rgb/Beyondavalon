@@ -35,7 +35,6 @@
 .brand-sub { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-text-muted); font-family: var(--font-body); margin-top: 2px; }
 .brand-lockup { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; gap: 3px; }
 .brand-logo { height: 36px; width: auto; flex-shrink: 0; }
-[data-theme="dark"] .brand-logo { content: url("./assets/images/counter-archive-logo-cream.png"); }
 
 
 .nav-links {
@@ -54,22 +53,6 @@
 .nav-links a:hover { color: var(--color-primary); }
 
 .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
-
-.theme-toggle {
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  width: 40px; height: 40px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  color: var(--color-text);
-}
-.theme-toggle:hover { border-color: var(--color-primary); }
-.theme-toggle svg { width: 18px; height: 18px; }
-[data-theme="dark"] .icon-sun { display: block; }
-[data-theme="dark"] .icon-moon { display: none; }
-.icon-sun { display: none; }
-.icon-moon { display: block; }
 
 .menu-toggle {
   display: flex;
@@ -389,7 +372,6 @@ section { padding-block: var(--space-20); }
 }
 .support-hero h2, .support-hero p { color: #f5f1e6; }
 .support-hero .section-head .kicker { color: #d7e3c6; }
-[data-theme="dark"] .support-hero { background: color-mix(in oklab, var(--color-secondary) 55%, var(--color-surface)); }
 
 .support-grid {
   display: grid;
@@ -625,10 +607,6 @@ section { padding-block: var(--space-20); }
 .verdict-ui { color: #8a5a00; border-color: #e0c36a; background: #fdf6e3; }
 .verdict-unv { color: #8a3a22; border-color: #d9a08a; background: #fbf1ec; }
 .verdict-prop { color: #1f5f8b; border-color: #8fb8d8; background: #eef5fb; }
-[data-theme="dark"] .verdict-doc { color: #a8d5ac; background: #1d3320; border-color: #3c6b41; }
-[data-theme="dark"] .verdict-ui { color: #e8c96a; background: #38300f; border-color: #6b5d1e; }
-[data-theme="dark"] .verdict-unv { color: #e0a58c; background: #3a2118; border-color: #7a4530; }
-[data-theme="dark"] .verdict-prop { color: #9cc8e8; background: #16283a; border-color: #2e5a7d; }
 
 /* ---------- 30-second findings strip (2026-09-24) ---------- */
 .findings-strip { padding-block: var(--space-10); }
