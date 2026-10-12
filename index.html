@@ -179,19 +179,61 @@
 
 <main id="main">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <div class="hero-bg"><img src="./assets/images/hero-oak.jpeg" alt="" role="presentation" /></div>
-    <div class="container hero-content">
-      <span class="eyebrow">Independent public-history research • Huntsville, Alabama</span>
-      <h1>Naming the names history left out.</h1>
-      <p class="lede">The Counter-Archive documents the enslaved people, families, and descendants held at Avalon Plantation — the land the University of Alabama in Huntsville was built on — and traces where the wealth went, who kept it, and what the institutions built on that land have refused to say. This is not a story about rescue. It is about accountability: naming the enslavers, naming the institutions, and giving Black history back its names.</p>
-      <div class="hero-actions">
-        <a href="#history" class="btn btn-primary btn-lg">Read the history</a>
-        <a href="#registry" class="btn btn-secondary btn-lg">See the names registry</a>
+  <!-- ============ HERO (combo redesign 2026-10-11) ============ -->
+  <section class="hero hero-combo" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="br" aria-hidden="true">[</span>&nbsp;A genealogical counter-archive&nbsp;<span class="br" aria-hidden="true">]</span></span>
+        <h1>Naming the names history left out.</h1>
+        <p class="lede">The Counter-Archive documents the enslaved people, families, and descendants held at Avalon Plantation — the land the University of Alabama in Huntsville was built on — and traces where the wealth went, who kept it, and what the institutions built on that land have refused to say. This is not a story about rescue. It is about accountability: naming the enslavers, naming the institutions, and giving Black history back its names.</p>
+        <div class="hero-actions">
+          <a href="#history" class="btn btn-primary btn-lg">Read the history</a>
+          <a href="#registry" class="btn btn-secondary btn-lg">See the names registry</a>
+        </div>
+      </div>
+      <aside class="catalog-card" aria-label="Sample catalog card: the archive redacts, we read against it">
+        <div class="cc-head"><span>The Counter-Archive</span><span>Catalog card</span></div>
+        <dl class="cc-fields">
+          <div><dt>File no.</dt><dd>CA-0187-D</dd></div>
+          <div><dt>Subject</dt><dd>Deed, Reuben Jones, Jan 1871</dd></div>
+          <div><dt>Grantor</dt><dd><span class="redact">redacted</span></dd></div>
+          <div><dt>Consideration</dt><dd>$<span class="redact">redacted</span> · 40 acres</dd></div>
+          <div><dt>Notes</dt><dd><span class="redact">redacted</span> freedpeople <span class="redact">redacted</span> on the Avalon property.</dd></div>
+        </dl>
+        <div class="cc-stamp" aria-hidden="true">Read<br />against</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ PILLARS: land, capital, people ============ -->
+  <section class="pillars" aria-label="How the research is organized">
+    <div class="container pillars-grid">
+      <div class="pillar">
+        <span class="pillar-num">01</span>
+        <h2>Land</h2>
+        <p>Parcels, patents, and deeds — who owned what, where, and how it changed hands.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">02</span>
+        <h2>Capital</h2>
+        <p>How the wealth was built and moved — hiring-out income, estate values, money flows.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">03</span>
+        <h2>People</h2>
+        <p>The enslaved and freed people, and the Jones network around them — named, not numbered.</p>
       </div>
     </div>
   </section>
+
+  <!-- ============ DATABASE TICKER ============ -->
+  <div class="db-ticker" aria-label="Database totals">
+    <div class="container ticker-row">
+      <span><span class="br" aria-hidden="true">[</span> DB1 · 4,966 records <span class="br" aria-hidden="true">]</span></span>
+      <span><span class="br" aria-hidden="true">[</span> DB2 · 10,285 people <span class="br" aria-hidden="true">]</span></span>
+      <span><span class="br" aria-hidden="true">[</span> DB4 · 1,757 sources <span class="br" aria-hidden="true">]</span></span>
+    </div>
+  </div>
 
   <!-- ============ ON THIS PAGE — jump-link table of contents ============ -->
   <style>
