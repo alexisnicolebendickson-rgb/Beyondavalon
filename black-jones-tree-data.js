@@ -1452,6 +1452,17 @@ window.BLACK_JONES_TREE_DATA = {
         168
       ]
     },
+      {
+        "id": "C20",
+        "source": "elizabeth-1820",
+        "target": "eliza-jones-1861",
+        "relationship": "possible_mother_of",
+        "confidence": "lead",
+        "notes": "Alternative structure under investigation (researcher hypothesis, 2026-10-14): Eliza Jones may have been Elizabeth's daughter rather than Elizabeth herself -- which would make Columbus and Reuben Shandy's nephews rather than half-brothers, and dissolves the age problem in the Elizabeth-maternity theory. Unproven; drawn as a lead alongside C14, never as fact. Do not merge.",
+        "db1_row": [
+          168
+        ]
+      },
     {
       "id": "C15",
       "source": "elizabeth-1820",
@@ -1471,8 +1482,8 @@ window.BLACK_JONES_TREE_DATA = {
       "source": "turner-moore",
       "target": "shandy-wesley-jones",
       "relationship": "father_of",
-      "confidence": "confirmed_secondary",
-      "notes": "Researcher determination 2026-10-03 (pretty certain): Turner Moore \u2014 the father Columbus Jones named in his Freedman's Bank register No. 29 (d. March 1867) \u2014 was Shandy's father. The link is inferential: no document names Shandy's father directly; it rests on the manumission grouping, the census trail, and Columbus's register. Shandy and Columbus are half-brothers (shared father; Elizabeth \u2260 Eliza Jones). DB1 row 2317. Turner Moore is the father per family records (social/legal father). See C17\u2013C19 for the separate biological-father candidacy layer (DB1 row 2318).",
+      "confidence": "lead",
+      "notes": "Researcher determination 2026-10-03 (pretty certain): Turner Moore \u2014 the father Columbus Jones named in his Freedman's Bank register No. 29 (d. March 1867) \u2014 was Shandy's father. The link is inferential: no document names Shandy's father directly; it rests on the manumission grouping, the census trail, and Columbus's register. Shandy and Columbus are half-brothers (shared father; Elizabeth \u2260 Eliza Jones). DB1 row 2317. Turner Moore is the father per family records (social/legal father). See C17\u2013C19 for the separate biological-father candidacy layer (DB1 row 2318). [Updated 2026-10-14: downgraded from confirmed_secondary to lead at the researcher's direction -- the paternity of Shandy, Evelina, and Ann is re-opened. Turner Moore remains a candidate alongside Lewellen Jones, John N. S. Jones, and Alexander P. Jones; no document names the father.]",
       "db1_row": [
         534,
         1718,
