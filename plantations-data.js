@@ -44,10 +44,11 @@
 
 2026-10-09 UPDATE: 2 new sites added (plato-jones-athens-acre-1878, reuben-jones-drake-land-1871; ids collision-checked against all existing ids). The Avalon entry now records Lewellen Jones's $18,742 land purchase and January 1820 suicide; the T4S patents entry carries the purchase price. Edmund Townsend's 7-plantation estate NOT mapped — parcel locations unrecovered. Count correction: the sites array actually holds 138 entries (bookkeeping had drifted). restoredCount is now 138, originalCount 144.
 2026-10-11 UPDATE: 4 new sites added (lawrence-county-al-benjamin-jones-lead, lawrence-county-tn-deed-index-lead, franklin-county-nc-haywood-lead, oglethorpe-county-ga-spotswood-lead — six-state expansion anchors; ids collision-checked against all existing ids). The two new federal patents (Spotswood Jones 1818, Haywood warrant 1875) live on the GLO patent map — no plantations-map pin, since section-center coordinates could not be verified against the BLM PLSS grid. restoredCount is now 142, originalCount 148.
+2026-10-17 UPDATE: 6 new sites added from the Oct 16–17, 2026 FAN/map-register wave (johnson-beasley-sec32-forty-1868, prince-bradford-sec32-forty-1868, marshall-jones-t3r2w-tract-1868, aleck-jones-place-1867, jesse-jordan-triana-road-500ac-1866, beasley-estate-sec29-lead; ids collision-checked against all existing ids). All six carry precise:false with the approximation basis stated on the precise line: the two Sec. 32 forties and the T3 R2W tract are placed at aliquot level on the PLSS grid derived from this file's own anchors (blow-cunningham-sec29-patent; cross-checked against the lewellen-jones-t4s-patents township centroid — the anchors agree to ~0.1 mi); the Aleck Jones place and Jordan's 500 acres are corridor-level placements (distance-and-road descriptions only; no legal description on file); the Beasley-estate entry reuses the Sec. 29 NW1/4 placement of the Blow/Cunningham patent entry and stays a separate Lead-grade entry — the existing patent entry is untouched, as is every other existing entry. No entry's summary claims a parcel-precise point. restoredCount is now 148, originalCount 154.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 142,
-  originalCount: 148,
+  restoredCount: 148,
+  originalCount: 154,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
   /* ---------- Network connections ----------
@@ -1690,6 +1691,74 @@ window.PLANTATIONS_DATA = {
       precise: false, // approximate: Lexington (county seat); the sheriff's sale location within the county is not stated
       summary: "An 1824 sheriff's sale advertised \"7 negroes — Spotswood 36 years old, Philip 26, Cesar 27, Susan 20, Josiah 27, Matt 11, and Mary 12 years old, levied on as the property of Anthony Foster.\" A Black man named Spotswood, thirty-six — the only enslaved person found anywhere in the expansion bearing one of the target surnames as a given name. Context for the Spotswood naming thread (cf. the 1818 Spotswood Jones patent, GLO map). DB2 rows 6631–6637.",
       citation: "Georgia historic-newspaper archive (1824 sheriff's sale ad); DB1 row 3742; paper note [1116]."
+    },
+
+    // ---------- 2026-10-17 paste: FAN / map-register wave (Oct 16–17, 2026) ----------
+    {
+      id: "johnson-beasley-sec32-forty-1868",
+      name: "Johnson Beasley's forty — A. P. Jones estate sale, Jan 27, 1868 (Sec. 32, T4 R1W)",
+      tier: 1,
+      county: "Madison",
+      lat: 34.6465,
+      lng: -86.6595,
+      precise: false, // APPROXIMATE: center of the N1/2 of the W1/2 of the SW1/4 of Sec. 32, T4S R1W on the PLSS grid derived from this file's blow-cunningham-sec29-patent anchor (NW1/4 Sec. 29, T3S R1W center, 34.7533/-86.6573; 1 section = 1 mi), cross-checked against the lewellen-jones-t4s-patents township centroid — aliquot-level placement of the deeded 40 acres, not a surveyed parcel point
+      summary: "Johnson Beasley, a freedman, bought the north half of the west half of the SW1/4 of Sec. 32, T4 R1W — 40 acres — at the January 27, 1868 chancery sale of the A. P. Jones estate (Paul L. Jones, administrator, v. Donnell et al.), for $130; the Register's deed (Wm. B. Figures) issued June 1, 1870 (Deed Book OO pp. 596–597, read in full). Beasley had signed the March 1866 Jordan labor contract (No. 586) as one of the Beasley/Moore group's two representatives, and by January 1871 he had married Columbus Jones's widow (Hoksbergen & DeNeefe fn 73 — Reported; the marriage deeds are unpulled). He is one of only three confirmed freedpeople buyers at the estate's own sale.",
+      citation: "Madison County Deed Book OO pp. 596–597; FAN chunks 3 & 5 and map register #16 (2026-10-16/17); DB1 rows 1738, 2059, 2062–2063, 2083."
+    },
+    {
+      id: "prince-bradford-sec32-forty-1868",
+      name: "Prince Bradford's forty — A. P. Jones estate sale, Jan 27, 1868 (Sec. 32, T4 R1W)",
+      tier: 1,
+      county: "Madison",
+      lat: 34.6429,
+      lng: -86.6595,
+      precise: false, // APPROXIMATE: center of the S1/2 of the W1/2 of the SW1/4 of Sec. 32, T4S R1W on the same PLSS grid as the Johnson Beasley entry above — aliquot-level placement of the deeded 40 acres, not a surveyed parcel point
+      summary: "Prince Bradford, a freedman and veteran of Co. A, 17th U.S.C.T., bought the south half of the same quarter-quarter as Johnson Beasley's forty at the same January 27, 1868 A. P. Jones estate sale, for the same $130 (Register's deed, Deed Book OO pp. 598–599 — an earlier index reading of 'p. 568' is retired; OO 568 is a different deed). The two forties stack into the full west half of the SW1/4 of Sec. 32: 80 acres bought by two freedmen on the same day out of the enslaver's estate. An August 10, 1867 War Department claim-division letter names Prince Bradford among nine discharged soldiers whose bounty-claim papers were acknowledged. No document on file states who held Prince Bradford before emancipation — his former owner is unstated in every record read. (A 'Price' rendering of his name stands unresolved in one index pass.)",
+      citation: "Madison County Deed Book OO pp. 598–599; FAN chunk 5 and map register #17 (2026-10-17); DB1 rows 2060, 2061, 2084."
+    },
+    {
+      id: "marshall-jones-t3r2w-tract-1868",
+      name: "Marshall Jones's winning-bid tract, T3 R2W (1868) — Register's deed issued to Edward C. Betts",
+      tier: 1,
+      county: "Madison",
+      lat: 34.7569,
+      lng: -86.7079,
+      precise: false, // APPROXIMATE: aliquot-weighted centroid of the tract's two described portions (E1/2 of the SW1/4 of Sec. 23, 40 ac, + E1/2 of the north part of the NW1/4 of Sec. 26, ~50 ac per the 1870 recital) on the PLSS grid derived from this file's blow-cunningham-sec29-patent anchor — the tract straddles the Sec. 23/26 line in T3S R2W; section-level placement only, and the described acreage is itself unresolved (see summary)
+      summary: "Marshall Jones — A. P. Jones's 'head man,' held by Jones and told early in the war that he was free and could trade and own property in his own name — was the winning bidder at the January 27, 1868 estate sale (Case No. 753) on this T3 R2W tract: the E1/2 of the north part of the NW1/4 of Sec. 26 plus the E1/2 of the SW1/4 of Sec. 23, less the N1/2 of the N1/2, north of the Athens–Huntsville road; both deeds style him '(Colored).' His winning price was never recovered, and the Register's deed for the tract issued instead to Edward C. Betts — a man who held 34 people in 1860 — by a mechanism no document on file states (an assignment is presumed, not stated). Betts and his wife sold the tract to Thaddeus Oakes for $565.31 (Apr 30, 1870, Deed Book OO p. 221); Oakes sold it to Delilah M. Bishop for $500 (Dec 3, 1872, Deed Book TT pp. 516–517). The unread Register-to-Betts deed is the document that would show how a Black man's winning bid became a white enslaver's deed. Conflict carried, not resolved: the 1872 deed describes only the east half of each portion, and the tract's ~110 acres 'as described' is a summary figure, not a deed figure.",
+      citation: "FAN chunk 5 §B1 and map register #24 (2026-10-17); DB1 rows 2041–2048, 2081–2085; DB4 rows 768, 769, 771, 793, 1811."
+    },
+    {
+      id: "aleck-jones-place-1867",
+      name: "The 'Aleck Jones place' — Reuben Jones & Jim Betts contract, 1867 (four miles west of Huntsville)",
+      tier: 1,
+      county: "Madison",
+      lat: 34.7304,
+      lng: -86.6565,
+      precise: false, // APPROXIMATE: corridor-level — placed 4 mi due west of this file's Huntsville county-seat anchor (34.7304, -86.5861) on the PLSS-derived mile grid; the contract gives a distance and a name only, no legal description, so this pin marks the west corridor, not a parcel
+      summary: "On July 16, 1867, Reuben Jones and Jim Betts contracted with Huntsville merchant B. W. Wise to work 'a tract of land, a part of which is known as the Aleck Jones place, four miles west of Huntsville' (Freedmen's Bureau contract 1397, manuscript-verified). Wise furnished food; the crop secured the men's store accounts — Reuben's $197.40 (including an 1866 Wise & Major balance) and Betts's $77.50. 'Aleck' is the name Nancy Rohr recalled for A. P. Jones, so the tract's name ties it to the Jones orbit; its boundaries, total acreage, and legal relation to the estate core are unstated in any document on file. One fact of the documents, recorded without inference: Reuben signed this contract by mark, and the same man signed his December 1872 Freedman's Bank card.",
+      citation: "Freedmen's Bureau contract 1397 (FamilySearch DGS 007636376, image 00752, verified 2026-10-16); FAN chunk 6 §3 and map register #2; DB1 row 5082."
+    },
+    {
+      id: "jesse-jordan-triana-road-500ac-1866",
+      name: "Jesse G. Jordan's 500 acres — Triana Road, five miles west of Huntsville (1866 contract)",
+      tier: 2,
+      county: "Madison",
+      lat: 34.6483,
+      lng: -86.6705,
+      precise: false, // APPROXIMATE: corridor-level — center of Sec. 31, T4S R1W (the Jordan family seat fronting Triana Road, per the compiled Jordan's Chapel report) on the PLSS grid derived from this file's blow-cunningham-sec29-patent anchor; the contract's 500 acres carry no legal description, so the pin marks the seat/corridor vicinity, not a parcel
+      summary: "The land of Freedmen's Bureau contract 586 (Mar 9, 1866, manuscript-verified opening): Jesse G. Jordan rented '500 acres more or less,' five miles west of Huntsville, to the Beasley/Moore labor group — Jefferson and Johnson Beasley signing for themselves and their employed hands — for 8 bales of cotton, 100 barrels of corn, and one-third of the fodder, under a $1,000 bond with a lien on the crop and on the freedpeople's own horses, mules, and wagons. Jordan (identity High: a son of Bartholomew 'Batt' Jordan) had administered his brother Henry's estate in 1844, petitioning to sell its land and four enslaved people; his family seat fronted Triana Road on the segment the compiled chapel report runs 'from {Alexander P.} Jones' Shop' eastward — geographic adjacency to the Jones orbit, with no deed, bond, or partnership tie to any Jones on file. Tier 2: adjacent FAN, not the research line itself. The September speculation tying this employer to the Limestone County Jordans rested on a superseded 'Jno. G. Jordan' reading and is retired; the Limestone Jordans stay firewalled.",
+      citation: "Freedmen's Bureau contract 586 (FamilySearch DGS 007636376, image 00369, verified 2026-10-16); Jordan's Chapel Cemetery Summary Report (Rankin/HMCHS); FAN chunks 4 & 6 and map register #1; DB1 row 5079."
+    },
+    {
+      id: "beasley-estate-sec29-lead",
+      name: "The 'Beasley estate' candidate — NW1/4 Sec. 29, T3S R1W (Peter Blow parcel, later Oakwood) — LEAD",
+      tier: 2,
+      county: "Madison",
+      lat: 34.7533,
+      lng: -86.6573,
+      precise: false, // APPROXIMATE: the same PLSS placement as blow-cunningham-sec29-patent — center of the NW1/4 of Sec. 29, T3S R1W per the BLM PLSS grid — because the candidate parcel IS that same quarter-section; kept as a separate entry because the Beasley-estate identification is an unproven Lead (see summary)
+      summary: "LEAD — identification unproven. Adventist sources call the farm their church bought by January 23, 1896 the 'Beasley estate,' and Dr. James A. Beasley's obituary ran February 7, 1896; the candidate parcel is the NW1/4 of Sec. 29, T3S R1W — the Peter Blow parcel, later Oakwood. No document on file equates that quarter-section with Dr. Beasley's estate land; his probate file is the test and is unpulled. Dr. Beasley is documented as an enslaver in his own right: the 1865 Colored Census names him former owner of the Wyley Jones household (Wyley, 40, a railroad hand; Henrietta, 4; Caldonia, 2) and of Sarah B. and Baker Fletcher, and Freedman's Bank depositor Nick Beasley was born on his plantation, seven miles from Huntsville, to Allen and Sealy Beasley. This entry is deliberately separate from the 1819 Blow/Cunningham patent entry for the same quarter-section (blow-cunningham-sec29-patent): the patent is a verified fact; the Beasley equation is a lead, and the two are not merged.",
+      citation: "FAN chunk 3 §A2 and map register #30 (2026-10-16/17); DB1 rows 1672, 1673, 1736; DB4 rows 670, 671."
     }
 
   ]

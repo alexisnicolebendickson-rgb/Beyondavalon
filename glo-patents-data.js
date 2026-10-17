@@ -10,6 +10,16 @@
   (1875 military-warrant patent, Randolph County). MW-1129-430 is the file's
   FIRST patent outside Madison County; the renderer now reads a per-patent
   `county` field (default Madison) instead of assuming Madison throughout.
+  2026-10-17 UPDATE: three Thomas W. Pettus patents added (Sec. 9, T3S R2W —
+  two 40-acre entries dated April 1, 1852, signature group with James S.
+  Pettus, and one 80-acre entry dated March 1, 1858), from the project's BLM
+  GLO box extraction (USGenWeb mirror of the BLM raw database, Madison County
+  P–S file; rows re-verified against the mirror 2026-10-17). The extraction
+  records no aliquot parts and no accession numbers for these rows, and none
+  are claimed here. A new township plat (T3S-R2W) and legend group
+  (pettus-1852-1858) were added for them. The equation of the patentee with
+  the Thos W. Pettus of Freedmen's Bureau contract 1265 (Jan 1867) is a
+  graded name-match Lead in project research, not an established identity.
 */
 (function () {
   "use strict";
@@ -94,6 +104,14 @@
         color: "#b5651d",
         note:
           "Military-warrant patent to the heirs of George C. Haywood (Mexican War) and their assignees the Stephenses — the file's first patent outside Madison County (Randolph County). Race unstated; possible freedwomen/heirs."
+      },
+      {
+        id: "pettus-1852-1858",
+        shortLabel: "TP",
+        label: "Thomas W. Pettus (1852/1858)",
+        color: "#704214",
+        note:
+          "Three Sec. 9, T3S R2W patents from the project's BLM GLO box extraction (two 40-acre entries, Apr 1, 1852, with James S. Pettus; 80 acres, Mar 1, 1858). The patentee's equation with the Thos W. Pettus of Freedmen's Bureau contract 1265 (Jan 1867) is a graded name-match Lead in project research, not an established identity."
       }
     ],
 
@@ -122,6 +140,12 @@
         title: "T3S R1W",
         subtitle: "Township 3 South, Range 1 West — Huntsville Meridian",
         note: "Blow + Cunningham (1819), Gaither + Huston (1818), Keen + Minor (1825)."
+      },
+      {
+        id: "T3S-R2W",
+        title: "T3S R2W",
+        subtitle: "Township 3 South, Range 2 West — Huntsville Meridian",
+        note: "Thomas W. Pettus's Sec. 9 patents (two 40-acre entries, Apr 1, 1852, with James S. Pettus; 80 acres, Mar 1, 1858). Added 2026-10-17 from the project's GLO box extraction."
       },
       {
         id: "T3S-R3E",
@@ -323,6 +347,47 @@
         group: "haywood-warrant-1875",
         note:
           "Warrant #78691 (ScripWarrant Act of 1847, Mexican War) to \"Matilda C. Haywood, Cynthia M. A. Haywood, William H. Haywood and Sarah Ann Haywood, children and heirs at law of George C. Haywood, deceased, late a Private in Co. 'C', Regt. U.S.\" — \"duly assigned\" to Harris Stephens and David L. Stephens, who took the 160.74 acres while the Haywood children monetized the warrant. The patent image reads Cynthia M. A. / Matilda C.; the BLM index reads Synthia M. A. / Matilda J. — discrepancies preserved. No race stated in the record; possible freedwomen/heirs (unproven). George C. Haywood is unlinked to the Franklin County Haywoods. Signed by President Ulysses S. Grant."
+      },
+      {
+        accession: "unrecorded in project extraction",
+        date: "April 1, 1852",
+        patentees: ["Thomas W Pettus", "James S Pettus"],
+        patenteeNote: "signature group as recorded in the BLM raw database",
+        township: "T3S-R2W",
+        section: 9,
+        aliquot: "",
+        acres: "40",
+        authority: "Not recorded in the project extraction",
+        group: "pettus-1852-1858",
+        note:
+          "One of two separate 40-acre entries the BLM raw database records for Thomas W. Pettus in Sec. 9 on this date, both in signature group with James S. Pettus (the database carries the pair as two rows; the aliquot parts are not recorded in the project's extraction, and none are claimed here — the plat shades the full section). Source: USGenWeb mirror of the BLM GLO raw database, Madison County P–S file, re-verified 2026-10-17. The patentee's equation with the Thos W. Pettus of Freedmen's Bureau contract 1265 (Jan 1867) is a graded name-match Lead, not an identity."
+      },
+      {
+        accession: "unrecorded in project extraction",
+        date: "April 1, 1852",
+        patentees: ["Thomas W Pettus", "James S Pettus"],
+        patenteeNote: "signature group as recorded in the BLM raw database",
+        township: "T3S-R2W",
+        section: 9,
+        aliquot: "",
+        acres: "40",
+        authority: "Not recorded in the project extraction",
+        group: "pettus-1852-1858",
+        note:
+          "The second of the two 40-acre Sec. 9 entries dated April 1, 1852 (see the preceding entry). A Pettus surname cluster patents elsewhere in this township — Thomas Pettus, Sec. 7, 164.22 acres (1835), and David W. Pettus, Sec. 17, 160 acres (1837) — recorded in the same extraction but not entered in this file; neither man is asserted as kin to Thomas W. Pettus."
+      },
+      {
+        accession: "unrecorded in project extraction",
+        date: "March 1, 1858",
+        patentees: ["Thomas W Pettus"],
+        township: "T3S-R2W",
+        section: 9,
+        aliquot: "",
+        acres: "80",
+        authority: "Not recorded in the project extraction",
+        group: "pettus-1852-1858",
+        note:
+          "Thomas W. Pettus's third Sec. 9 patent in the extraction: 80 acres, six years after the paired 40-acre entries of 1852. No document on file states where the thirteen hands of Bureau contract 1265 actually worked; these patents place the Pettus name on Sec. 9 land, and the contract's workplace is a separate, unproven step."
       }
     ]
   };
