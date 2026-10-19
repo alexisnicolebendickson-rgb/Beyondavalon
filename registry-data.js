@@ -946,9 +946,9 @@ const REGISTRY_DATA = [
     "note": "I found Lelia Bradford in the same 1865 Census of Black Citizens / Register of Bounty Claims record, Madison, Alabama (https://nmaahc.si.edu/freedmens-bureau/record/fbs-1662423774659-1662425318593-0)."
   },
   {
-    "name": "Lucy Ann Jones",
+    "name": "Judy Ann Jones",
     "meta": "Freedmen's Bureau record, 1865",
-    "note": "U.S., Freedmen's Bureau Records, 1865-1878"
+    "note": "First entered in this registry under Ancestry's first-pass reading, 'Lucy Ann Jones' (U.S., Freedmen's Bureau Records, 1865-1878). A deciding third read of the Contract 507 manuscript (October 18, 2026) settles the name as Judy Ann — see the Judy Ann Jones entry from the NMAAHC portal record (1866). The superseded reading is preserved in this note, not deleted."
   },
   {
     "name": "Malinda Jones/Bradford",
@@ -1023,7 +1023,7 @@ const REGISTRY_DATA = [
   {
     "name": "Dallas Jones",
     "meta": "Freedmen's Bureau record, 1866",
-    "note": "I found Dallas Jones in the Smithsonian NMAAHC Freedmen's Bureau Search Portal: 'Fair Copies of Contracts, Huntsville (Subassistant Commissioner), Vol. 2,' appearing 17 Feb 1866, Huntsville, Madison, Alabama -- the same record as Shandy Jones and July Ann Jones (https://nmaahc.si.edu/freedmens-bu..."
+    "note": "I found Dallas Jones in the Smithsonian NMAAHC Freedmen's Bureau Search Portal: 'Fair Copies of Contracts, Huntsville (Subassistant Commissioner), Vol. 2,' appearing 17 Feb 1866, Huntsville, Madison, Alabama -- the same record as Shandy Jones and Judy Ann Jones (https://nmaahc.si.edu/freedmens-bu..."
   },
   {
     "name": "Edie Sanford",
@@ -1071,9 +1071,9 @@ const REGISTRY_DATA = [
     "note": "Docket of Trials Vol. 84, Huntsville AL Bureau Superintendent, Mar. 24, 1866"
   },
   {
-    "name": "July Ann Jones",
+    "name": "Judy Ann Jones",
     "meta": "Freedmen's Bureau record, 1866",
-    "note": "I found July Ann Jones in the Smithsonian NMAAHC Freedmen's Bureau Search Portal: 'Fair Copies of Contracts, Huntsville (Subassistant Commissioner), Vol. 2,' appearing 29 Jan 1866 and 17 Feb 1866, Huntsville, Madison, Alabama -- the same record as Shandy Jones (row 78/80/288) (https://nmaahc.si.e..."
+    "note": "Wife of Shandy Jones in Freedmen's Bureau Contract 507 (Huntsville, Feb 17, 1866), and in the Jan 29, 1866 record the portal indexes with him. The NMAAHC portal abstract reads her name 'July Ann'; Ancestry's first pass read 'Lucy Ann.' A deciding third read of the manuscript (October 18, 2026) gives 'Judy Ann' in both the contract body and the signature block. The rejected readings are preserved in this note because the public indexes still carry them."
   },
   {
     "name": "Lucy Jones",

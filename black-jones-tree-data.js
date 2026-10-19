@@ -425,7 +425,7 @@ window.BLACK_JONES_TREE_DATA = {
       "dates": "1833 – 1898",
       "group": "freedperson",
       "confidence": "confirmed_secondary",
-      "notes": "Born enslaved at Avalon. U.S. Colored Troops — enlisted July 14, 1862 at Greensburg, Indiana; discharged June 20, 1865; blacksmith. Freedman's Bank card No. 1406 (Dec 21, 1872): b. ~1842 Madison Co., wife Mollie, children Emily & Coretina, father Turner, mother Eliza — full family now on record. Bought plantation land Jan 1871 (Deed Book OO p. 593, Vanderventer to Reuben Jones, 1870); bought Drake-parcel land Jan 1871; leased land to a freedmen's school 1869–70. Reconstruction-era AL legislator with his brother Columbus. Married Mollie Richardson Oct 1872.",
+      "notes": "Born enslaved at Avalon. U.S. Colored Troops — enlisted July 14, 1862 at Greensburg, Indiana; discharged June 20, 1865; blacksmith. Freedman's Bank card No. 1406 (Dec 21, 1872): b. ~1842 Madison Co., wife Mollie, children Emily & Coretina, father Simon, mother Eliza (father-name decided by letterform test; earlier transcriptions read Turner) — full family now on record. Bought plantation land Jan 1871 (Deed Book OO p. 593, Vanderventer to Reuben Jones, 1870); bought Drake-parcel land Jan 1871; leased land to a freedmen's school 1869–70. Reconstruction-era AL legislator with his brother Columbus. Married Mollie Richardson Oct 1872.",
       "db1_rows": [
         151,
         166,
@@ -435,11 +435,11 @@ window.BLACK_JONES_TREE_DATA = {
     },
     {
       "id": "simon-reuben",
-      "label": "Turner (father of Reuben)",
+      "label": "Simon (father of Reuben)",
       "dates": "father of Reuben Jones",
       "group": "freedperson",
       "confidence": "confirmed_secondary",
-      "notes": "Named as Reuben Jones's father in his Freedman's Bank account. NOT Turner Moore — separate person; do not merge.",
+      "notes": "Named as Reuben Jones's father in his Freedman's Bank account (No. 1406); the name was transcribed 'Turner' in early readings and is Simon on the deciding letterform test of the manuscript (Oct 16, 2026). NOT Turner Moore — separate person; do not merge.",
       "db1_rows": [
         253
       ]
@@ -476,6 +476,32 @@ window.BLACK_JONES_TREE_DATA = {
       "db1_rows": [
         15,
         179
+      ]
+    },
+    {
+      "id": "shandy-jones-madison-1866",
+      "label": "Shandy Jones (Madison County, fl. 1866)",
+      "dates": "fl. 1866, Madison County",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "The Shandy Jones of Freedmen's Bureau Contract 507 (Feb 17, 1866): contracted with Wm. M. A. Hawkins for fifty acres, the crop worked under the direction of Dallas Jones, and agreed with his wife Judy Ann to buy Hawkins's bay mare mule for $150 out of the cotton proceeds. Whether he is Shandy Wesley Jones is NOT established — the project's hypothesis file carries the identity as an open question (DB4 1815, Open/Low). Do not merge.",
+      "db1_rows": [
+        5135,
+        5137,
+        5182
+      ]
+    },
+    {
+      "id": "judy-ann-jones",
+      "label": "Judy Ann Jones",
+      "dates": "fl. 1866, Madison County",
+      "group": "freedperson",
+      "confidence": "confirmed_primary",
+      "notes": "Wife of Shandy Jones in Freedmen's Bureau Contract 507 (Feb 17, 1866); the couple agreed to buy a bay mare mule for $150 out of the cotton proceeds. Her name was read 'July Ann' (portal abstract) and 'Lucy Ann' (Ancestry first pass) before the deciding manuscript read settled 'Judy Ann' (Oct 18, 2026).",
+      "db1_rows": [
+        5135,
+        5137,
+        5182
       ]
     },
     {
@@ -1414,7 +1440,7 @@ window.BLACK_JONES_TREE_DATA = {
       "target": "turner-moore",
       "relationship": "not_the_same_person",
       "confidence": "do_not_merge",
-      "notes": "Reuben's father Turner (per bank register).",
+      "notes": "Reuben's father Simon (per bank register No. 1406, letterform-decided).",
       "db1_row": [
         253
       ]
@@ -1896,6 +1922,31 @@ window.BLACK_JONES_TREE_DATA = {
       "notes": "Household continuity plus the barber trade; age discrepancy (25 vs expected 29). Unmerged.",
       "db2_lead": [
         208
+      ]
+    },
+    {
+      "id": "C21",
+      "source": "shandy-jones-madison-1866",
+      "target": "judy-ann-jones",
+      "relationship": "spouse_of",
+      "confidence": "confirmed_primary",
+      "notes": "Wife in Freedmen's Bureau Contract 507 (Feb 17, 1866).",
+      "db1_row": [
+        5135,
+        5137,
+        5182
+      ]
+    },
+    {
+      "id": "C22",
+      "source": "shandy-jones-madison-1866",
+      "target": "shandy-wesley-jones",
+      "relationship": "not_the_same_person",
+      "confidence": "do_not_merge",
+      "notes": "Firewall: the Shandy Jones of Contract 507 (Madison County, 1866) is not merged with Shandy Wesley Jones — the identity is an open hypothesis (DB4 1815, Open/Low), not an established fact.",
+      "db1_row": [
+        5135,
+        5182
       ]
     }
   ]

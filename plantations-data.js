@@ -45,10 +45,11 @@
 2026-10-09 UPDATE: 2 new sites added (plato-jones-athens-acre-1878, reuben-jones-drake-land-1871; ids collision-checked against all existing ids). The Avalon entry now records Lewellen Jones's $18,742 land purchase and January 1820 suicide; the T4S patents entry carries the purchase price. Edmund Townsend's 7-plantation estate NOT mapped — parcel locations unrecovered. Count correction: the sites array actually holds 138 entries (bookkeeping had drifted). restoredCount is now 138, originalCount 144.
 2026-10-11 UPDATE: 4 new sites added (lawrence-county-al-benjamin-jones-lead, lawrence-county-tn-deed-index-lead, franklin-county-nc-haywood-lead, oglethorpe-county-ga-spotswood-lead — six-state expansion anchors; ids collision-checked against all existing ids). The two new federal patents (Spotswood Jones 1818, Haywood warrant 1875) live on the GLO patent map — no plantations-map pin, since section-center coordinates could not be verified against the BLM PLSS grid. restoredCount is now 142, originalCount 148.
 2026-10-17 UPDATE: 6 new sites added from the Oct 16–17, 2026 FAN/map-register wave (johnson-beasley-sec32-forty-1868, prince-bradford-sec32-forty-1868, marshall-jones-t3r2w-tract-1868, aleck-jones-place-1867, jesse-jordan-triana-road-500ac-1866, beasley-estate-sec29-lead; ids collision-checked against all existing ids). All six carry precise:false with the approximation basis stated on the precise line: the two Sec. 32 forties and the T3 R2W tract are placed at aliquot level on the PLSS grid derived from this file's own anchors (blow-cunningham-sec29-patent; cross-checked against the lewellen-jones-t4s-patents township centroid — the anchors agree to ~0.1 mi); the Aleck Jones place and Jordan's 500 acres are corridor-level placements (distance-and-road descriptions only; no legal description on file); the Beasley-estate entry reuses the Sec. 29 NW1/4 placement of the Blow/Cunningham patent entry and stays a separate Lead-grade entry — the existing patent entry is untouched, as is every other existing entry. No entry's summary claims a parcel-precise point. restoredCount is now 148, originalCount 154.
+2026-10-19 UPDATE: 3 new sites added from the 1875 county map's Athens Road corridor (jones-parcel-sec22-t3s-r2w-1875, wm-jones-sec28-t3s-r2w-1875, jones-spring-sec4-t4s-r1w-1875; ids collision-checked against all existing ids). All three carry precise:false, placed at aliquot level on the PLSS grid derived from this file's blow-cunningham-sec29-patent anchor; all three are map-label facts with NO owner identification asserted. Also this date: the reuben-jones-drake-land-1871 summary is corrected — Freedman's Bank card No. 1406 dates to Dec 24, 1872, Reuben b. ~1833, and the father named is Simon (the 'Turner' transcription superseded by the Oct 16, 2026 letterform read; see Reuben Jones's page) — and the marshall-jones-t3r2w-tract-1868 summary gains the Contract 777 / 1876-testimony siting passage, with the tract equation labeled an inference on the entry's face. The 'Beverly plantation' named in Contract 1096 (DB1 5176/5186) is NOT mapped: no location for it exists in any record yet read and no coordinates are proposed — it is held off-map as a named search target, per this file's convention for coordinate-less entries. The jesse-jordan-triana-road-500ac-1866 entry is unchanged. restoredCount is now 151, originalCount 157.
 */
 window.PLANTATIONS_DATA = {
-  restoredCount: 148,
-  originalCount: 154,
+  restoredCount: 151,
+  originalCount: 157,
   missingCounties: ["Lauderdale", "Morgan", "DeKalb"],
 
   /* ---------- Network connections ----------
@@ -1643,7 +1644,7 @@ window.PLANTATIONS_DATA = {
       lat: 34.7241,
       lng: -86.6402,
       precise: false, // approximate: placed at the Avalon/Drake parcel area; the Drake holdings (purchased by Priscilla Holmes Drake and James Perry Drake c. 1867–68) adjoined the Jones lands — exact parcel metes unlocated
-      summary: "Reuben Jones, the freedman, bought land from the Drakes in January 1871 — a direct freedpeople land-acquisition on the Avalon/Drake parcel (Big-3 priority #1 cross-source hit). His full family is now on record via Freedman's Bank card No. 1406 (Dec 21, 1872): b. ~1842 Madison Co., wife Mollie, children Emily & Coretina, father Turner, mother Eliza.",
+      summary: "Reuben Jones, the freedman, bought land from the Drakes in January 1871 — a direct freedpeople land-acquisition on the Avalon/Drake parcel (Big-3 priority #1 cross-source hit). His full family is now on record via Freedman's Bank card No. 1406 (Dec 24, 1872): b. ~1833 Madison Co., wife Mollie, children Emily & Coretina, father Simon, mother Eliza. (The register's father-name was transcribed 'Turner' in early readings; the deciding letterform read gives Simon — see Reuben Jones's page.)",
       citation: "fullread-20261009 (Freedman's Bank No. 1406; Drake deed research); DB1/DB2."
     },
 
@@ -1724,7 +1725,7 @@ window.PLANTATIONS_DATA = {
       lat: 34.7569,
       lng: -86.7079,
       precise: false, // APPROXIMATE: aliquot-weighted centroid of the tract's two described portions (E1/2 of the SW1/4 of Sec. 23, 40 ac, + E1/2 of the north part of the NW1/4 of Sec. 26, ~50 ac per the 1870 recital) on the PLSS grid derived from this file's blow-cunningham-sec29-patent anchor — the tract straddles the Sec. 23/26 line in T3S R2W; section-level placement only, and the described acreage is itself unresolved (see summary)
-      summary: "Marshall Jones — A. P. Jones's 'head man,' held by Jones and told early in the war that he was free and could trade and own property in his own name — was the winning bidder at the January 27, 1868 estate sale (Case No. 753) on this T3 R2W tract: the E1/2 of the north part of the NW1/4 of Sec. 26 plus the E1/2 of the SW1/4 of Sec. 23, less the N1/2 of the N1/2, north of the Athens–Huntsville road; both deeds style him '(Colored).' His winning price was never recovered, and the Register's deed for the tract issued instead to Edward C. Betts — a man who held 34 people in 1860 — by a mechanism no document on file states (an assignment is presumed, not stated). Betts and his wife sold the tract to Thaddeus Oakes for $565.31 (Apr 30, 1870, Deed Book OO p. 221); Oakes sold it to Delilah M. Bishop for $500 (Dec 3, 1872, Deed Book TT pp. 516–517). The unread Register-to-Betts deed is the document that would show how a Black man's winning bid became a white enslaver's deed. Conflict carried, not resolved: the 1872 deed describes only the east half of each portion, and the tract's ~110 acres 'as described' is a summary figure, not a deed figure.",
+      summary: "Marshall Jones — A. P. Jones's 'head man,' held by Jones and told early in the war that he was free and could trade and own property in his own name — was the winning bidder at the January 27, 1868 estate sale (Case No. 753) on this T3 R2W tract: the E1/2 of the north part of the NW1/4 of Sec. 26 plus the E1/2 of the SW1/4 of Sec. 23, less the N1/2 of the N1/2, north of the Athens–Huntsville road; both deeds style him '(Colored).' His winning price was never recovered, and the Register's deed for the tract issued instead to Edward C. Betts — a man who held 34 people in 1860 — by a mechanism no document on file states (an assignment is presumed, not stated). Betts and his wife sold the tract to Thaddeus Oakes for $565.31 (Apr 30, 1870, Deed Book OO p. 221); Oakes sold it to Delilah M. Bishop for $500 (Dec 3, 1872, Deed Book TT pp. 516–517). The unread Register-to-Betts deed is the document that would show how a Black man's winning bid became a white enslaver's deed. Conflict carried, not resolved: the 1872 deed describes only the east half of each portion, and the tract's ~110 acres 'as described' is a summary figure, not a deed figure. Contract 777 of the Bureau volumes (January 1866) leases part of a tract 'belonging to the Estate of Alex Jones Decd' — a garden of 1½ acres with houses, and the west half of the adjoining orchard, 'eight miles west of the town of Huntsville on the Athens Road.' Marshall Jones testified in 1876 that Alexander P. Jones 'let me [live] in his last place about eight miles from Huntsville… we had a garden, about three acres.' The distance and the homesite character make this T3S R2W tract the leading candidate for Contract 777's land — an inference, flagged as such: the garden acreage differs (3 acres in the testimony, 1½ in the lease), and whether the estate's 'East Place' is this R2W holding remains an open question in the project files (DB4 732/774).",
       citation: "FAN chunk 5 §B1 and map register #24 (2026-10-17); DB1 rows 2041–2048, 2081–2085; DB4 rows 768, 769, 771, 793, 1811."
     },
     {
@@ -1759,6 +1760,41 @@ window.PLANTATIONS_DATA = {
       precise: false, // APPROXIMATE: the same PLSS placement as blow-cunningham-sec29-patent — center of the NW1/4 of Sec. 29, T3S R1W per the BLM PLSS grid — because the candidate parcel IS that same quarter-section; kept as a separate entry because the Beasley-estate identification is an unproven Lead (see summary)
       summary: "LEAD — identification unproven. Adventist sources call the farm their church bought by January 23, 1896 the 'Beasley estate,' and Dr. James A. Beasley's obituary ran February 7, 1896; the candidate parcel is the NW1/4 of Sec. 29, T3S R1W — the Peter Blow parcel, later Oakwood. No document on file equates that quarter-section with Dr. Beasley's estate land; his probate file is the test and is unpulled. Dr. Beasley is documented as an enslaver in his own right: the 1865 Colored Census names him former owner of the Wyley Jones household (Wyley, 40, a railroad hand; Henrietta, 4; Caldonia, 2) and of Sarah B. and Baker Fletcher, and Freedman's Bank depositor Nick Beasley was born on his plantation, seven miles from Huntsville, to Allen and Sealy Beasley. This entry is deliberately separate from the 1819 Blow/Cunningham patent entry for the same quarter-section (blow-cunningham-sec29-patent): the patent is a verified fact; the Beasley equation is a lead, and the two are not merged.",
       citation: "FAN chunk 3 §A2 and map register #30 (2026-10-16/17); DB1 rows 1672, 1673, 1736; DB4 rows 670, 671."
+    },
+
+    // ---------- 2026-10-19 paste: 1875 county map, Athens Road corridor (Oct 18–19 harvest) ----------
+    {
+      id: "jones-parcel-sec22-t3s-r2w-1875",
+      name: "Parcel labeled 'Jones' — SW¼ Sec. 22, T3S R2W (1875 county map)",
+      tier: 2,
+      county: "Madison",
+      lat: 34.7605,
+      lng: -86.7277,
+      precise: false, // APPROXIMATE: center of the SW1/4 of Sec. 22, T3S R2W on the PLSS grid derived from this file's blow-cunningham-sec29-patent anchor (NW1/4 Sec. 29, T3S R1W center, 34.7533/-86.6573; 1 section = 1 mi) — aliquot-level placement of the map-labeled parcel, not a surveyed point
+      summary: "The 1875 county map prints a parcel labeled simply 'Jones' in the SW quarter of Sec. 22, T3S R2W, on the Athens Road corridor west of Huntsville. The label is a fact of the map; whose Jones it was is not stated there or in any record yet read. Carried as a name-only observation, unmerged with any Jones in the project.",
+      citation: "1875 Map of Madison County (LOC 2011590020); three-tract read, DB1 5123."
+    },
+    {
+      id: "wm-jones-sec28-t3s-r2w-1875",
+      name: "'Wm. Jon[es]' parcel — N part of Sec. 28, T3S R2W (1875 county map)",
+      tier: 2,
+      county: "Madison",
+      lat: 34.7533,
+      lng: -86.7409,
+      precise: false, // APPROXIMATE: center of the N1/2 of Sec. 28, T3S R2W on the same PLSS grid as the Sec. 22 entry above — aliquot-level placement of the map-labeled parcel fronting the Athens Road, not a surveyed point
+      summary: "A second Jones label on the same corridor: 'Wm. Jon[es]' in the north part of Sec. 28, T3S R2W, on the Athens Road, 1875. Name-only; not equated with any documented William Jones.",
+      citation: "1875 Map of Madison County (LOC 2011590020); DB1 5123."
+    },
+    {
+      id: "jones-spring-sec4-t4s-r1w-1875",
+      name: "Jones' Spring — NW Sec. 4, T4S R1W (1875 county map)",
+      tier: 2,
+      county: "Madison",
+      lat: 34.7245,
+      lng: -86.6397,
+      precise: false, // APPROXIMATE: center of the NW1/4 of Sec. 4, T4S R1W on the same PLSS grid as the entries above — aliquot-level placement of the printed place label, not a surveyed point
+      summary: "The 1875 map names a place, not a parcel: 'Jones' Spring,' NW Sec. 4, T4S R1W. A Jones association with the spring predates the map by an unknown span; no record yet read says whose name it carries.",
+      citation: "1875 Map of Madison County (LOC 2011590020); DB1 5123."
     }
 
   ]
